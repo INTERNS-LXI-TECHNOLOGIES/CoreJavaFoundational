@@ -7,17 +7,18 @@ public class Game
     List<Player> players;
     List<Snake> snakes;
     List<Ladder> ladders;
+    List<Cell> board;
    
     Dice dice;
     String gameControl;
     int totalPlayersList = players;
 
     Scanner sc = new Scanner(System.in);
-    Cell cell = new Cell();
-    
+    Cell cell ;
     for(int i = 0; i<=100; i++)
     {
-        cell.add(c);
+        cell = new Cell(i);
+        board.add(cell);
     }
 
     public void createPlayersAndDice()
@@ -38,23 +39,26 @@ public class Game
          }
     }
     
-    public void gamePlay()
+    public void gameLoop()
     {
-        System.out.println("Enter x to roll dice"); 
-        gameControl = sc.nextLine();  
-        System.out.println(i + " please roll dice");
-    
-        /*
-            player.currentCell == ladder.headCell
-            player.currentCell == snake.tailCell 
-            (i%4)
-        */
-         
+        for(int i = 0; i < gameState.END; i++) 
+        {       
+            System.out.println("Press 'Enter' to roll dice"); 
+            gameControl = sc.nextLine();  
+            System.out.println(i + " please roll dice");
+            
+        
+            /*+
+                player.currentCell == ladder.headCell
+                player.currentCell == snake.tailCell 
+                (i%4)
+            */
+         }
     }    
     public static void main(String args[])
     {
         Game snakeAndLadder = new Game();
-        SnakesAndLadders sl = new SnakeAndLadders() ;
+        SnakesAndLadders sl = new SnakeAndLadders(board) ;
 
         snakeAndLadder.createPlayersAndDice();
         snakeAndLadder.gameLoop();

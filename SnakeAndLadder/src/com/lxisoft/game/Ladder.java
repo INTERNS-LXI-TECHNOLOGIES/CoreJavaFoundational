@@ -10,5 +10,7 @@ public class Ladder
     {
         this.headCell = headCell;
         this.tailCell = tailCell;
+        this.headCell.ladders.add(this);
+        this.tailCell.ladders.add(this);
     }
 }

@@ -5,9 +5,11 @@ public class Snake
     Cell headCell;
     Cell tailCell;    
 
-    public Snake(int headCell,int tailCell)
+    public Snake(Cell headCell,Cell tailCell)
     {
         this.headCell = headCell;
         this.tailCell = tailCell;
+        this.headCell.snakes.add(this) ;
+        this.tailCell.snakes.add(this) ;
     }
 }
