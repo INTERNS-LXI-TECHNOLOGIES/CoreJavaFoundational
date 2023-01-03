@@ -33,7 +33,7 @@ public class SnakeAndLadders
                     System.out.println("Snake Bites!!");
                     if(s.headCell == currentCell)                    
                     {
-                        currentCell == s.tailCell;                                
+                        return s.tailCell;                                
                     }
                 }
                 
@@ -42,8 +42,10 @@ public class SnakeAndLadders
                     System.out.println("Yeah You Got Ladders");                                        
                     if(l.tailCell == currentCell)                    
                     {
-                        currentCell == l.headCell;                                
+                        return l.headCell;                                
                     }
                 }
+
+
             }
 }

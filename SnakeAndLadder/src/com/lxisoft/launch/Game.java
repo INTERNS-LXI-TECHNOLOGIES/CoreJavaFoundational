@@ -8,6 +8,7 @@ public class Game
     List<Snake> snakes;
     List<Ladder> ladders;
     List<Cell> board;
+    SnakesAndLadders sl ;
    
     Dice dice;
     String gameControl;
@@ -34,6 +35,7 @@ public class Game
 
             Player player = new Player();
             
+            
             player.setName(sc.nextLine());
             players.add(player);
          }
@@ -41,28 +43,75 @@ public class Game
     
     public void gameLoop()
     {
-        for(int i = 0; i < gameState.END; i++) 
-        {       
-            System.out.println("Press 'Enter' to roll dice"); 
-            gameControl = sc.nextLine();  
-            System.out.println(i + " please roll dice");
-            
-        
-            /*+
-                player.currentCell == ladder.headCell
-                player.currentCell == snake.tailCell 
-                (i%4)
-            */
-         }
-    }    
+        do
+        {
+            for(Player p : players)
+            {
+                p.throwDice();
+
+                if(p.state == GameState.GAMEPLAY)
+                {
+
+                    p.currentCell 
+                      = p.currentCell+diceResult;
+
+                    p.currenctCell = sl.moveIfSnakeOrLadderExists(p.currentcell);
+                } 
+                
+
+                currentcell = 100 change state to end;
+
+                if(p.state == GameState.FRESH)
+                {
+
+                    if(p.throwDice() == 6)
+                    {
+                        p.state=GAMEPLAY;
+                        p.currentCell = 1;    
+                    }                        
+                }
+
+                if(p.state == GameState.END)
+                {
+                    //players.currentCell=;
+                    System.out.println("Congratulations! " + i + "player wins");
+                    //remove player from players
+                    if(p == 100)
+                    {
+                        p.remove();                    
+                    }                    
+                    boolean playerwon = true;
+
+                    if(/*6 && not playerwon */)
+                    {
+                        //he/she gets one more chance to throw dice;
+                    }
+                }
+            }    
+        }
+        while(players.size()>1)
+    
     public static void main(String args[])
     {
         Game snakeAndLadder = new Game();
-        SnakesAndLadders sl = new SnakeAndLadders(board) ;
+        sl = new SnakeAndLadders(board) ;
 
         snakeAndLadder.createPlayersAndDice();
         snakeAndLadder.gameLoop();
         
     }
+
+    /*+
+                player.currentCell == ladder.headCell
+                player.currentCell == snake.tailCell 
+                (i%4)
+            */
+
+    /*for(int i = 0; i < //gameState.END; i++) 
+            {       
+                System.out.println("Press 'Enter' to roll dice"); 
+                gameControl = sc.nextLine();  
+                System.out.println(i + " please roll dice");
+            }*/
 }
 

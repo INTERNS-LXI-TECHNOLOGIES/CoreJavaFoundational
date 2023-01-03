@@ -6,6 +6,11 @@ public class Player
     private String name;       
     Cell currentCell = 0;
     GameState state;
+
+    public Player()
+    {
+        state = GameState.FRESH ;
+    }
     
     public String getName()
     {
