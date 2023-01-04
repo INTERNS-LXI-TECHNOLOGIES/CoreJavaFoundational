@@ -9,7 +9,7 @@ public class Snake
     {
         this.headCell = headCell;
         this.tailCell = tailCell;
-        this.headCell.snakes.add(this) ;
-        this.tailCell.snakes.add(this) ;
+        this.headCell.snakes.add(this);
+        this.tailCell.snakes.add(this);
     }
 }

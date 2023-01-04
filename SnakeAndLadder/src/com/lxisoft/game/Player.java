@@ -4,12 +4,13 @@ import java.util.*;
 public class Player 
 {  
     private String name;       
-    Cell currentCell = 0;
-    GameState state;
-
+    public Cell currentCell = new Cell();
+    public GameState state;
+    
+        
     public Player()
     {
-        state = GameState.FRESH ;
+        state = GameState.FRESH;
     }
     
     public String getName()
@@ -24,11 +25,18 @@ public class Player
     
     public int throwDice(Dice dice)
     {
+        int diceResult;
+        Random r = new Random();
+        diceResult = r.nextInt(7);
+        System.out.println("Dice Rolled : " + diceResult);
+        return diceResult;       
+   
         /*if(diceValue == 6 && onemore chance!)
         {
             //inside if, change state to gameplay.
             //insert do-while.
         }
         */
+           
     }
 }

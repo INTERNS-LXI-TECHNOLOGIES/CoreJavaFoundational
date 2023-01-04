@@ -6,7 +6,7 @@ public class Ladder
     Cell headCell; 
     Cell tailCell;
 
-    public Ladder(int headCell,int tailCell)
+    public Ladder(Cell headCell,Cell tailCell)
     {
         this.headCell = headCell;
         this.tailCell = tailCell;
