@@ -8,7 +8,7 @@ public class Teacher {
 
     }
 }
- class Teachers{
+ class Teachers{ //class names should be singular
 
     int teacherId; // techer id ttt
     String Name;

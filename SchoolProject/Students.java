@@ -1,4 +1,4 @@
-public class Students {
+public class Students { //Plural class names are not recommended. Use School instead
     
  public static void main (String[] args){
 
