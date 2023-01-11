@@ -45,11 +45,11 @@ public class Snake_Ladder
     public Snake_Ladder(Board board)
     {
         this.board = board;
-        snakes.add(new Snake(board.getCells().get(12)));
-        snakes.add(new Snake(board.getCells().get(26)));
-        snakes.add(new Snake(board.getCells().get(56)));
-        snakes.add(new Snake(board.getCells().get(75)));
-        snakes.add(new Snake(board.getCells().get(97)));
+        snakes.add(new Snake(board.getCell().get(12)));
+        snakes.add(new Snake(board.getCell().get(26)));
+        snakes.add(new Snake(board.getCell().get(56)));
+        snakes.add(new Snake(board.getCell().get(76)));
+        snakes.add(new Snake(board.getCell().get(97)));
 
         ladders.add(new Ladder(board.getCells().get(10)));
         ladders.add(new Ladder(board.getCells().get(13)));
@@ -62,25 +62,23 @@ public class Snake_Ladder
     {
         System.out.println("Checking If Snake Or Ladder Exist");
         
-        for(Snake s : currentCell.getSnakes())
+        for(Snake s : currentCell.getSnake())
         {
-            System.out.println("Snakes Check ");
+            System.out.println("Snake Check ");
 
             if(s.getHeadCell().getCellID() == currentCell.getCellID())
             {
                 System.out.println("Ouch snake bites Go Down...!");                    
-                //return s.tailCell.cellID;
             }
         }
 
-        for(Ladder l : currentCell.getLadders())
+        for(Ladder l : currentCell.getLadder())
         {
             System.out.println("Ladder Check ");
 
             if(l.getTailCell().getCellID() =  currentCell.getCellID())
             {
-                System.out.println("Yeah! You Got Ladders");
-                //return l.headCell.cellID;
+                System.out.println("Yeah! You Got Ladders");              
             }
         }
         return currentCell.getCellID();

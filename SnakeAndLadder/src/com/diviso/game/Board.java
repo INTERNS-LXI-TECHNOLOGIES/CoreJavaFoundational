@@ -5,12 +5,12 @@ public class Board
 {
     private List <Cell> cells = new ArrayList<Cell>();
 
-    public List<Cell> getCells()
+    public List<Cell> getCell()
     {
         return cells;
     }
     
-    public void setCells(List<Cell> Cells)
+    public void setCell(List<Cell> Cells)
     {
         this.cells = Cells;
     }

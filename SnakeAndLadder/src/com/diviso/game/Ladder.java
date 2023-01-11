@@ -1,36 +1,23 @@
 package com.diviso.game;
-
 import com.diviso.snakeandladder.SnakeAndLadder;
 
 public class Ladder
 {
-    private int headCell;
-    private int tailCell;
+    private Cell tailCell;
 
-    public int getHeadCell()
-    {
-        return headCell;
-    }
-
-    public void setHeadCell(int HeadCell)
-    {
-        this.headCell = HeadCell;
-    }
-
-    public int getTailCell()
+    public Cell getTailCell()
     {
         return tailCell;
     }
 
-    public void setTailCell(int TailCell)
+    public void setTailCell(Cell TailCell)
     {
         this.tailCell = TailCell;
     }
 
     
-    public Ladder(int headCell,int tailCell)
+    public Ladder(Cell tailCell)
     {
-        this.headCell = headCell;
         this.tailCell = tailCell;
 
         Cell ladderBottom = SnakeAndLadder.getBoard().getCells().get(tailCell.getCellID());

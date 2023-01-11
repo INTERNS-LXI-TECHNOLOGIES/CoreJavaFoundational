@@ -4,11 +4,13 @@ import java.util.*;
 
 public class SnakeAndLadder
 {
-    private Board board;
+    private Board board = new Board();
     private Cell cell;
+    private Dice dice;
     private Snake_Ladder snakesLadders;
     private List<Player> players = new ArrayList<Player>();
-    private int totalPlayersList;
+    private List<Snake> snakes   = new ArrayList<Snake>();
+    private List<Ladder> ladders = new ArrayList<Ladder>();
 
     Scanner sc = new Scanner(System.in); 
 
@@ -31,17 +33,17 @@ public class SnakeAndLadder
     {
         this.cell = Cell;
     }
-        
-    public int getTotalPlayersList()
+
+    public Dice getDice()
     {
-        return totalPlayersList;
+        return dice;
     }       
 
-    public void setTotalPlayersList(int TotalPlayersList)
+    public void setDice(Dice Dice)
     {
-        this.totalPlayersList = TotalPlayersList;
+        this.dice = Dice;
     }
-
+    
     public Snake_Ladder getSnakesLadders()
     {
         return snakesLadders;
@@ -52,14 +54,34 @@ public class SnakeAndLadder
         this.snakesLadders = SnakesLadders;
     }
     
-    public List<Player> getPlayers()
+    public List<Player> getPlayer()
     {
         return players;
     }
 
-    public void setPlayers(List<Player> Players)
+    public void setPlayer(List<Player> Players)
     {
         this.players = Players;
+    }   
+
+    public List<Ladder> getLadder()
+    {
+        return ladders;
+    }
+
+    public void setLadder(List<Ladder> Ladders)
+    {
+        this.ladders = Ladders;
+    }   
+
+    public List<Snake> getSnake()
+    {
+        return snakes;
+    }
+
+    public void setSnake(List<Snake> Snakes)
+    {
+        this.snakes = Snakes;
     }   
             
     public void gameInit()
@@ -79,14 +101,14 @@ public class SnakeAndLadder
         for(int i =0; i <=100; i++)
         {
             cell = new Cell(i);
-            setBoard(board.setCell().add(cell));
+            board.getCell().add(cell);
         }
     }    
 
     public void createPlayersAndDice()
     {
         System.out.println("How Many Players Need To Join");
-        totalPlayersList = Integer.parseInt(sc.nextLine());
+        int totalPlayersList = Integer.parseInt(sc.nextLine());
                
         createCell();
         Dice dice = new Dice();
@@ -102,7 +124,7 @@ public class SnakeAndLadder
 
     public void gameLoop()
     {
-        int diceResult;        
+        int diceResult;
         do
         {
             for(Player p : players)
@@ -110,24 +132,24 @@ public class SnakeAndLadder
                 p.printDetails();
                 do
                 {
-                    System.out.println(p.getName() + "Please Roll Dice");                
-                    diceResult = p.throwDice(dice);    
+                    System.out.println(p.getName() + "Please Roll Dice");
+                    diceResult = p.throwDice(dice);
                     System.out.println(diceResult);
                     if(p.getGameState() == GameState.GAMEPLAY)
                     {
                         p.getCurrentCell().setCellID(p.getCurrentCell().getCellID()+diceResult);
-                        p.getCurrentCell().setCellID(snakesLadders.moveIfSnakeOrLadderExists(board.getCells().get(p.getCurrentCell().getCellID())));
+                        p.getCurrentCell().setCellID(snakesLadders.moveIfSnakeOrLadderExists(board.getCell().get(p.getCurrentCell().getCellID())));
                     }
-        
+
                     if(p.getGameState() == GameState.FRESH)
                     {
                         if(diceResult == 1 || diceResult == 6)
                         {
                             p.setGameState(GameState.GAMEPLAY);
                             p.getCurrentCell().setCellID(1);
-                            System.out.println("GameState changed to GamePlay");                        
+                            System.out.println("GameState changed to GAMEPLAY ");
                         }
-                    }    
+                    }
 
                     if(p.getGameState() == GameState.END)
                     {
@@ -138,22 +160,22 @@ public class SnakeAndLadder
                             p.setPlayerWon(true);
                         }
                     }
-            
+
                     System.out.println("Do you want to continue? (Yes/No)");
                     String key = sc.nextLine();
                     switch(key)
                     {
                         case "Y" :
                         break;
-                        
+
                         case "N" :
                         System.out.println("Exited!");
                         break;
 
                         default :
                         System.out.println("Wrong Statement");
-                    }   
-    
+                    }
+
                 }while(diceResult == 6 && !p.getPlayerWon());
             }
         }while(players.size()>1);

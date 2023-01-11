@@ -6,7 +6,6 @@ public class Player
     private String name;
     private GameState state;
     private boolean playerWon = false;
-
     private Cell currentCell = new Cell();
 
     public String getName()
@@ -34,12 +33,12 @@ public class Player
         return currentCell;          
     }
 
-    public Boolean getPlayerWon()
+    public boolean getPlayerWon()
     {
         return playerWon;
     }
 
-    public void setPlayerWon(Boolean PlayerWon)
+    public void setPlayerWon(boolean PlayerWon)
     {
         this.playerWon = PlayerWon;
     }
@@ -60,6 +59,6 @@ public class Player
 
         public void printDetails()
         {
-            System.out.println(this.name + "CurrentCell Is " + currentCell.cellID);
+            System.out.println(this.name + "CurrentCell Is " + currentCell.getCellID());
         }        
 }
