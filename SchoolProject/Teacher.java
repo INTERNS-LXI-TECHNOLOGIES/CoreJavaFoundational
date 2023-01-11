@@ -1,21 +1,20 @@
-public class Teacher {
-    public static void main(String[] args){
-     Teachers teacher = new Teachers();
-       
-     teacher.teacherId = 10;
-     teacher.Name = "pam";
-     teacher.subject = "maths";
+
+public class Teacher{ 
+
+    
+    String teacherName;
+    String teacherSubject;
+
+
+
+    public Teacher(String teacherName, String teacherSubject){
+
+        this.teacherName = teacherName;
+        this.teacherSubject = teacherSubject;
 
     }
-}
- class Teachers{ //class names should be singular
-
-    int teacherId; // techer id ttt
-    String Name;
-    String subject;
-
     public void printDetails(){
-     
-        System.out.println("teacher ID: " + teacherId + " teacher name: " + Name+ " subject: "+ subject);
+        System.out.println("teacher name: " + teacherName + " teacher subject: " + teacherSubject );
+
     }
 }
