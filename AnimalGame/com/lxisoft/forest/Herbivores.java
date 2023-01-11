@@ -1,6 +1,8 @@
 package com.lxisoft.forest;
 public interface Herbivores {
 	
-		 void escape();
-
+		 public String veganFight(Animal animal1);
+		 
+		 public void escape(Animal animal1);
+		 
 }

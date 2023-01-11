@@ -16,6 +16,7 @@ public class TDD {
 		denseForest.setName("Amazon Forest");
 		
 		denseForest.initializeAnimals();
+		denseForest.animalDetails();
 		denseForest.countAnimalsInForest();
 		denseForest.coutingCarnivores();
 		denseForest.startFight();

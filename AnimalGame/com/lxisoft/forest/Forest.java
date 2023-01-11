@@ -21,24 +21,12 @@ public class Forest{
 		deer.setAnimalAggressivenessLevel(7);
 		animals.add(deer);		
 		
-		System.out.println("____ANIMAL DETAILS_____\n");
-		System.out.println("AnimalName: "+deer.getAnimalName()
-		+"\nAnimalStrengthLevel: "+deer.getAnimalStrengthLevel()
-		+"\nAnimalHungerLevel: "+deer.getAnimalHungerLevel()
-		+"\nAnimalAggressivenessLevel: "+deer.getAnimalAggressivenessLevel()+"\n"); 
-		
-		
 		Elephant elephant = new Elephant();
 		elephant.setAnimalName("Elephant");
  		elephant.setAnimalStrengthLevel(7);
 		elephant.setAnimalHungerLevel(8);
 		elephant.setAnimalAggressivenessLevel(9);  
 		animals.add(elephant);
-		
-		System.out.println("AnimalName: "+elephant.getAnimalName()
-		+"\nAnimalStrengthLevel: "+elephant.getAnimalStrengthLevel()
-		+"\nAnimalHungerLevel: "+elephant.getAnimalHungerLevel()
-		+"\nAnimalAggressivenessLevel: "+elephant.getAnimalAggressivenessLevel()+"\n"); 
 		
 		Lion lion = new Lion();
 		lion.setAnimalName("Lion");
@@ -47,11 +35,6 @@ public class Forest{
 		lion.setAnimalAggressivenessLevel(9);  
 		animals.add(lion);
 		
-		System.out.println("AnimalName: "+lion.getAnimalName()
-		+"\nAnimalStrengthLevel: "+lion.getAnimalStrengthLevel()
-		+"\nAnimalHungerLevel: "+lion.getAnimalHungerLevel()
-		+"\nAnimalAggressivenessLevel: "+lion.getAnimalAggressivenessLevel()+"\n"); 
-		
 		Tiger tiger = new Tiger();
 		tiger.setAnimalName("Tiger");
  		tiger.setAnimalStrengthLevel(7);
@@ -59,45 +42,29 @@ public class Forest{
 		tiger.setAnimalAggressivenessLevel(9);  
 		animals.add(tiger);
 		
-		System.out.println("AnimalName: "+tiger.getAnimalName()
-		+"\nAnimalStrengthLevel: "+tiger.getAnimalStrengthLevel()
-		+"\nAnimalHungerLevel: "+tiger.getAnimalHungerLevel()
-		+"\nAnimalAggressivenessLevel: "+tiger.getAnimalAggressivenessLevel()+"\n"); 
-		
 		Wolf wolf = new Wolf();
 		wolf.setAnimalName("Wolf");
  		wolf.setAnimalStrengthLevel(7);
 		wolf.setAnimalHungerLevel(8);
 		wolf.setAnimalAggressivenessLevel(9);  
 		animals.add(wolf);
+	}
+	
+	public void animalDetails(){
 		
-		System.out.println("AnimalName: "+wolf.getAnimalName()
-		+"\nAnimalStrengthLevel: "+wolf.getAnimalStrengthLevel()
-		+"\nAnimalHungerLevel: "+wolf.getAnimalHungerLevel()
-		+"\nAnimalAggressivenessLevel: "+wolf.getAnimalAggressivenessLevel()+"\n"); 
-		
-/* 		for (int i=0;i < number; i++) {
-		Animal animal = new Animal();
-		animal.setAnimalName("Animal "+(i+1));
- 		animal.setAnimalStrengthLevel(1 +(i+1));
-		animal.setAnimalHungerLevel(1 +(i+1));
-		animal.setAnimalAggressivenessLevel(1 +(i+1));  
-		animals.add(animal);
-		
-			
+		for (int i=0;i < animals.size(); i++) {	
 		System.out.println("____ANIMAL DETAILS_____\n");
-		System.out.println("AnimalName: "+animal.getAnimalName()
-		+"\nAnimalStrengthLevel: "+animal.getAnimalStrengthLevel()
-		+"\nAnimalHungerLevel: "+animal.getAnimalHungerLevel()
-		+"\nAnimalAggressivenessLevel: "+animal.getAnimalAggressivenessLevel()+"\n"); 
-		
-	} */
+		System.out.println("AnimalName: "+animals.get(i).getAnimalName()
+		+"\nAnimalStrengthLevel: "+animals.get(i).getAnimalStrengthLevel()
+		+"\nAnimalHungerLevel: "+animals.get(i).getAnimalHungerLevel()
+		+"\nAnimalAggressivenessLevel: "+animals.get(i).getAnimalAggressivenessLevel()+"\n"); 
+		}
 	}
 	
 	public void coutingCarnivores(){
-		System.out.println("-----coutingCarnivores-----"+"\n");
+		System.out.println("-----Couting Carnivores in the Forest-----"+"\n");
 		for(int i=0; i < animals.size();i++) {
-		if ((animals.get(i)) instanceof Herbivores){
+		if ((animals.get(i)) instanceof Carnivores){
 			carnivoresCount++;
 		System.out.println(animals.get(i).getAnimalName()+"\n");	
 		}
@@ -116,10 +83,10 @@ public class Forest{
 			
 	int animalSizeReference = animals.size();
 	
-	System.out.println("-----RANDOM FIGHT DETAILS-----");
+	System.out.println("-----RANDOM FIGHT DETAILS-----"+"\n");
 		
 
-	while (animalSizeReference>1){
+	while (animalSizeReference > 1){
 		
 		double randomValue = Math.random();
 		double randomValue1 = Math.random();
@@ -150,16 +117,15 @@ public class Forest{
 			
 		else if (animal1 instanceof Herbivores){
 			
-		System.out.println(animal1.getAnimalName());	
-		((Herbivores)animal1).escape(); }
+		System.out.println("Fight Between 2 Animals & Survived Animal Name : " +((Herbivores)animal1).veganFight(animal2)+"\n");
+		}
 		
 		else if (animal2 instanceof Herbivores){
 		
-		System.out.println(animal1.getAnimalName());	
-		((Herbivores)animal2).escape(); }
+		((Herbivores)animal2).escape(animal1);
+		}
 		
 		else {
-		
 		
 		if (((animal1.getAnimalStrengthLevel() >= 1) && (animal2.getAnimalStrengthLevel() >= 1))){
 		
@@ -170,24 +136,25 @@ public class Forest{
 		}
 		}
 		
-		animalSizeReference = animals.size()-carnivoresCount;
+		//animalSizeReference = animals.size()-carnivoresCount;
+		animalSizeReference = carnivoresCount;
 				
 		for (Animal i : animals){			
 				
 			if (i.getAnimalStrengthLevel() <= 1) {
-							
-			animalSizeReference --;
+			
+				if (i instanceof Carnivores){
 					
+			animalSizeReference --;
+					}
 			System.out.println("\n"+"Lost Animal Name: " + i.getAnimalName() + 
 			"\n" +"Lost Animal Strength Level:" + i.getAnimalStrengthLevel()+"\n"+
 			"Lost Animal Hunger Level:" + i.getAnimalHungerLevel()+"\n"+
 			"Lost Animal Aggressiveness Level:" + i.getAnimalAggressivenessLevel()+"\n"
 			);
-						 			 
-			}
 			
 		}
-			
+		}
 	}
 	
 	} 

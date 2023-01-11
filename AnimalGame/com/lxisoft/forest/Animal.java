@@ -3,9 +3,7 @@
 package com.lxisoft.forest;
 import java.util.Comparator;
 
-public abstract class Animal implements Carnivores{
-	
-	//public class Forest extends Deer implements Carnivores{
+public abstract class Animal{
 	
 	private String animalName;
 	public int animalStrengthLevel,animalHungerLevel,animalAggressivenessLevel;
