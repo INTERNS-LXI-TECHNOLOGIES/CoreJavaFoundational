@@ -4,10 +4,10 @@ public class School{
      
     String schoolName;
     String schoolAddress;
-    ArrayList<ClassRoom> classroom1;
+    ClassRoom classroom1;
     
 
-    public School(String schoolName, String schoolAddress, ArrayList<ClassRoom> classroom1){
+    public School(String schoolName, String schoolAddress, ClassRoom classroom1){
 
         this.schoolName = schoolName;
         this.schoolAddress = schoolAddress;
@@ -17,7 +17,5 @@ public class School{
     public void printDetails(){
         System.out.println("school name: " + schoolName + " school address: " + schoolAddress + " class romm: " + classroom1);
     }
-    public ArrayList<ClassRoom>getclassroom(){
-		return this.classroom1;
-	}
+  
 }
