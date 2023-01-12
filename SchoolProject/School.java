@@ -7,15 +7,21 @@ public class School{
     ClassRoom classroom1;
     
 
-    public School(String schoolName, String schoolAddress, ClassRoom classroom1){
+    public School(String schoolName, String schoolAddress){
 
         this.schoolName = schoolName;
         this.schoolAddress = schoolAddress;
-        this.classroom1 = classroom1;
+
 
     }
+    public School(){
+
+    }
+    
     public void printDetails(){
-        System.out.println("school name: " + schoolName + " school address: " + schoolAddress + " class romm: " + classroom1);
+        System.out.println("school name: " + schoolName + " school address: " + schoolAddress);
+        classroom1.printdetails();
+        
     }
   
 }

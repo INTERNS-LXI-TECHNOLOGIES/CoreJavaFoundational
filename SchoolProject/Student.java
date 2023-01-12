@@ -1,15 +1,15 @@
 public class Student{
 
+  
     int studentId;
     String studentName;
- 
-      public Student(int studentId, String studentName){
+    public Student(int stid, String name){
+      studentId = stid;
+      studentName = name;
+    }
 
-        this.studentId = studentId;
-        this.studentName = studentName; 
-      }
-      public void printDetails(){
-
-     System.out.println("student Id: " + studentId + " student name: " + studentName);
-      }
+    public void printDetails(){
+    
+      System.out.println("student id: " + studentId + " student name: " + studentName);
+    }
 }

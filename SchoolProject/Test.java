@@ -1,28 +1,24 @@
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Test {
 
 public static void main(String [] args)  {
 
-    Student student1 = new Student(10, "mike");
+    School school1 = new School("oxford school", "223 wonderland road, london");
 
-    Teacher teacher1 = new Teacher("pam", "maths");
+    school1.classroom1 = new ClassRoom(20, 5);
 
-
-    ClassRoom classroom1 = new ClassRoom(40, 5, student1, teacher1);
-
-
-    School school1 = new School("oxford school", "455 oxfrod at wonderland, london, ON", classroom1);
     
+    ClassRoom  classroom1 = new ClassRoom(20, 4);
+    
+    classroom1.student1 = new Student(3,"mike");
+
+    classroom1.teacher1 = new Teacher("pam", "maths");
+
+   
    
 
+        school1.printDetails();
         
-    
 
-     school1.printDetails();
-     classroom1.printdetails();
-     teacher1.printDetails();
-     student1.printDetails();
  }
 }
