@@ -1,4 +1,4 @@
-package com.diviso.snakeandladder;
+package com.diviso.launch;
 import com.diviso.game.*;
 import java.util.*;
 

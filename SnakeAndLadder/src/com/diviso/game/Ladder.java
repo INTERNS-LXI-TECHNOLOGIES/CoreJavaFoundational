@@ -1,10 +1,11 @@
 package com.diviso.game;
-import com.diviso.snakeandladder.SnakeAndLadder;
+import com.diviso.launch.SnakeAndLadder;
 
 public class Ladder
 {
     private Cell tailCell;
-    SnakeAndLadder game1 = new SnakeAndLadder();
+    private SnakeAndLadder game;
+
     public Cell getTailCell()
     {
         return tailCell;
@@ -15,12 +16,17 @@ public class Ladder
         this.tailCell = TailCell;
     }
 
-    
-    public Ladder(Cell tailCell)
+    public SnakeAndLadder getGame()
+    {
+        this.game = game;
+    }
+
+    public Ladder(Cell tailCell , SnakeAndLadder game)
     {
         this.tailCell = tailCell;
+        this.game = game;
 
-        Cell ladderBottom = game1.getBoard().getCell().get(tailCell.getCellID());
+        Cell ladderBottom = game.getBoard().getCell().get(tailCell.getCellID());
         ladderBottom.getLadder().add(this);
     }
 }

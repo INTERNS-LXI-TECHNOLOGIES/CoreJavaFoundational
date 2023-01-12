@@ -4,8 +4,8 @@ import java.util.*;
 public class Snake_Ladder
 {
     private Board board;
-    private List<Snake>snakes = new ArrayList<Snake>();
-    private List<Ladder>ladders = new ArrayList<Ladder>();
+    private List<Snake>snakes = new ArrayList<>();
+    private List<Ladder>ladders = new ArrayList<>();
 
     public Board getBoard()
     {
@@ -57,6 +57,7 @@ public class Snake_Ladder
         ladders.add(new Ladder(board.getCell().get(57)));
         ladders.add(new Ladder(board.getCell().get(76)));
     }
+
 
     public int moveIfSnakeOrLadderExists(Cell currentCell)
     {
