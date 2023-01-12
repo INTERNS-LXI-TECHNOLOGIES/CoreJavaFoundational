@@ -4,7 +4,7 @@ import com.diviso.snakeandladder.SnakeAndLadder;
 public class Ladder
 {
     private Cell tailCell;
-
+    SnakeAndLadder game1 = new SnakeAndLadder();
     public Cell getTailCell()
     {
         return tailCell;
@@ -20,7 +20,7 @@ public class Ladder
     {
         this.tailCell = tailCell;
 
-        Cell ladderBottom = SnakeAndLadder.getBoard().getCells().get(tailCell.getCellID());
-        ladderBottom.getLadders().add(this);
+        Cell ladderBottom = game1.getBoard().getCell().get(tailCell.getCellID());
+        ladderBottom.getLadder().add(this);
     }
 }

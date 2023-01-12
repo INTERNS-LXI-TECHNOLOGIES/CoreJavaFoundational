@@ -8,28 +8,28 @@ public class Cell
     private List<Ladder> ladders = new ArrayList<>();
     private int cellID;
 
-    public List<Snake> getSnakes()
+    public List<Snake> getSnake()
     {
         return snakes;
     }
 
-    public void setSnakes(List<Snake> snakes) {
+    public void setSnake(List<Snake> snakes) {
         this.snakes = snakes;
     }
 
-    public List<Player> getPlayers() {
+    public List<Player> getPlayer() {
         return players;
     }
 
-    public void setPlayers(List<Player> players) {
+    public void setPlayer(List<Player> players) {
         this.players = players;
     }
 
-    public List<Ladder> getLadders()
+    public List<Ladder> getLadder()
     {
         return ladders;
     }
-    public void setLadders(List<Ladder> ladders) {
+    public void setLadder(List<Ladder> ladders) {
         this.ladders = ladders;
     }
 

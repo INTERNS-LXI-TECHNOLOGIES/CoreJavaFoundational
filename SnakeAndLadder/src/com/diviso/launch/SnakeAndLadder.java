@@ -8,9 +8,9 @@ public class SnakeAndLadder
     private Cell cell;
     private Dice dice;
     private Snake_Ladder snakesLadders;
-    private List<Player> players = new ArrayList<Player>();
-    private List<Snake> snakes   = new ArrayList<Snake>();
-    private List<Ladder> ladders = new ArrayList<Ladder>();
+    private List<Player> players = new ArrayList<>();
+    private List<Snake> snakes   = new ArrayList<>();
+    private List<Ladder> ladders = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in); 
 
@@ -107,17 +107,18 @@ public class SnakeAndLadder
 
     public void createPlayersAndDice()
     {
+        int totalPlayersList;
         System.out.println("How Many Players Need To Join");
-        int totalPlayersList = Integer.parseInt(sc.nextLine());
-               
+        totalPlayersList = Integer.parseInt(sc.nextLine());
+
         createCell();
         Dice dice = new Dice();
 
-        for(int i = 0; i < totalPlayersList; i++)
+        for(int i = 1; i <= totalPlayersList; i++)
         {
             Player player = new Player();
             players.add(player);
-            System.out.println("Enter " + i + "Name : ");
+            System.out.println("Enter Player " + i + " Name : ");
             player.setName(sc.nextLine());        
         }    
     }
@@ -132,7 +133,7 @@ public class SnakeAndLadder
                 p.printDetails();
                 do
                 {
-                    System.out.println(p.getName() + "Please Roll Dice");
+                    System.out.println(p.getName() + "Please Roll Dice ");
                     diceResult = p.throwDice(dice);
                     System.out.println(diceResult);
                     if(p.getGameState() == GameState.GAMEPLAY)
@@ -184,10 +185,10 @@ public class SnakeAndLadder
 
     public static void main(String args[])
     {
-        SnakeAndLaddder game = new SnakeAndLaddder();
+        SnakeAndLadder game = new SnakeAndLadder();
         game.gameInit();
         game.createPlayersAndDice();
-        snakesLadders = new Snake_Ladder(board);  
+        game.snakesLadders= new Snake_Ladder(game.board);
         game.gameLoop();
     }
 }

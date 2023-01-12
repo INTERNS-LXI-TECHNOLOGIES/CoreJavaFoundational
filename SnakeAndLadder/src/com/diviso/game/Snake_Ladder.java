@@ -51,11 +51,11 @@ public class Snake_Ladder
         snakes.add(new Snake(board.getCell().get(76)));
         snakes.add(new Snake(board.getCell().get(97)));
 
-        ladders.add(new Ladder(board.getCells().get(10)));
-        ladders.add(new Ladder(board.getCells().get(13)));
-        ladders.add(new Ladder(board.getCells().get(20)));
-        ladders.add(new Ladder(board.getCells().get(57)));
-        ladders.add(new Ladder(board.getCells().get(76)));
+        ladders.add(new Ladder(board.getCell().get(10)));
+        ladders.add(new Ladder(board.getCell().get(13)));
+        ladders.add(new Ladder(board.getCell().get(20)));
+        ladders.add(new Ladder(board.getCell().get(57)));
+        ladders.add(new Ladder(board.getCell().get(76)));
     }
 
     public int moveIfSnakeOrLadderExists(Cell currentCell)
@@ -76,7 +76,7 @@ public class Snake_Ladder
         {
             System.out.println("Ladder Check ");
 
-            if(l.getTailCell().getCellID() =  currentCell.getCellID())
+            if(l.getTailCell().getCellID() ==  currentCell.getCellID())
             {
                 System.out.println("Yeah! You Got Ladders");              
             }
