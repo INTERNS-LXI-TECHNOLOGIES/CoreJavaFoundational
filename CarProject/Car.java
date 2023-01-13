@@ -11,9 +11,6 @@ public class Car {
         this.model = model;
         this.color = color;
     }
-    public Car(){
-
-    }
 
     public void showdetails(){
         System.out.println("brand: " + brand + " model: " + model + "color: " + color );

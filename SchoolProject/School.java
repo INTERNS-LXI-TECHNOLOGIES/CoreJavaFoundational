@@ -14,9 +14,7 @@ public class School{
 
 
     }
-    public School(){
 
-    }
     
     public void printDetails(){
         System.out.println("school name: " + schoolName + " school address: " + schoolAddress);
