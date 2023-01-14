@@ -1,11 +1,12 @@
 package com.diviso.game;
 import java.util.*;
 
-public class Snake_Ladder
+public class SnakesAndLadders
 {
     private Board board;
     private List<Snake>snakes = new ArrayList<>();
     private List<Ladder>ladders = new ArrayList<>();
+
 
     public Board getBoard()
     {
@@ -37,39 +38,39 @@ public class Snake_Ladder
         this.ladders = Ladders;
     }
 
-    public Snake_Ladder()
+    public SnakesAndLadders()
     {
 
     }
 
-    public Snake_Ladder(Board board)
+    public SnakesAndLadders(Board board)
     {
         this.board = board;
-        snakes.add(new Snake(board.getCell().get(12)));
-        snakes.add(new Snake(board.getCell().get(26)));
-        snakes.add(new Snake(board.getCell().get(56)));
-        snakes.add(new Snake(board.getCell().get(76)));
-        snakes.add(new Snake(board.getCell().get(97)));
+        snakes.add(new Snake(board.getCell().get(12),null));
+        snakes.add(new Snake(board.getCell().get(26),null));
+        snakes.add(new Snake(board.getCell().get(56),null));
+        snakes.add(new Snake(board.getCell().get(76),null));
+        snakes.add(new Snake(board.getCell().get(97),null));
 
-        ladders.add(new Ladder(board.getCell().get(10)));
-        ladders.add(new Ladder(board.getCell().get(13)));
-        ladders.add(new Ladder(board.getCell().get(20)));
-        ladders.add(new Ladder(board.getCell().get(57)));
-        ladders.add(new Ladder(board.getCell().get(76)));
+        ladders.add(new Ladder(board.getCell().get(10),null));
+        ladders.add(new Ladder(board.getCell().get(13),null));
+        ladders.add(new Ladder(board.getCell().get(20),null));
+        ladders.add(new Ladder(board.getCell().get(57),null));
+        ladders.add(new Ladder(board.getCell().get(76),null));
     }
 
 
     public int moveIfSnakeOrLadderExists(Cell currentCell)
     {
         System.out.println("Checking If Snake Or Ladder Exist");
-        
+
         for(Snake s : currentCell.getSnake())
         {
             System.out.println("Snake Check ");
 
             if(s.getHeadCell().getCellID() == currentCell.getCellID())
             {
-                System.out.println("Ouch snake bites Go Down...!");                    
+                System.out.println("Ouch snake bites Go Down...!");
             }
         }
 
@@ -79,7 +80,7 @@ public class Snake_Ladder
 
             if(l.getTailCell().getCellID() ==  currentCell.getCellID())
             {
-                System.out.println("Yeah! You Got Ladders");              
+                System.out.println("Yeah! You Got Ladders");
             }
         }
         return currentCell.getCellID();

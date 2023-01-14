@@ -2,12 +2,12 @@ package com.diviso.launch;
 import com.diviso.game.*;
 import java.util.*;
 
-public class SnakeAndLadder
+public class Game
 {
     private Board board = new Board();
     private Cell cell;
     private Dice dice;
-    private Snake_Ladder snakesLadders;
+    private SnakesAndLadders snakesLadders;
     private List<Player> players = new ArrayList<>();
     private List<Snake> snakes   = new ArrayList<>();
     private List<Ladder> ladders = new ArrayList<>();
@@ -44,12 +44,12 @@ public class SnakeAndLadder
         this.dice = Dice;
     }
     
-    public Snake_Ladder getSnakesLadders()
+    public SnakesAndLadders getSnakesLadders()
     {
         return snakesLadders;
     }       
 
-    public void setSnakesLadders(Snake_Ladder SnakesLadders)
+    public void setSnakesLadders(SnakesAndLadders SnakesLadders)
     {
         this.snakesLadders = SnakesLadders;
     }
@@ -185,10 +185,10 @@ public class SnakeAndLadder
 
     public static void main(String args[])
     {
-        SnakeAndLadder game = new SnakeAndLadder();
-        game.gameInit();
-        game.createPlayersAndDice();
-        game.snakesLadders= new Snake_Ladder(game.board);
-        game.gameLoop();
+        Game snakeAndLadderGame = new Game();
+        snakeAndLadderGame.gameInit();
+        snakeAndLadderGame.createPlayersAndDice();
+        snakeAndLadderGame.snakesLadders = new SnakesAndLadders(snakeAndLadderGame.board);
+        snakeAndLadderGame.gameLoop();
     }
 }
