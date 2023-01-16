@@ -1,25 +1,44 @@
-import java.util.ArrayList;
+public class School {
+	private String sclName;
+	private String address;
 
-public class School{
-     
-    String schoolName;
-    String schoolAddress;
-    ClassRoom classroom1;
-    
+	private ClassRoom classRooms[];
 
-    public School(String schoolName, String schoolAddress){
+	public void inputDetails() {
+		sclName = "Oxford University";
+		address = "611 oxford street, london, ontario";
+		
+	}
 
-        this.schoolName = schoolName;
-        this.schoolAddress = schoolAddress;
+	public void printDetails() {
+		System.out.println("School Name: " + sclName + "\nSchool Address: " + address + "\n");
+		for (int i = 0; i < classRooms.length; i++) {
+			classRooms[i].printDetails();
+		}
+	}
+
+	public String getName() {
+		return sclName;
+	}
+
+	public void setName(String name) {
+		this.sclName = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
 
-    }
+	public ClassRoom[] getClassRooms() {
+		return classRooms;
+	}
 
-    
-    public void printDetails(){
-        System.out.println("school name: " + schoolName + " school address: " + schoolAddress);
-        classroom1.printdetails();
-        
-    }
-  
+	public void setClassRooms(ClassRoom[] classRooms) {
+		this.classRooms = classRooms;
+	}
 }

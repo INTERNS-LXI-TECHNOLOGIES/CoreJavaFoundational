@@ -1,26 +1,58 @@
-import java.util.ArrayList;
-
 public class ClassRoom {
 
-	int seats;
-	int standard;
-	Student student1;
-	Teacher teacher1;
-	
+	private int seats;
+	private String standard;
+	private Student[] students;
+	private Teacher classTeacher;
 
-	public ClassRoom(int seats, int standard){
+	ClassRoom(int seats, String standard, String division, Student[] students, Teacher classTeacher) {
 		this.seats = seats;
 		this.standard = standard;
-	}
-	
-	public ClassRoom() {
+		this.students = students;
+		this.classTeacher = classTeacher;
 	}
 
-	public void printdetails(){
-      System.out.println("seats: "+ seats + " standard " + standard );
-	student1.printDetails();
-	teacher1.printDetails();
+	public void printDetails() {
+		System.out.println(standard + "\n");
+		System.out.println("Number of seats: " + seats);
+		System.out.println("\nClass Teacher\n----");
+		classTeacher.printDetails();
+		System.out.println("\nStudents\n-----------------------");
+		for (int i = 0; i < students.length; i++) {
+			students[i].printDetails();
+		}
+		System.out.println();
 	}
-	
-	
+
+	public int getSeats() {
+		return seats;
+	}
+
+	public void setSeats(int seats) {
+		this.seats = seats;
+	}
+
+	public String getStandard() {
+		return standard;
+	}
+
+	public void setStandard(String standard) {
+		this.standard = standard;
+	}
+
+	public Student[] getStudents() {
+		return students;
+	}
+
+	public void setStudents(Student[] students) {
+		this.students = students;
+	}
+
+	public Teacher getClassTeacher() {
+		return classTeacher;
+	}
+
+	public void setClassTeacher(Teacher classTeacher) {
+		this.classTeacher = classTeacher;
+	}
 }

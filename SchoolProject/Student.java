@@ -1,15 +1,28 @@
-public class Student{
+public class Student {
+	private String name;
+	private int stdNo;
 
-  
-    int studentId;
-    String studentName;
-    public Student(int stid, String name){
-      studentId = stid;
-      studentName = name;
-    }
+	public Student(String name, int stdNo) {
+		this.name = name;
+		this.stdNo = stdNo;
+	}
 
-    public void printDetails(){
-    
-      System.out.println("student id: " + studentId + " student name: " + studentName);
-    }
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getstdNo() {
+		return stdNo;
+	}
+
+	public void setstdNo(int stdNo) {
+		this.stdNo = stdNo;
+	}
+    public void printDetails() {
+		System.out.println("Student Name: " + name + "\nstd Number: " + stdNo);
+	}
 }
