@@ -4,6 +4,15 @@ public class Rim {
     int size;
 
 
+    public Rim(int size, String type){
+        this.size = size;
+        this.type = type;
+    }
+
+    public Rim(){
+        
+    }
+
     public String gettype(){
         return type;
     }

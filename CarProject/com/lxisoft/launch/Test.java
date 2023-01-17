@@ -1,5 +1,8 @@
-package com.lxisoft.main;
-import com.lxisoft.files.*;
+package com.lxisoft.launch;
+import com.lxisoft.car.*;
+import java.util.ArrayList;
+
+
 public class Test
 {
      public static void main(String args[])
@@ -17,16 +20,23 @@ public class Test
         
             tires[j].setSize(17 + j);       
         }        
-        Rim rims[] = new Rim[4];
+        ArrayList<Rim> rims = new ArrayList<Rim>();
 
-       car.setrim(rims);
+      // 
         
         for (int k = 0; k<4; k++){
-            rims[k]= new Rim();
-            rims[k].settype("type" + k);
-            rims[k].setsize(16 + k);
+            rims.add(new Rim(16+k, "type"+k));
+            /*rims.get(k);
+            rims.get(k).settype("type" + k);
+            rims.get(k).setsize(16 + k);*/
         }
-        
+        /*rims.add(new Rim(16, "type16"));
+        rims.add(new Rim(17, "type17"));
+        rims.add(new Rim(18, "type18"));
+        rims.add(new Rim(19, "type19"));*/
+
+        car.setRim(rims);
+
         car.showDetails();                    
     }
 }

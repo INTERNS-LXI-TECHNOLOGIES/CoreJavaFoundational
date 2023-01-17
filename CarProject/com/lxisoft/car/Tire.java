@@ -4,6 +4,7 @@ public class Tire
     private String position;
     private int size;
     
+        
     
         public String getPosition()
         {

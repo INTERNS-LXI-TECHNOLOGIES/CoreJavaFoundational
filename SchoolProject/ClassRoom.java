@@ -1,25 +1,27 @@
+import java.util.ArrayList;
+
 public class ClassRoom {
 
 	private int seats;
-	private String standard;
-	private Student[] students;
+
+	private ArrayList<Student> students;    //ArrayList<Student> student1;
 	private Teacher classTeacher;
 
-	ClassRoom(int seats, String standard, String division, Student[] students, Teacher classTeacher) {
+	ClassRoom(int seats, String string, ArrayList<Student> students, Teacher classTeacher) {
 		this.seats = seats;
-		this.standard = standard;
 		this.students = students;
 		this.classTeacher = classTeacher;
 	}
 
 	public void printDetails() {
-		System.out.println(standard + "\n");
+
 		System.out.println("Number of seats: " + seats);
 		System.out.println("\nClass Teacher\n----");
 		classTeacher.printDetails();
 		System.out.println("\nStudents\n-----------------------");
-		for (int i = 0; i < students.length; i++) {
-			students[i].printDetails();
+		System.out.println(students.size());
+		for (int i = 0; i < students.size(); i++) {
+			students.get(i).printDetails();
 		}
 		System.out.println();
 	}
@@ -32,19 +34,11 @@ public class ClassRoom {
 		this.seats = seats;
 	}
 
-	public String getStandard() {
-		return standard;
-	}
-
-	public void setStandard(String standard) {
-		this.standard = standard;
-	}
-
-	public Student[] getStudents() {
+	public ArrayList<Student> getStudents() {
 		return students;
 	}
 
-	public void setStudents(Student[] students) {
+	public void setStudents(ArrayList<Student> students) {
 		this.students = students;
 	}
 

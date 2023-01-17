@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Car 
 {
 
@@ -5,11 +7,10 @@ public class Car
     private String color;
     
     Tire[] tires;
-    Rim[] rims;             
+    ArrayList<Rim> rims = new ArrayList<Rim>();           
     
         //variables settings
 
-        
         public String getName()
         {
             return name;
@@ -30,7 +31,6 @@ public class Car
             this.color=Color;
         }
 
-       
         //setter and getter in Tyre tyres
         
         public Tire[] getTire()
@@ -43,12 +43,12 @@ public class Car
             this.tires=Tire;
         }    
 
-        public Rim[] getrim()
+        public ArrayList<Rim> getRim()
         {
             return rims;
         } 
         //rim set and get
-        public void setrim(Rim[] rim)
+        public void setRim(ArrayList<Rim> rim)
         {
             this.rims=rim;
         }    
@@ -72,7 +72,7 @@ public class Car
         System.out.println("\t\t rims types and sizes: ");     
         System.out.println("");
                 for(int k = 0;k < 4;k++) {
-                    rims[k].printdetails();        
+                    rims.get(k).printdetails();        
                 }                                                        
     }
 }
