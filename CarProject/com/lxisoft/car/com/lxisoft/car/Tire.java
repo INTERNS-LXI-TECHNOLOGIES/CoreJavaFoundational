@@ -1,4 +1,4 @@
-
+package com.lxisoft.car;
 public class Tire
 {    
     private String position;

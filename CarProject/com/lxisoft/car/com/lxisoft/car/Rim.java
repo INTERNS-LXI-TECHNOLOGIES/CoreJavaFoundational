@@ -1,3 +1,4 @@
+package com.lxisoft.car;
 public class Rim {
     
     String type;
