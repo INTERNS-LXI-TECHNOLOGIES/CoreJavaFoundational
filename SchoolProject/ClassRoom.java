@@ -7,7 +7,7 @@ public class ClassRoom {
 	private ArrayList<Student> students;    //ArrayList<Student> student1;
 	private Teacher classTeacher;
 
-	ClassRoom(int seats, String string, ArrayList<Student> students, Teacher classTeacher) {
+	ClassRoom(int seats,  ArrayList<Student> students, Teacher classTeacher) {
 		this.seats = seats;
 		this.students = students;
 		this.classTeacher = classTeacher;

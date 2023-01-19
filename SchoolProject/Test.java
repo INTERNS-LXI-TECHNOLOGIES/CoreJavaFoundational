@@ -12,7 +12,7 @@ public class Test {
 		
 
 	    	Teacher classTeacher = new Teacher("Teacher " + i, "Subject " + i);
-	    	school.getClassRooms().add(new ClassRoom(20 + i, "Class " + i, students, classTeacher)) ; // when you need a new copy
+	    	school.getClassRooms().add(new ClassRoom(20 + i,   students, classTeacher)) ; // when you need a new copy
 			// of an object, you use the keyword "new", since it makes a memory space for that object
 	    }
 	    school.inputDetails();
