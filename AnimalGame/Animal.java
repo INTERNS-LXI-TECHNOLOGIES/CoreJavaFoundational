@@ -6,6 +6,9 @@ public class Animal {
     String name;
     int strength;
 
+    public Animal(){
+
+    }
 
     public Animal(String name, int strength){
         this.name = name;
@@ -22,11 +25,15 @@ public class Animal {
     public int getStrength(){
         return strength;
     }
-    public void setStrength(int strength){
-
+    public void setStrength(double strength){
     }
-    public int modStrength(int strength){
-        return strength/2;
+
+    public void modStrength(){
+    this.strength = this.strength/2;
+    }
+
+    public void highstrength(){
+     
     }
 
 }
