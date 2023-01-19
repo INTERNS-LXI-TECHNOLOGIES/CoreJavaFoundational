@@ -5,7 +5,7 @@ public class Ladder
 {
     private Cell tailCell;
     private Game snakeAndLadderGame;
-
+    
     public Cell getTailCell()
     {
         return tailCell;
