@@ -1,46 +1,95 @@
-import tDetails.Tyre;
-import audio.AudioSystem;
+package car;
+
 import java.util.ArrayList;
-public class Car{
+import tDetails.TireDetails;
+import audio.AudioSystem;
 
-int myear;
-String company;
-String model;
-String color;
-String manufact;
-AudioSystem audio1;
-ArrayList<Tyre> tyres;
+public class Car {
+    private String company;
+    private String model;
+    private String color;
+    private String manufacturer;
+    private AudioSystem audioSystem;
+    private ArrayList<TireDetails> tyreDetails;
 
+    public Car(String company, String model, String color, String manufacturer) {
+        this.company = company;
+        this.model = model;
+        this.color = color;
+        this.manufacturer = manufacturer;
+    }
 
+    public String getCompany() {
+        return company;
+    }
 
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
-public void startCar(){
+    public String getModel() {
+        return model;
+    }
 
-System.out.println("The "+this.myear+" made "+this.color+"  color "+this.company+" " +this.model+" manufactured in "+this.manufact+" has started\n\n");
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public AudioSystem getAudioSystem() {
+        return audioSystem;
+    }
+
+    public void setAudioSystem(AudioSystem audioSystem) {
+        this.audioSystem = audioSystem;
+    }
+
+    public ArrayList<TireDetails> getTyreDetails() {
+        return tyreDetails;
+    }
+
+    public void setTyreDetails(ArrayList<TireDetails> tyreDetails) {
+        this.tyreDetails = tyreDetails;
+    }
+
+    public void startCar() {
+        System.out.println("Car has started.\n\n");
+    }
+
+    public void playMusic() {
+        if(audioSystem != null){
+            audioSystem.playMusic();
+        }else{
+            System.out.println("Audio System not set");
+        }
+    }
+
+    public void printTyreDetails() {
+        System.out.println("Tyre Details:");
+        for (TireDetails tyre : tyreDetails) {
+            System.out.println(tyre.toString());
+        }
+    }
+
+    public String toString() {
+        return "details of Car \n company=" + company + ", model=" + model + ", color=" + color + ", manufacturer=" + manufacturer
+                + "\n\n";
+    }
 }
 
-public void playMusic()
-{
-this.audio1.playMusic();
 
-}
-public void tyreDetails(){
-for(int i=0;i<=3;i++)
-{
-
-tyres.get(i).tyreDetails();
-}
-
-
-
-
-
-}
-
-
-
-
-
-
-
-}
