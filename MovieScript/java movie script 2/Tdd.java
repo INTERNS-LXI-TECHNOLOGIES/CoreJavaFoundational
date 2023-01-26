@@ -30,31 +30,40 @@ heroDialogues[0] = "Anga yedho vittutu vandha madhiri irukku";
 heroDialogues[1] = "ah yenga velilayum onnum ilaye";
 heroDialogues[2] = "enna vittutu poitteenga";
 
-/*
-dialogues[0] = "namakula odhuva irukurathu panam nu neenga soninga";
-dialogues[1] =  "namakula podhuva irukurathu makkal";
-dialogues[2] = "naan enoda vote ah podrathukaga vandhu iruken";
-*/
-Hero hero = new Hero(heroDialogues);
+String[] heroDialogues2 = new String[3];
+heroDialogues2[0] = "namakula odhuva irukurathu panam nu neenga soninga";
+heroDialogues2[1] = "namakula podhuva irukurathu makkal";
+heroDialogues2[2] = "naan enoda vote ah podrathukaga vandhu iruken";
+
+Hero[] heroArray = new Hero[2];
+heroArray[0] = new Hero(heroDialogues);
+heroArray[1] = new Hero(heroDialogues2);
 
 String[] comedianDialogues = new String[3];
 comedianDialogues[0] = "athu pona masam..naan sonnathu intha masam";
 comedianDialogues[1] = "ayyaio ayyaiooo";
 comedianDialogues[2] = "Appappaaa ennadaa";
 
-/*dialogues[0] = "shangi mangi adangoooo";
-dialogues[1] = "enna vecchi comedy pannalaiye";
-dialogues[2] = "mamanukku eppa kanji oothapora";
-*/
+String[] comedianDialogues2 = new String[3];
+comedianDialogues2[0] = "shangi mangi adangoooo";
+comedianDialogues2[1] = "enna vecchi comedy pannalaiye";
+comedianDialogues2[2] = "mamanukku eppa kanji oothapora";
 
+Comedian[] comedianArray = new Comedian[2];
+comedianArray[0] = new Comedian(comedianDialogues);
+comedianArray[1] = new Comedian(comedianDialogues2);
 
-
-Comedian comedian = new Comedian(comedianDialogues);
 
 villian.sayVillianDialogue();
+
 heroineArray[0].sayHeroineDialogue();
 heroineArray[1].sayHeroineDialogue();
-hero.sayHeroDialogue();
-comedian.sayComedianDialogue();
+
+heroArray[0].sayHeroDialogue();
+heroArray[1].sayHeroDialogue();
+
+comedianArray[0].sayComedianDialogue();
+comedianArray[1].sayComedianDialogue();
+
 }
 }
