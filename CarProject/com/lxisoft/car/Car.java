@@ -1,8 +1,8 @@
-package car;
+package com.lxisoft.car;
 
 import java.util.ArrayList;
-import tDetails.TireDetails;
-import audio.AudioSystem;
+import com.lxisoft.tDetails.*;
+import com.lxisoft.audio.*;
 
 public class Car {
     private String company;
@@ -10,7 +10,7 @@ public class Car {
     private String color;
     private String manufacturer;
     private AudioSystem audioSystem;
-    private ArrayList<TireDetails> tyreDetails;
+    private ArrayList<Tire> tyres;
 
     public Car(String company, String model, String color, String manufacturer) {
         this.company = company;
@@ -59,12 +59,12 @@ public class Car {
         this.audioSystem = audioSystem;
     }
 
-    public ArrayList<TireDetails> getTyreDetails() {
-        return tyreDetails;
+    public ArrayList<Tire> getTyreDetails() {
+        return tyres;
     }
 
-    public void setTyreDetails(ArrayList<TireDetails> tyreDetails) {
-        this.tyreDetails = tyreDetails;
+    public void setTyreDetails(ArrayList<Tire> tyres) {
+        this.tyres = tyres;
     }
 
     public void startCar() {
@@ -81,15 +81,11 @@ public class Car {
 
     public void printTyreDetails() {
         System.out.println("Tyre Details:");
-        for (TireDetails tyre : tyreDetails) {
-            System.out.println(tyre.toString());
+        for (Tire tyres : tyres) {
+            System.out.println(tyres);
         }
     }
 
-    public String toString() {
-        return "details of Car \n company=" + company + ", model=" + model + ", color=" + color + ", manufacturer=" + manufacturer
-                + "\n\n";
-    }
 }
 
 

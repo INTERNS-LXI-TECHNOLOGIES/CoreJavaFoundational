@@ -1,4 +1,4 @@
-package audio;
+package com.lxisoft.audio;
 
 public class AudioSystem {
     private String brand;

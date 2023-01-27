@@ -1,12 +1,12 @@
-package tDetails;
+package com.lxisoft.tDetails;
 
-public class TireDetails {
+public class Tire{
     private String company;
     private String design;
     private int width;
     private String position;
 
-    public TireDetails(String company, String design, int width, String position) {
+    public Tire(String company, String design, int width, String position) {
         this.company = company;
         this.design = design;
         this.width = width;
