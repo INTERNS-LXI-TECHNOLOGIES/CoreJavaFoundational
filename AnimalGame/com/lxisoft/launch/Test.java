@@ -10,6 +10,7 @@ public class Test{
       forest.animalDetails();
       forest.animalFight();
       forest.findWinner();
+      
        }
      } 
        

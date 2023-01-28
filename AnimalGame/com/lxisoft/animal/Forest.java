@@ -8,38 +8,47 @@ public class Forest {
   
 //animal details
     public void animalDetails(){
-        animals.add(new Animal("lion", 10,10));
-        animals.add(new Animal("tiger", 8, 8));
-        animals.add(new Animal("fox", 4, 6));
-        animals.add(new Animal("cheetah", 6, 10));
-        animals.add(new Animal("wolf", 6, 8));
+        animals.add(new Animal("lion", 9,9,6,2,1));
+        animals.add(new Animal("tiger", 8, 8,5,1,2));
+        animals.add(new Animal("fox", 4, 6,4,2,1));
+        animals.add(new Animal("cheetah", 6, 9,8,2,1));
+        animals.add(new Animal("wolf", 6, 7,5,1,2));
     }
 
     public void animalFight(){
-    int random1 = (int)(Math.random()*6);
-    int random2 = (int)(Math.random()*6);  
+    int random1 = (int)(Math.random()*5);
+    int random2 = (int)(Math.random()*5);  
      
     if (random1 == random2){
         random1 =  random1 + 1;
       }
-        for (int n=0; n<4; n++){
+        int tt = animals.get(random1).getVision() + animals.get(random2).getVision();
+      if ( tt >4){
+        for (int h = 0; h<4; h++){
           animals.get(random1).modStrength();
           animals.get(random2).modStrength();
-          animals.get(random1).modhungerLevel();
-          animals.get(random2).modhungerLevel();  
-            }  
+          animals.get(random1).modStrength();
+          animals.get(random2).modStrength();
+          animals.get(random1).modHungerLevel();
+          animals.get(random2).modHungerLevel();  
+          }
+        }
        }
 
      public void findWinner(){
+           Animal largestStrength = animals.get(0);
+           Animal largestHl = animals.get(0);
 
-         for(int i = 0; i<4; i++){  
+
+         for(int i = 0; i<animals.size(); i++){  
         
-            if (animals.get(i).getStrength() >= animals.get(0).getStrength()){   
-                    System.out.println(animals.get(i).toString());
-                    
-                    
+            if (animals.get(i).getStrength() > largestStrength.getStrength() &&
+             animals.get(i).getHungerLevel() > largestHl.getHungerLevel()){   
+               largestStrength =  animals.get(i);      
+               }
            }
-        }
-    }
+              System.out.println(largestStrength);
+            
+  }
+  
 }
-
