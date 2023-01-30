@@ -2,6 +2,10 @@ public class Tdd
 {
 public static void main(String[] args) 
 {
+Hero[] heros = new Hero[2];
+Heroine[] heroines = new Heroine[2];
+Comedian[] comedians = new Comedian[2];
+
 String[] villianDialogues = new String[3];
 
 villianDialogues[0] = "yen kadhai le naan villain da";
@@ -9,8 +13,9 @@ villianDialogues[1] = "nama koode erukkuravangala nama pathukitta nama mele eruk
 villianDialogues[2] = "eppovum oru prachana na";
 
 String villianName = "Prakash Raj";
+String villianCharacterName = "Muthupandi";
+Villian villian = new Villian(villianDialogues, villianName, villianCharacterName);
 
-Villian villian = new Villian(villianDialogues, villianName);
 
 String[] heroineDialogues = new String[3];
 heroineDialogues[0] = "yara namburathunae";
@@ -22,13 +27,16 @@ heroineDialogues2[0] = "idhula enna perumai";
 heroineDialogues2[1] = "mannika therinjavan periya manushyan";
 heroineDialogues2[2] = "mannippu kekka therinjavan atha vida periya manushyan";
 
+
 String heroineName = "Tamanna";
+String heroineCharacterName = "Anjali";
+heroines[0] = new Heroine(heroineDialogues, heroineName, heroineCharacterName);
+
 String heroineName2 = "Asin";
+String heroineCharacterName2 = "Kalpana";
+heroines[1] = new Heroine(heroineDialogues2, heroineName2, heroineCharacterName2);
 
 
-Heroine[] heroineArray = new Heroine[2];
-heroineArray[0] = new Heroine(heroineDialogues, heroineName);
-heroineArray[1] = new Heroine(heroineDialogues2, heroineName2);
 
 String[] heroDialogues = new String[3];
 heroDialogues[0] = "Anga yedho vittutu vandha madhiri irukku";
@@ -41,11 +49,13 @@ heroDialogues2[1] = "namakula podhuva irukurathu makkal";
 heroDialogues2[2] = "naan enoda vote ah podrathukaga vandhu iruken";
 
 String heroName = "Surya";
-String heroName2 = "Vijay";
+String heroCharacterName = "Deva";
+heros[0]= new Hero(heroDialogues, heroName, heroCharacterName);
 
-Hero[] heroArray = new Hero[2];
-heroArray[0] = new Hero(heroDialogues, heroName);
-heroArray[1] = new Hero(heroDialogues2, heroName2);
+String heroName2 = "Vijay";
+String heroCharacterName2 = "jay";
+heros[1]= new Hero(heroDialogues2, heroName2, heroCharacterName2);
+
 
 String[] comedianDialogues = new String[3];
 comedianDialogues[0] = "athu pona masam..naan sonnathu intha masam";
@@ -58,23 +68,21 @@ comedianDialogues2[1] = "enna vecchi comedy pannalaiye";
 comedianDialogues2[2] = "mamanukku eppa kanji oothapora";
 
 String comedianName = "Vadivelu";
+String comedianCharacterName = "velayudhan";
+comedians[0] = new Comedian(comedianDialogues, comedianName, comedianCharacterName);
+
 String comedianName2 = "Vivek";
+String comedianCharacterName2 = "Marimuthu";
+comedians[1] = new Comedian(comedianDialogues2, comedianName2, comedianCharacterName2);
 
-Comedian[] comedianArray = new Comedian[2];
-comedianArray[0] = new Comedian(comedianDialogues, comedianName);
-comedianArray[1] = new Comedian(comedianDialogues2, comedianName2);
+String name = "Ayan";
+String director = "K.V Anand";
+String producer = "M Saravanan";
+String musicDirector = "Harris Jayaraj";
+String releaseDate = "3 April 2009";
 
-
-villian.sayVillianDialogue();
-
-heroineArray[0].sayHeroineDialogue();
-heroineArray[1].sayHeroineDialogue();
-
-heroArray[0].sayHeroDialogue();
-heroArray[1].sayHeroDialogue();
-
-comedianArray[0].sayComedianDialogue();
-comedianArray[1].sayComedianDialogue();
+Movie movie = new Movie(name, director, producer, musicDirector, releaseDate, villian, heros, heroines, comedians);
+movie.showMovieDetails();
 
 }
 }
