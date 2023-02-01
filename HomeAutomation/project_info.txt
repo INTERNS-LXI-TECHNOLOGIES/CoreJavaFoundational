@@ -1,0 +1,3 @@
+This project asks you to implement inheritance and polymorphism
+
+A home has chairs, tables, beds under category furniture and Tv, AC, fridge under category home appliances. Things which need electrical energy to operate should implement an 'Electrical' interface which has a 'powerOn' method. Create furnitures and home appliances in this project and then turnOn all the home appliances after calling poweOn. Also implement a 'use' method in furniture class and override that in Chair, Table etc.
