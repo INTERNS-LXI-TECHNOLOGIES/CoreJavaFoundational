@@ -1,6 +1,6 @@
-package com.diviso.game;
+package com.diviso.game; 
 
 public class Dice
 {
-    
-}
+
+}   

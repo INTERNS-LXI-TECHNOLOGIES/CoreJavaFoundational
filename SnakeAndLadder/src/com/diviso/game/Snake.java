@@ -1,27 +1,23 @@
 package com.diviso.game;
-import com.diviso.launch.Game;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Snake
+public class Snake extends GameTool
 {
     private Cell headCell;
-    private Game snakeAndLadderGame;
+    private Cell tailCell;
 
-    public Cell getHeadCell()
-    {
-        return headCell;
-    }
+    public void setHeadCell(Cell headCell) { this.headCell = headCell;}
+    public Cell getHeadCell() { return headCell;}
 
-    public Game getGame()
-    {
-        return snakeAndLadderGame;
-    }
+    public void setTailCell(Cell tailCell) { this.tailCell = tailCell;}
+    public Cell getTailCell() { return tailCell;}
 
-    public Snake(Cell headCell , Game snakeAndLadderGame)
+    public Snake() {}
+
+    public Snake(Cell headCell, Cell tailCell)
     {
         this.headCell = headCell;
-        this.snakeAndLadderGame = snakeAndLadderGame;
-        
-        Cell snakeHead = snakeAndLadderGame.getBoard().getCell().get(headCell.getCellID());
-        snakeHead.getSnake().add(this);
+        this.tailCell = tailCell;
     }
 }

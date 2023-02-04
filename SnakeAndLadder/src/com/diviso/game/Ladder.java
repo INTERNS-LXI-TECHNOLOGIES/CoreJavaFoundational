@@ -1,32 +1,25 @@
 package com.diviso.game;
-import com.diviso.launch.Game;
 
-public class Ladder
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ladder extends GameTool
 {
     private Cell tailCell;
-    private Game snakeAndLadderGame;
-    
-    public Cell getTailCell()
-    {
-        return tailCell;
-    }
+    private Cell headCell;
 
-    public void setTailCell(Cell TailCell)
-    {
-        this.tailCell = TailCell;
-    }
+    public void setTailCell(Cell tailCell) { this.tailCell = tailCell;}
+    public Cell getTailCell() { return tailCell;}
 
-    public Game getGame()
-    {
-        return snakeAndLadderGame;
-    }
+    public void setHeadCell(Cell headCell) { this.headCell = headCell;}
+    public Cell getHeadCell() { return headCell;}
 
-    public Ladder(Cell tailCell , Game snakeAndLadderGame)
+    public Ladder() {}
+
+    public Ladder(Cell tailCell, Cell headCell)
     {
+        this.headCell = headCell;
         this.tailCell = tailCell;
-        this.snakeAndLadderGame = snakeAndLadderGame;
-
-        Cell ladderBottom = snakeAndLadderGame.getBoard().getCell().get(tailCell.getCellID());
-        ladderBottom.getLadder().add(this);
     }
+
 }
