@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class ClassRoom {
 
 	private int seats;
-
 	private ArrayList<Student> students;    //ArrayList<Student> student1;
 	private Teacher classTeacher;
 

@@ -9,8 +9,11 @@ public class Test{
 
       forest.animalDetails();
       forest.animalFight();
+      forest.animalFight();
+      forest.animalFight();
+      forest.animalFight();
       forest.findWinner();
-      
+
        }
      } 
        

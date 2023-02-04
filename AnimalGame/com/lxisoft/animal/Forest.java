@@ -4,36 +4,64 @@ import java.util.Random;
 
 
 public class Forest {
-    ArrayList<Animal> animals = new ArrayList<Animal>();
+    public ArrayList<Animal> animals = new ArrayList<Animal>();
   
 //animal details
     public void animalDetails(){
-        animals.add(new Animal("lion", 9,9,6,2,1));
-        animals.add(new Animal("tiger", 8, 8,5,1,2));
-        animals.add(new Animal("fox", 4, 6,4,2,1));
-        animals.add(new Animal("cheetah", 6, 9,8,2,1));
-        animals.add(new Animal("wolf", 6, 7,5,1,2));
-    }
+
+        animals.add(new Animal("lion", 8,10,6, new Location(4,9)));
+        animals.add(new Animal("tiger", 8, 7,9, new Location(7,10)));
+        animals.add(new Animal("fox", 4, 6,7, new Location(8, 5)));
+        animals.add(new Animal("cheetah", 6, 9,8,new Location(9,7)));
+        animals.add(new Animal("wolf", 6, 6,5, new Location(10,8)));
+  }
 
     public void animalFight(){
-    int random1 = (int)(Math.random()*5);
-    int random2 = (int)(Math.random()*5);  
-     
-    if (random1 == random2){
-        random1 =  random1 + 1;
+
+      Animal nearestAnimal = animals.get(0);
+      Random ran = new Random();
+      int random1 = ran.nextInt(5);
+      int random =  ran.nextInt(10);
+      int random2 =  ran.nextInt(10);
+      int random3 =  ran.nextInt(10);
+      int random4 =  ran.nextInt(10);
+      Animal firstAnimal = animals.get(random1);
+
+      double distance1 = 1000;
+   
+      for(int t = 0; t<animals.size(); t++){  
+    
+      double square = Math.pow((firstAnimal.location.getLocationx() - animals.get(t).location.getLocationx()), 2);
+
+      double animalSquare = Math.pow((firstAnimal.location.getLocationy() - animals.get(t).location.getLocationy()) , 2);
+
+
+      double distance2 = Math.sqrt((animalSquare+square));
+
+      if( distance2 < distance1 ){
+        nearestAnimal = animals.get(t);
+        distance1 = distance2;
       }
-        int tt = animals.get(random1).getVision() + animals.get(random2).getVision();
-      if ( tt >4){
-        for (int h = 0; h<4; h++){
+     }
+         
           animals.get(random1).modStrength();
-          animals.get(random2).modStrength();
-          animals.get(random1).modStrength();
-          animals.get(random2).modStrength();
+          nearestAnimal.modStrength();
           animals.get(random1).modHungerLevel();
-          animals.get(random2).modHungerLevel();  
+          nearestAnimal.modHungerLevel();  
+          for(int e=0; e<animals.size(); e++){
+        //  System.out.println(animals.get(e).location.getLocationx()+" "+animals.get(e).location.getLocationy());
           }
+
+         
+            animals.get(0).setLocation(new Location(random, random1));
+            animals.get(1).setLocation(new Location(random3, random));
+            animals.get(2).setLocation(new Location(random, random2));
+            animals.get(3).setLocation(new Location(random2, random3));
+            animals.get(4).setLocation(new Location(random1, random4));
         }
-       }
+  
+        
+        
 
      public void findWinner(){
            Animal largestStrength = animals.get(0);
@@ -47,8 +75,9 @@ public class Forest {
                largestStrength =  animals.get(i);      
                }
            }
-              System.out.println(largestStrength);
+              System.out.println(largestStrength.toString());
+          } 
+             
             
   }
-  
-}
+

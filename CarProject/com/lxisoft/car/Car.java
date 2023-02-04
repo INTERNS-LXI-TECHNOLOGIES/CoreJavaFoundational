@@ -1,9 +1,7 @@
 package com.lxisoft.car;
 import java.util.ArrayList;
 
-public class Car 
-{
-
+public class Car {
     private String name;                   
     private String color;
     
@@ -59,7 +57,6 @@ public class Car
     public void showDetails()
     {               
      
-
         System.out.print("Car Name : "+getName()+"     "+"Color : "+getColor()+"\n");
         System.out.println("");
         

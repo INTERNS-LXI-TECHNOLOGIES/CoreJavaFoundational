@@ -3,23 +3,24 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Animal {
+   public Location location;
+   public String name;
+   public double strength;
+   public double hungerLevel;
+   public int vision;
+   
 
-  private String name;
-   private double strength;
-   private double hungerLevel;
-   private int vision;
-   private int locationx;
-   private int locationy;
-
-    public Animal(String name, double strength, double hungerLevel, int vision, int locationx, int locationy){
+    public Animal(String name, double strength, double hungerLevel, int vision, Location location){
         this.name = name;
         this.strength = strength;
         this.hungerLevel = hungerLevel;
         this.vision = vision;
-        this.locationx = locationx;
-        this.locationy = locationy;
+        this.location = location;
+
     }
+
     //getters and setters
+  
     public String getName (){
        return name;
     }
@@ -40,20 +41,13 @@ public class Animal {
     public int getVision(){
         return vision;
     }
-    public void setVision(int vision){
-        
+    public void setVision(int vision){       
     }
-    public int getLocationx(){
-        return locationx;
+    public Location getLocation(){
+        return location;
     }
-    public void setLocationx(int locationx){
-
-    }
-    public int getLocationy(){
-        return locationy;
-    }
-    public void setLocationy(int locationy){
-
+    public void setLocation(Location location){
+        this.location = location;
     }
     public void modHungerLevel(){
         this.hungerLevel = this.hungerLevel/2;
@@ -61,8 +55,7 @@ public class Animal {
     public void modStrength(){
         this.strength = this.strength/3;
     }
-    
-    public String toString(){
+        public String toString(){
         return  this.name + " " + "strength " + this.strength + " Hunger Level: " + this.hungerLevel + " is the winner";
     }
 }
