@@ -3,11 +3,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Animal {
-   public Location location;
-   public String name;
-   public double strength;
-   public double hungerLevel;
-   public int vision;
+   private Location location;
+   private String name;
+   private double strength;
+   private double hungerLevel;
+   private int vision;
    
 
     public Animal(String name, double strength, double hungerLevel, int vision, Location location){
@@ -50,12 +50,17 @@ public class Animal {
         this.location = location;
     }
     public void modHungerLevel(){
-        this.hungerLevel = this.hungerLevel/2;
+        this.hungerLevel = Math.round(this.hungerLevel/2);
     }
     public void modStrength(){
-        this.strength = this.strength/3;
+        this.strength = Math.round(this.strength/3);
+
+    }
+    void  anmialData(){
+       System.out.println(  "-> " + this.name + " "  +  "strength: " + this.strength + " Hunger Level: " + this.hungerLevel 
+        +  " vision: " + this.vision );
     }
         public String toString(){
-        return  this.name + " " + "strength " + this.strength + " Hunger Level: " + this.hungerLevel + " is the winner";
+        return  this.name.toUpperCase() + "-> strength: " + this.strength + " Hunger Level: " + this.hungerLevel + " vision " +this.vision + " is the winner";
     }
 }
