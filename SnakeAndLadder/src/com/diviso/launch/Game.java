@@ -1,5 +1,6 @@
 package com.diviso.launch;
 import com.diviso.game.*;
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,10 @@ public class Game {
     private List<Snake> snakes = new ArrayList<>();
     private List<Ladder> ladders = new ArrayList<>();
     private List<Player> players = new ArrayList<>();
-    private List<GameTool> GameTools = new ArrayList<>();
+    private List<GameTool> gameTools = new ArrayList<>();
+
+    Scanner sc = new Scanner(System.in);
+
 
     public void setName(String name) {
         this.name = name;
@@ -70,11 +74,11 @@ public class Game {
     }
 
     public void setGameTools(List<GameTool> GameTools) {
-        this.GameTools = GameTools;
+        this.gameTools = GameTools;
     }
 
     public List<GameTool> getGameTools() {
-        return GameTools;
+        return gameTools;
     }
 
     public void gameDetails() {
@@ -89,41 +93,72 @@ public class Game {
         System.out.println("\t\t\t\t\t      " + "©Copyright All Rights Reserved 2023." + "\n");
     }
 
-    public void transferSnakesAndLadderIntoBoard()
+    public void createPlayers()
     {
-        for(GameTool gT : gameTools)
-        {
-            if (gT instanceof Snake)
-            {
-                ((Snake) gT).getHeadCell();
-            }
+        Player p = new Player();
 
-            if (gT instanceof Ladder)
-            {
-                ((Ladder) gT).getTailCell();
-            }
-        }
+        players.add(p);
+
+        System.out.println("Enter PlayerOne Name");
+        p.setNameOne(sc.nextLine());
+        System.out.println("Enter PlayerTwo Name");
+        p.setNameTwo(sc.nextLine());
+
+        System.out.println(p);
     }
 
     public void createCells()
     {
         for (int i = 1; i <= 100; i++)
         {
-            cells.add(new Cell(i));
-            board.getCells(cell);
-
+            cell = new Cell(i);
+            board.getCells().add(cell);
         }
     }
 
-    public void configSnakesAndLadders()
+    public void addSnakesAndLadders()
     {
-        Cell c = board.getCells().get(12);
-        c = getSnakes().add(gameTool);
+        snakes.add(new Snake(new Cell(12), new Cell(2)));
+        snakes.add(new Snake(new Cell(24), new Cell(15)));
+        snakes.add(new Snake(new Cell(42), new Cell(25)));
+        snakes.add(new Snake(new Cell(62), new Cell(45)));
+        snakes.add(new Snake(new Cell(85), new Cell(55)));
+        snakes.add(new Snake(new Cell(99), new Cell(38)));
+
+        ladders.add(new Ladder(new Cell(3), new Cell(13)));
+        ladders.add(new Ladder(new Cell(14), new Cell(27)));
+        ladders.add(new Ladder(new Cell(20), new Cell(44)));
+        ladders.add(new Ladder(new Cell(39), new Cell(54)));
+        ladders.add(new Ladder(new Cell(61), new Cell(84)));
+        ladders.add(new Ladder(new Cell(86), new Cell(98)));
     }
+
+    public void transferSnakesAndLadderIntoBoard()
+    {
+        for(GameTool gT : gameTools)
+        {
+            if (gT instanceof Snake)
+            {
+                ((Snake) gT).getHeadCell().getCellID();
+                board.getCells().get(((Snake) gT).getHeadCell().getCellID()).getSnakes().add((Snake)gT);
+            }
+
+            if (gT instanceof Ladder)
+            {
+                ((Ladder) gT).getTailCell().getCellID();
+                board.getCells().get(((Ladder) gT).getTailCell().getCellID()).getLadders().add((Ladder)gT);
+            }
+        }
+    }
+
     public static void main(String args[])
     {
         Game game = new Game();
-
         game.name = "Snake And Ladder Game";
+
+        game.createPlayers();
+        game.createCells();
+        game.transferSnakesAndLadderIntoBoard();
+        game.addSnakesAndLadders();
     }
 }

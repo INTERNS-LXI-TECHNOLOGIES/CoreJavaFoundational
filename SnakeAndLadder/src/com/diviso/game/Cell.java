@@ -25,5 +25,4 @@ public class Cell
         this.cellID=cellID;
     }
 
-    //toString()
 }

@@ -2,10 +2,19 @@ package com.diviso.game;
 
 public class Player
 {
-    private String name;
+    private String nameOne;
+    private String nameTwo;
 
-    public void setName(String name) { this.name = name;}
-    public String getName() { return name;}
+    public void setNameOne(String nameOne) { this.nameOne = nameOne;}
+    public String getNameOne() { return nameOne;}
 
-    //toString();
+    public void setNameTwo(String nameTwo) { this.nameTwo = nameTwo;}
+    public String getNameTwo() { return nameTwo;}
+
+    @Override
+    public String toString()
+    {
+        return "PlayerOne Name : " + getNameOne() +"\n" +
+                "PlayerTwo Name : " + getNameTwo() ;
+    }
 }
