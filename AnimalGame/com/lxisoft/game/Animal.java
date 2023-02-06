@@ -32,8 +32,7 @@ this.Alive = Alive;
 
 }
 
-//FIXME this does not follow a setter signature. this should accept a Location object
-public void setLocation(int x , int y) {
+public void animalLocation(int x , int y) {
 
     location.setLocationXaxis(x);
     location.setLocationYaxis(y);

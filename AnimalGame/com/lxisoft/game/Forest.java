@@ -1,5 +1,7 @@
 package com.lxisoft.game;
 
+import java.util.List;
+
 import java.util.ArrayList;
 
 import java.util.Random;
@@ -11,14 +13,9 @@ import com.lxisoft.animals.*;
 
 public class Forest {
 
-    //FIXME use List as the reference type instead of ArrayList for the flexibility
-    ArrayList<Animal> animalsList = new ArrayList<Animal>();
+     List<Animal> animalsList = new ArrayList<Animal>();
 
-   
-
-
-
-     public void welcomeToForest () {
+      public void welcomeToForest () {
 
         System.out.println("..........WELCOME TO FOREST........... \n");
     
@@ -52,22 +49,22 @@ public class Forest {
         Animal player1 = animalsList.get(animal1);
         Animal player2 = animalsList.get(animal2);
 
-        player1.setLocation(random.nextInt(30),random.nextInt(30));
-        player2.setLocation(random.nextInt(30),random.nextInt(30));
+        player1.animalLocation(random.nextInt(30),random.nextInt(30));
+        player2.animalLocation(random.nextInt(30),random.nextInt(30));
 
-        roamingArea(player1 , player2 );
+        animalRoamingArea(player1 , player2 );
  }
     }
 
-    //FIXME the method name should be more meaningful. It should be in a verb+noun format
-      public void roamingArea(Animal player1, Animal player2) throws customException,MyCustomException {
+    
+      public void animalRoamingArea(Animal player1, Animal player2) throws customException,MyCustomException {
 
             Random random = new Random();
            
             int x1 = player1.getLocationX();
             int x2 = player2.getLocationX();
-            int y1 = player1.getLocationX();
-            int y2 = player2.getLocationX();
+            int y1 = player1.getLocationY();
+            int y2 = player2.getLocationY();
             
             double roamArea = Math.sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
 
@@ -88,7 +85,7 @@ public class Forest {
         
         else if((player1 instanceof Herbivorous) && (player2 instanceof Carnivorous)) {
     
-            player1.setLocation(random.nextInt(20),random.nextInt(20));            
+            player1.animalLocation(random.nextInt(20),random.nextInt(20));            
             System.out.println("The First Player Is Herbivores \n" );
             System.out.println("Player1 is : "+player1.getName()+" "+"  with hungry level "+player1.getHungryLevel()+" having strength of "+player1.getStrengthLevel() + "\n");
             System.out.println("The Second Player Is Carnivores \n");

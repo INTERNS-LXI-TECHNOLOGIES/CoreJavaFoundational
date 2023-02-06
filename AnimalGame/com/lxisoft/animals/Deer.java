@@ -1,7 +1,5 @@
 package com.lxisoft.animals;
-
 import java.util.Random;
-
 import com.lxisoft.factors.customException;
 import com.lxisoft.game.Animal;
 

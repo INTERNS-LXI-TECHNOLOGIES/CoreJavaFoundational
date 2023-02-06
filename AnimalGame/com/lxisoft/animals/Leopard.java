@@ -1,12 +1,12 @@
 package com.lxisoft.animals;
 
-import java.util.Random;
+
 
 import com.lxisoft.game.Animal;
 
 public class Leopard extends Animal implements Carnivorous {
 
-    Random random = new Random();
+
 
 public Leopard() {
 
@@ -22,11 +22,11 @@ super(animalName, eat,strengthLevel, hungeryLevel, isAlive);
 
 public Animal startFight(Animal opponent) {
 
-    int hungryLevelOfPlayer1 = this.getHungryLevel();
+    /*int hungryLevelOfPlayer1 = this.getHungryLevel();
     int hungryLevelOfPlayer2 = opponent.getHungryLevel();
 
     int strengthLevelOfPlayer1 = this.getStrengthLevel();
-    int strengthLevelOfPlayer2 = opponent.getStrengthLevel();
+    int strengthLevelOfPlayer2 = opponent.getStrengthLevel();*/
 
     if(this.getHungryLevel() >= opponent.getStrengthLevel()) {
 
