@@ -1,6 +1,4 @@
 package com.diviso.game;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Snake extends GameTool
 {
@@ -20,4 +18,11 @@ public class Snake extends GameTool
         this.headCell = headCell;
         this.tailCell = tailCell;
     }
+
+    @Override
+    public String toString()
+    {
+        return null;
+    }
+
 }

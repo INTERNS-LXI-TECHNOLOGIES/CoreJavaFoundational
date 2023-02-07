@@ -14,7 +14,7 @@ public class Player
     @Override
     public String toString()
     {
-        return "PlayerOne Name : " + getNameOne() +"\n" +
-                "PlayerTwo Name : " + getNameTwo() ;
+        return "PlayerOne Name : " + nameOne +"\n" +
+                "PlayerTwo Name : " + nameTwo ;
     }
 }

@@ -9,5 +9,10 @@ public class Board
     public void setCells(List<Cell> cells) { this.cells = cells;}
     public List<Cell> getCells() { return cells;}
 
+    @Override
+    public String toString()
+    {
+        return null;
+    }
 
 }

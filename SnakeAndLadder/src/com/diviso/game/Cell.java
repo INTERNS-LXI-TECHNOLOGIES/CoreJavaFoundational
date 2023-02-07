@@ -16,13 +16,17 @@ public class Cell
     public void setCellID(int cellID) { this.cellID = cellID;}
     public int getCellID() { return cellID;}
 
-    public Cell()
-    {
-    }
+    public Cell() {}
 
     public Cell(int cellID)
     {
         this.cellID=cellID;
+    }
+
+    @Override
+    public String toString()
+    {
+        return null;
     }
 
 }

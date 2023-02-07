@@ -1,8 +1,5 @@
 package com.diviso.game;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Ladder extends GameTool
 {
     private Cell tailCell;
@@ -20,6 +17,12 @@ public class Ladder extends GameTool
     {
         this.headCell = headCell;
         this.tailCell = tailCell;
+    }
+
+    @Override
+    public String toString()
+    {
+        return null;
     }
 
 }

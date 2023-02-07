@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
+
     private String name;
     private Cell cell = new Cell();
     private Dice dice;
@@ -13,22 +14,16 @@ public class Game {
     private List<Ladder> ladders = new ArrayList<>();
     private List<Player> players = new ArrayList<>();
     private List<GameTool> gameTools = new ArrayList<>();
+    public GameTool gameTool = new GameTool();
 
     Scanner sc = new Scanner(System.in);
 
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
+    public void setName(String name) { this.name = name;}
+    public String getName() { return name;}
 
     public void setBoard(Board board) {
         this.board = board;
     }
-
     public Board getBoard() {
         return board;
     }
@@ -36,7 +31,6 @@ public class Game {
     public void setCell(Cell cell) {
         this.cell = cell;
     }
-
     public Cell getCell() {
         return cell;
     }
@@ -44,7 +38,6 @@ public class Game {
     public void setDice(Dice dice) {
         this.dice = dice;
     }
-
     public Dice getDice() {
         return dice;
     }
@@ -52,7 +45,6 @@ public class Game {
     public void setSnakes(List<Snake> snakes) {
         this.snakes = snakes;
     }
-
     public List<Snake> getSnakes() {
         return snakes;
     }
@@ -60,7 +52,6 @@ public class Game {
     public void setLadders(List<Ladder> ladders) {
         this.ladders = ladders;
     }
-
     public List<Ladder> getLadders() {
         return ladders;
     }
@@ -68,7 +59,6 @@ public class Game {
     public void setPlayers(List<Player> players) {
         this.players = players;
     }
-
     public List<Player> getPlayers() {
         return players;
     }
@@ -76,12 +66,11 @@ public class Game {
     public void setGameTools(List<GameTool> GameTools) {
         this.gameTools = GameTools;
     }
-
     public List<GameTool> getGameTools() {
         return gameTools;
     }
 
-    public void gameDetails() {
+    /*public void gameDetails() {
         System.out.println("\n" + "\t\t\t\t\t\t\t" + "LXI SOFT PRESENTS" + "\n");
         System.out.println("\t\t\t\t\t\t     " + " Snake And Ladder Game  " + "\n");
         System.out.println("\t\t\t\t\t\t      " + "*** Instructions ***" + "\n");
@@ -91,6 +80,18 @@ public class Game {
         System.out.println("\t\t\t\t     " + "When reach End Point at Cell 100, Player Win Lets party!");
 
         System.out.println("\t\t\t\t\t      " + "©Copyright All Rights Reserved 2023." + "\n");
+    }*/
+
+    @Override
+    public String toString()
+
+    {
+        return "Game Name : " + name + "\n"
+            + "Game Has GameTool " + gameTool + "\n"
+            + "Game Has Board " + board + "\n"
+            + "Board Has Cell " + cell + "\n"
+            + "Cell Has CellID " + "\n"
+            + "Game Has Players " + players + "\n";
     }
 
     public void createPlayers()
@@ -154,7 +155,10 @@ public class Game {
     public static void main(String args[])
     {
         Game game = new Game();
-        game.name = "Snake And Ladder Game";
+        game.name = "Snake And Ladder 4.0";
+
+        //Calling Complete Game toString()
+        System.out.println(game);
 
         game.createPlayers();
         game.createCells();
