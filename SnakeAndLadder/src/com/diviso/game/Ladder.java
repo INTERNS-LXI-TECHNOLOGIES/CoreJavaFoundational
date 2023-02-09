@@ -1,28 +1,20 @@
 package com.diviso.game;
-
 public class Ladder extends GameTool
 {
-    private Cell tailCell;
-    private Cell headCell;
+    private String ladderName;
 
-    public void setTailCell(Cell tailCell) { this.tailCell = tailCell;}
-    public Cell getTailCell() { return tailCell;}
+    public String getName() { return ladderName;}
+    public void setName(String ladderName) { this.ladderName = ladderName;}
 
-    public void setHeadCell(Cell headCell) { this.headCell = headCell;}
-    public Cell getHeadCell() { return headCell;}
-
-    public Ladder() {}
-
-    public Ladder(Cell tailCell, Cell headCell)
-    {
-        this.headCell = headCell;
-        this.tailCell = tailCell;
+    public Ladder(String gTName,String ladderName, Cell tailCell, Cell headCell) {
+        super(gTName, tailCell, headCell);
+        this.ladderName = ladderName;
     }
 
     @Override
     public String toString()
     {
-        return null;
+        return "Ladder";
     }
 
 }

@@ -16,7 +16,8 @@ public class Cell
     public void setCellID(int cellID) { this.cellID = cellID;}
     public int getCellID() { return cellID;}
 
-    public Cell() {}
+    public Cell() {
+    }
 
     public Cell(int cellID)
     {
@@ -26,7 +27,7 @@ public class Cell
     @Override
     public String toString()
     {
-        return null;
+        return "Cell Has " + cellID + "\n" + "CellID Has SnakesCell " + snakes + "\n" + "CellID Has LadderCell" + ladders;
     }
 
 }

@@ -8,7 +8,7 @@ public class Game {
 
     private String name;
     private Cell cell = new Cell();
-    private Dice dice;
+    private Dice dice = new Dice();
     private Board board = new Board();
     private List<Snake> snakes = new ArrayList<>();
     private List<Ladder> ladders = new ArrayList<>();
@@ -70,7 +70,7 @@ public class Game {
         return gameTools;
     }
 
-    /*public void gameDetails() {
+    public void gameDetails() {
         System.out.println("\n" + "\t\t\t\t\t\t\t" + "LXI SOFT PRESENTS" + "\n");
         System.out.println("\t\t\t\t\t\t     " + " Snake And Ladder Game  " + "\n");
         System.out.println("\t\t\t\t\t\t      " + "*** Instructions ***" + "\n");
@@ -80,18 +80,6 @@ public class Game {
         System.out.println("\t\t\t\t     " + "When reach End Point at Cell 100, Player Win Lets party!");
 
         System.out.println("\t\t\t\t\t      " + "©Copyright All Rights Reserved 2023." + "\n");
-    }*/
-
-    @Override
-    public String toString()
-
-    {
-        return "Game Name : " + name + "\n"
-            + "Game Has GameTool " + gameTool + "\n"
-            + "Game Has Board " + board + "\n"
-            + "Board Has Cell " + cell + "\n"
-            + "Cell Has CellID " + "\n"
-            + "Game Has Players " + players + "\n";
     }
 
     public void createPlayers()
@@ -119,19 +107,19 @@ public class Game {
 
     public void addSnakesAndLadders()
     {
-        snakes.add(new Snake(new Cell(12), new Cell(2)));
-        snakes.add(new Snake(new Cell(24), new Cell(15)));
-        snakes.add(new Snake(new Cell(42), new Cell(25)));
-        snakes.add(new Snake(new Cell(62), new Cell(45)));
-        snakes.add(new Snake(new Cell(85), new Cell(55)));
-        snakes.add(new Snake(new Cell(99), new Cell(38)));
+        snakes.add(new Snake("Snake1", "Snake1",new Cell(12), new Cell(2)));
+        snakes.add(new Snake("Snake2", "Snake2",new Cell(24), new Cell(15)));
+        snakes.add(new Snake("Snake3", "Snake3",new Cell(42), new Cell(25)));
+        snakes.add(new Snake("Snake4", "Snake4",new Cell(62), new Cell(45)));
+        snakes.add(new Snake("Snake5", "Snake5",new Cell(85), new Cell(55)));
+        snakes.add(new Snake("Snake6", "Snake6",new Cell(99), new Cell(38)));
 
-        ladders.add(new Ladder(new Cell(3), new Cell(13)));
-        ladders.add(new Ladder(new Cell(14), new Cell(27)));
-        ladders.add(new Ladder(new Cell(20), new Cell(44)));
-        ladders.add(new Ladder(new Cell(39), new Cell(54)));
-        ladders.add(new Ladder(new Cell(61), new Cell(84)));
-        ladders.add(new Ladder(new Cell(86), new Cell(98)));
+        ladders.add(new Ladder("Ladder1","Ladder1",new Cell(3), new Cell(13)));
+        ladders.add(new Ladder("Ladder2","Ladder2",new Cell(14), new Cell(27)));
+        ladders.add(new Ladder("Ladder3","Ladder3",new Cell(20), new Cell(44)));
+        ladders.add(new Ladder("Ladder4","Ladder4",new Cell(39), new Cell(54)));
+        ladders.add(new Ladder("Ladder5","Ladder5",new Cell(61), new Cell(84)));
+        ladders.add(new Ladder("Ladder6","Ladder6",new Cell(86), new Cell(98)));
     }
 
     public void transferSnakesAndLadderIntoBoard()
@@ -152,14 +140,27 @@ public class Game {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Game Has " + name + "\n" +
+                " cell=" + cell +
+                " dice=" + dice +
+                " board=" + board +
+                " snakes=" + snakes +
+                " ladders=" + ladders +
+                " players=" + players +
+                " gameTools=" + gameTools +
+                " gameTool=" + gameTool ;
+    }
+
     public static void main(String args[])
     {
         Game game = new Game();
         game.name = "Snake And Ladder 4.0";
 
-        //Calling Complete Game toString()
         System.out.println(game);
 
+        game.gameDetails();
         game.createPlayers();
         game.createCells();
         game.transferSnakesAndLadderIntoBoard();

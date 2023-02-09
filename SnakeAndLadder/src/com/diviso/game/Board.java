@@ -12,7 +12,8 @@ public class Board
     @Override
     public String toString()
     {
-        return null;
+        return "Board " + "\n" ;
+
     }
 
 }

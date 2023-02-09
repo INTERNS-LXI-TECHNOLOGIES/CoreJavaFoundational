@@ -2,27 +2,21 @@ package com.diviso.game;
 
 public class Snake extends GameTool
 {
-    private Cell headCell;
-    private Cell tailCell;
+    private String snakeName;
 
-    public void setHeadCell(Cell headCell) { this.headCell = headCell;}
-    public Cell getHeadCell() { return headCell;}
+    public void setSnakeName(String snakeName) { this.snakeName = snakeName;}
+    public String getSnakeName() { return snakeName;}
 
-    public void setTailCell(Cell tailCell) { this.tailCell = tailCell;}
-    public Cell getTailCell() { return tailCell;}
-
-    public Snake() {}
-
-    public Snake(Cell headCell, Cell tailCell)
+    public Snake(String gtName, String snakeName, Cell headCell, Cell tailCell)
     {
-        this.headCell = headCell;
-        this.tailCell = tailCell;
+        super(gtName, tailCell, headCell) ;
+        this.snakeName = snakeName ;
     }
 
     @Override
     public String toString()
     {
-        return null;
+        return super.toString()+"Name "+snakeName ;
     }
 
 }
