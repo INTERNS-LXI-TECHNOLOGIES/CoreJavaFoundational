@@ -3,14 +3,15 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Animal {
-   private Location location;
    private String name;
    private double strength;
    private double hungerLevel;
    private int vision;
+   private Location location;
+
    
 
-    public Animal(String name, double strength, double hungerLevel, int vision, Location location){
+    public Animal( String name, double strength, double hungerLevel, int vision, Location location){
         this.name = name;
         this.strength = strength;
         this.hungerLevel = hungerLevel;
@@ -20,7 +21,6 @@ public class Animal {
     }
 
     //getters and setters
-  
     public String getName (){
        return name;
     }
@@ -53,7 +53,7 @@ public class Animal {
         this.hungerLevel = Math.round(this.hungerLevel/2);
     }
     public void modStrength(){
-        this.strength = Math.round(this.strength/3);
+        this.strength = Math.round(this.strength/2);
 
     }
     void  anmialData(){
