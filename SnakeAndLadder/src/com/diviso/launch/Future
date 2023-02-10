@@ -1,0 +1,32 @@
+public class ME
+{
+    public static void main(String args[])
+    {
+        Skill[] scriptForFuture = { new basicsInProgrammingLanguage(), new howProgrammeWorks(), new deepInAlgorithmAndDataStructure(), new responsibilityDrivenDesign(), new classObjectsAndRelationships(), new advancedProgrammer(), new anInterDependantSoftwareDeveloper() };
+
+        Skill[] investmentForBestHuman = { new englishLanguageSpeakingListeningAndWriting(), new visionHumansAndProActNeeds(), new publicSpeaking(), new leaderShip(), new personalityDevelopment(), new creativityAndInnovation() };
+
+        improvePhysicalDimension()
+        {
+
+        }
+
+        improveSocialDimension()
+        {
+
+        }
+
+        improveMentalDimension()
+        {
+
+        }
+
+        improveSpiritualDimension
+        {
+
+        }
+
+    }
+
+
+}

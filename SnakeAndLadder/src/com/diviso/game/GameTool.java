@@ -24,8 +24,6 @@ public  class GameTool
         this.name = name;
     }
 
-
-
     public void setTailCell(Cell tailCell) { this.tailCell = tailCell;}
     public Cell getTailCell() { return tailCell;}
 

@@ -14,7 +14,7 @@ public class Ladder extends GameTool
     @Override
     public String toString()
     {
-        return "Ladder";
+        return super.toString() + "Name : " + ladderName;
     }
 
 }

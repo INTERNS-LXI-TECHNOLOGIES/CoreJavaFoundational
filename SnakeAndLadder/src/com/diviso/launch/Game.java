@@ -7,9 +7,9 @@ import java.util.List;
 public class Game {
 
     private String name;
-    private Cell cell = new Cell();
     private Dice dice = new Dice();
     private Board board = new Board();
+    private List <Cell> cells = new ArrayList<>();
     private List<Snake> snakes = new ArrayList<>();
     private List<Ladder> ladders = new ArrayList<>();
     private List<Player> players = new ArrayList<>();
@@ -28,12 +28,8 @@ public class Game {
         return board;
     }
 
-    public void setCell(Cell cell) {
-        this.cell = cell;
-    }
-    public Cell getCell() {
-        return cell;
-    }
+    public void setCells(List<Cell> cells) { this.cells = cells;}
+    public List<Cell> getCells() { return cells;}
 
     public void setDice(Dice dice) {
         this.dice = dice;
@@ -100,9 +96,9 @@ public class Game {
     {
         for (int i = 1; i <= 100; i++)
         {
-            cell = new Cell(i);
-            board.getCells().add(cell);
+            cells.add(new Cell(i));
         }
+        board.setCells(cells);
     }
 
     public void addSnakesAndLadders()
@@ -141,17 +137,19 @@ public class Game {
     }
 
     @Override
-    public String toString() {
-        return "Game Has " + name + "\n" +
-                " cell=" + cell +
-                " dice=" + dice +
-                " board=" + board +
-                " snakes=" + snakes +
-                " ladders=" + ladders +
-                " players=" + players +
-                " gameTools=" + gameTools +
-                " gameTool=" + gameTool ;
-    }
+    public String toString()
+    {
+        return  "Game Has " + name + "\n" +
+                "Game Has " + board + "\n" +
+                "Board Has " + cells + "\n" +
+                "Cell Has CellID " + "\n" +
+                "CellID Has Ladders " + ladders + "\n" +
+                "CellID Has Snakes " + snakes + "\n" +
+                "Snake Is A " + gameTool + "\n" +
+                "Ladder Is A " + gameTool + "\n" +
+                "Game Has Dice " + dice + "\n" +
+                "Game Has Players " + players + "\n" ;
+    };
 
     public static void main(String args[])
     {

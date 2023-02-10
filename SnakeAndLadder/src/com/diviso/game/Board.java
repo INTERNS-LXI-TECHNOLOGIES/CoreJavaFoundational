@@ -12,7 +12,7 @@ public class Board
     @Override
     public String toString()
     {
-        return "Board " + "\n" ;
+        return "Cells : "  + cells;
 
     }
 

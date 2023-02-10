@@ -16,7 +16,7 @@ public class Snake extends GameTool
     @Override
     public String toString()
     {
-        return super.toString()+"Name "+snakeName ;
+        return super.toString() + "Name : "+snakeName ;
     }
 
 }
