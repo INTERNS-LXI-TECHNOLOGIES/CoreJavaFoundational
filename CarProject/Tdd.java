@@ -3,24 +3,28 @@ public class Tdd
 public static void main(String[] args)
 {	
 Car car = new Car("Hyundai Elantra", "Starry night", "SX", "KL 7 H789" );
-Part door = new Door("1011088881", "Steel World", "Black");
-Part tyre = new Tyre("1011088882", "Global Tyres", "Black");
-Part steering = new Steering("1011088883", "Appolo" , 8.5);
 
-/*for(int i=0; i<4; i++)
+
+for(int i=0; i<4; i++)
 {
-car.part[i] = new Door();	
-((Door)car.part[i]=
+car.parts[i] = new Door();
+//((Door)super.car.part[i]).partNumber = 100001122;	
+((Door)car.parts[i]).brand = "Steel World";
+((Door)car.parts[i]).colour = "Black";
 }
 
 for(int j=4; j<8; j++)
 {
-car.part[j] = new Tyre();
-((Tyre)car.part[j] =	
+car.parts[j] = new Tyre();
+//((Tyre)super.car.part[j]).partNumber = 100001123;
+((Tyre)car.parts[j]).brand = "Global Tyres";
+((Tyre)car.parts[j]).colour = "Black";
 }
 
-car.part[8] = new Steering();
-((Steering)car.part[8] = */
+car.parts[8] = new Steering();
+//((Steering)super.car.part[8]).partNumber = 100001124;
+((Steering)car.parts[8]).brand = "Appolo";
+((Steering)car.parts[8]).radius = 8.5;
 
 System.out.println(car);
 

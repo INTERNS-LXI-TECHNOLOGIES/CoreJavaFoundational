@@ -2,7 +2,7 @@ public class Part
 {
 private long partNumber;
 
-public Part(String partNumber)
+public Part(long partNumber)
 {
 this.partNumber = partNumber;
 }
@@ -18,6 +18,6 @@ this.partNumber = partNumber;
 }
 public String toString()
 {
-return "Part Number:" + partNumber;
+return  "Part Number:" + partNumber;
 }
 }

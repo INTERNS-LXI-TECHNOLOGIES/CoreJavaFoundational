@@ -5,7 +5,7 @@ private String colour;
 private String variant;
 private String registrationNumber;
 
-Part[] part = new Part[9];
+Part[] parts = new Part[9];
 
 public Car(String model, String colour, String variant, String registrationNumber)
 {	
@@ -55,6 +55,6 @@ this.registrationNumber = registrationNumber;
 
 public String toString()
 {
-return "Model:" + model + "\t" + "Colour:" + colour + "\t" + "Variant:" + variant + "\t" + "Registration Number:" + registrationNumber;
+return "Model:" + model + "\n" + "Colour:" + colour + "\n" + "Variant:" + variant + "\t" + "Registration Number:" + registrationNumber;
 }
 }

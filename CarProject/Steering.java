@@ -31,6 +31,6 @@ this.radius = radius;
 
 public String toString()
 {
-return super.toString "Part Number:" + partNumber + "\t" + "Brand:"+ brand +"\t" + "Radius:" + radius;
+return super.toString + "Part Number:" + partNumber + "\n" + "Brand:"+ brand +"\n" + "Radius:" + radius;
 }
 }

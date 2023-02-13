@@ -30,6 +30,6 @@ this.colour = colour;
 
 public String toString()
 {
-return super.toString "Part Number" + partNumber + "\t" + "Brand:" + brand + "\t" + "Colour:" + colour;	
+return super.toString + "Part Number" + partNumber + "\n" + "Brand:" + brand + "\n" + "Colour:" + colour;	
 }
 }
