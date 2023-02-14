@@ -7,7 +7,8 @@ public class Animal {
    private double strength;
    private double hungerLevel;
    private int vision;
-   private Location location;
+   Location location;
+   private static String Feature;
 
    
 
@@ -21,6 +22,11 @@ public class Animal {
     }
 
     //getters and setters
+    public static String getFeature(){
+        return Feature;
+    }
+    public void setFeature(String Feature){
+    }
     public String getName (){
        return name;
     }
@@ -54,13 +60,19 @@ public class Animal {
     }
     public void modStrength(){
         this.strength = Math.round(this.strength/2);
-
+    
     }
     void  anmialData(){
+       
        System.out.println(  "-> " + this.name + " "  +  "strength: " + this.strength + " Hunger Level: " + this.hungerLevel 
         +  " vision: " + this.vision );
     }
-        public String toString(){
-        return  this.name.toUpperCase() + "-> strength: " + this.strength + " Hunger Level: " + this.hungerLevel + " vision " +this.vision + " is the winner";
+    void locationData(){
+     System.out.println(this.name+ " location x= " + this.location.locationx+ " location y= " + this.location.locationy);
     }
+        public String toString(){
+        return   "The Winner is "+ this.name.toUpperCase() + " with strength: " + 
+         this.strength + " Hunger Level: " + this.hungerLevel + " vision " +this.vision;
+    }
+
 }

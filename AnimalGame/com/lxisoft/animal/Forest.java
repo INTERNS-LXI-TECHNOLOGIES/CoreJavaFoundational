@@ -2,20 +2,21 @@ package com.lxisoft.animal;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.xml.catalog.CatalogFeatures.Feature;
+
 
 public class Forest {
      ArrayList<Animal> animals = new ArrayList<Animal>();
   
 //animal details 
     public void animalDetails(){
-        System.out.println("welcome to the Forest - Amazon" + '\n'+ "prestented animals" + '\n' + "================");
+      System.out.println("welcome to the Forest - Amazon" + '\n'+ "prestented animals" + '\n' + "================");
         
-        animals.add(new Lion("lion", 8,10,6, new Location(4,9)));
+        animals.add(new Lion("lion", 9,10,6, new Location(4,9)));
         animals.add(new Deer("Deer", 8, 7,9, new Location(7,10)));
         animals.add(new Tiger("Tiger", 8 ,7 ,3,new Location(4,6)));
         animals.add(new Fox("Fox", 3,5,8, new Location(4,1)));
         animals.add(new Giraffe("Giraffe", 5, 4, 10,new Location(5, 6)));
-        animals.add(new Fox("Fox",6, 8, 7, new Location(4,8)));
         animals.add(new Cheetah("Cheetah",7,7,8, new Location(5,8)));
 
 
@@ -23,6 +24,7 @@ public class Forest {
        public void showDetails(){
         for (int n=0; n<animals.size(); n++){
           animals.get(n).anmialData();
+        
        }
       }
     public void animalFight(){
@@ -52,26 +54,42 @@ public class Forest {
       }}}
           
     
-         System.out.println(firstAnimal.getName().toUpperCase()+ " meets " + nearestAnimal.getName().toUpperCase());
- 
-         if(firstAnimal instanceof Herbivores && nearestAnimal instanceof Herbivores){
-   
-          animals.get(random1).modStrength();
-          nearestAnimal.modStrength();
-          animals.get(random1).modHungerLevel();
-          nearestAnimal.modHungerLevel();  
-
-          System.out.println(animals.get(random1).getName()+ " strength decresed to "+ animals.get(random1).getStrength()  + 
-           " hungerlevel decresed to "+ animals.get(random1).getHungerLevel());
-          System.out.println(nearestAnimal.getName()
-          +" strength decresed to "+ nearestAnimal.getStrength() + " hungerlevel decresed to " + nearestAnimal.getHungerLevel());
-      
-         }
-         else{
-          System.out.println("NO Fight");
+        System.out.println(firstAnimal.getName().toUpperCase()+ " meets " + nearestAnimal.getName().toUpperCase());
+    
+         if(firstAnimal instanceof Herbivores ){
+          System.out.println(firstAnimal.getName()+" escaped");
           roamAnimal();
          }
+         else if(firstAnimal instanceof Herbivores && nearestAnimal instanceof Herbivores){
+          System.out.println("both didnt fight");
+          roamAnimal();
          }
+
+
+         else if(firstAnimal instanceof Carnivores && nearestAnimal instanceof Herbivores){
+            ((Carnivores)firstAnimal).fight(nearestAnimal);
+            if(((Herbivores)nearestAnimal).escapeFromEnemy() == false){
+              System.out.println(firstAnimal.getName()+ " strength decresed to "+ firstAnimal.getStrength()  + 
+              " hungerlevel decresed to "+ firstAnimal.getHungerLevel());
+             System.out.println(nearestAnimal.getName()
+             +" strength decresed to "+ nearestAnimal.getStrength() + " hungerlevel decresed to " + nearestAnimal.getHungerLevel());
+             roamAnimal();
+            }
+         }
+          else{
+            ((Carnivores)firstAnimal).fight(nearestAnimal);
+            System.out.println(firstAnimal.getName()+ " strength decresed to "+ firstAnimal.getStrength()  + 
+           " hungerlevel decresed to "+ firstAnimal.getHungerLevel());
+          System.out.println(nearestAnimal.getName()
+          +" strength decresed to "+ nearestAnimal.getStrength() + " hungerlevel decresed to " + nearestAnimal.getHungerLevel());
+          roamAnimal();
+          }
+
+    
+         
+         }
+         
+        
 
          public void roamAnimal(){
           Random ran = new Random();
@@ -88,7 +106,11 @@ public class Forest {
             animals.get(3).setLocation(new Location(random2, random3));
             animals.get(4).setLocation(new Location(random5, random6));
             animals.get(5).setLocation(new Location(random2, random7));
-            animals.get(6).setLocation(new Location(random7, random4));
+            System.out.println("current locations:");
+            for(int f=0; f<animals.size(); f++){
+              animals.get(f).locationData();
+            }
+           
         }
      
      public void findWinner(){
@@ -102,8 +124,13 @@ public class Forest {
              animals.get(i).getHungerLevel() > largestHl.getHungerLevel()){   
                largestStrength =  animals.get(i);       
                }
+              
            }
-              System.out.println(largestStrength);
+              System.out.println(largestStrength.toString());
+              
+            Lion.getFeature();
+              
+           
           } 
              
             
