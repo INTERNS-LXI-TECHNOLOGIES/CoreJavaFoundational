@@ -37,17 +37,19 @@ public class Animal {
         return strength;
     }
     public void setStrength(double strength){
+        this.strength = strength;
     }
     public double getHungerLevel(){
         return hungerLevel;
     }
     public void setHungerLevel(double hungerLevel){
-        
+        this.hungerLevel = hungerLevel;
     }
     public int getVision(){
         return vision;
     }
-    public void setVision(int vision){       
+    public void setVision(int vision){ 
+        this.vision = vision;      
     }
     public Location getLocation(){
         return location;

@@ -13,7 +13,7 @@ public class Giraffe extends Animal implements Herbivores {
     @Override
     public boolean escapeFromEnemy() {
         Random r = new Random();
-        int girrrandom = r.nextInt(3);
+        int girrrandom = r.nextInt(4);
         if(girrrandom ==1){
         return true;
         }
@@ -22,4 +22,10 @@ public class Giraffe extends Animal implements Herbivores {
         }
     
 }
+     public void herbiFight(Animal animal){
+        if(animal instanceof Herbivores){
+            this.setStrength(this.getStrength()-1);
+            animal.setStrength(animal.getStrength()-1);
+        }
+     }
 }

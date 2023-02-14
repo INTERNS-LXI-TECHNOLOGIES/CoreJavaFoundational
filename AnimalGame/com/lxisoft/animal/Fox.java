@@ -12,6 +12,11 @@ public class Fox extends Animal implements Carnivores {
         if (animal instanceof Herbivores){
             if(((Herbivores)animal).escapeFromEnemy() == true){
                 System.out.println(animal.getName()+" luckily escaped");
+            }
+            else{
+              
+                animal.setStrength(animal.getStrength()-1);
+                animal.setHungerLevel(animal.getHungerLevel()-1);
             }}
          else{
        this.setStrength(this.getStrength()-3);

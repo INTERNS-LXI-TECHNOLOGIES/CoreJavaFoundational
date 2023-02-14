@@ -4,6 +4,8 @@ import java.util.Random;
 
 import javax.xml.catalog.CatalogFeatures.Feature;
 
+import com.lxisoft.launch.Elephant;
+
 
 public class Forest {
      ArrayList<Animal> animals = new ArrayList<Animal>();
@@ -13,11 +15,12 @@ public class Forest {
       System.out.println("welcome to the Forest - Amazon" + '\n'+ "prestented animals" + '\n' + "================");
         
         animals.add(new Lion("lion", 9,10,6, new Location(4,9)));
-        animals.add(new Deer("Deer", 8, 7,9, new Location(7,10)));
+        animals.add(new Deer("Deer", 6, 5,9, new Location(7,10)));
         animals.add(new Tiger("Tiger", 8 ,7 ,3,new Location(4,6)));
         animals.add(new Fox("Fox", 3,5,8, new Location(4,1)));
         animals.add(new Giraffe("Giraffe", 5, 4, 10,new Location(5, 6)));
         animals.add(new Cheetah("Cheetah",7,7,8, new Location(5,8)));
+        animals.add(new Elephant("elphant",9,6,6, new Location(6,2)));
 
 
     }
@@ -55,13 +58,14 @@ public class Forest {
           
     
         System.out.println(firstAnimal.getName().toUpperCase()+ " meets " + nearestAnimal.getName().toUpperCase());
-    
-         if(firstAnimal instanceof Herbivores ){
-          System.out.println(firstAnimal.getName()+" escaped");
+  
+          if(firstAnimal instanceof Herbivores && nearestAnimal instanceof Herbivores){
+            ((Herbivores)firstAnimal).herbiFight(nearestAnimal);
+          System.out.println("both had a small fight");
           roamAnimal();
          }
-         else if(firstAnimal instanceof Herbivores && nearestAnimal instanceof Herbivores){
-          System.out.println("both didnt fight");
+         else if(firstAnimal instanceof Herbivores && nearestAnimal instanceof Carnivores){
+          System.out.println(firstAnimal.getName()+ " escaped");
           roamAnimal();
          }
 
@@ -73,9 +77,13 @@ public class Forest {
               " hungerlevel decresed to "+ firstAnimal.getHungerLevel());
              System.out.println(nearestAnimal.getName()
              +" strength decresed to "+ nearestAnimal.getStrength() + " hungerlevel decresed to " + nearestAnimal.getHungerLevel());
-             roamAnimal();
             }
-         }
+
+           
+             
+             roamAnimal();
+    }
+         
           else{
             ((Carnivores)firstAnimal).fight(nearestAnimal);
             System.out.println(firstAnimal.getName()+ " strength decresed to "+ firstAnimal.getStrength()  + 
@@ -106,6 +114,7 @@ public class Forest {
             animals.get(3).setLocation(new Location(random2, random3));
             animals.get(4).setLocation(new Location(random5, random6));
             animals.get(5).setLocation(new Location(random2, random7));
+            animals.get(6).setLocation(new Location(random4, random3));
             System.out.println("current locations:");
             for(int f=0; f<animals.size(); f++){
               animals.get(f).locationData();
@@ -120,15 +129,13 @@ public class Forest {
 
          for(int i = 0; i<animals.size(); i++){  
         
-            if (animals.get(i).getStrength() > largestStrength.getStrength() &&
-             animals.get(i).getHungerLevel() > largestHl.getHungerLevel()){   
+            if (animals.get(i).getStrength() > largestStrength.getStrength()){   
                largestStrength =  animals.get(i);       
                }
               
            }
               System.out.println(largestStrength.toString());
               
-            Lion.getFeature();
               
            
           } 

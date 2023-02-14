@@ -12,16 +12,25 @@ public class Tiger extends Animal implements Carnivores {
         if (animal instanceof Herbivores){
             if(((Herbivores)animal).escapeFromEnemy() == true){
               System.out.println(animal.getName()+" luckily escaped");
-            }}
+            }
+            else{
+             
+                animal.setStrength(animal.getStrength()-3);
+                animal.setHungerLevel(animal.getHungerLevel()-3);
+            }
+        }
+            
         else{
+        
        this.setStrength(this.getStrength()-2);
        this.setHungerLevel(this.getHungerLevel()-2);
        animal.setStrength(animal.getStrength()-3);
-       animal.setHungerLevel(animal.getHungerLevel()-3);
+       animal.setHungerLevel(animal.getHungerLevel()-2);
+        }
 
 
      
        
         }}
     
-}
+
