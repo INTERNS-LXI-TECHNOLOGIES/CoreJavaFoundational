@@ -15,9 +15,9 @@ public class Cheetah extends Animal implements Carnivores {
             }}
             else{
        this.setStrength(this.getStrength()-1);
-       this.setHungerLevel(getHungerLevel()-3);
-       animal.setStrength(getStrength()-3);
-       animal.setHungerLevel(getHungerLevel()-2);
+       this.setHungerLevel(this.getHungerLevel()-3);
+       animal.setStrength(animal.getStrength()-3);
+       animal.setHungerLevel(animal.getHungerLevel()-2);
      
        }
     }}

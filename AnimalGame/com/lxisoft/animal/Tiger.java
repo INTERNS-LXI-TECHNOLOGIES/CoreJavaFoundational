@@ -15,9 +15,9 @@ public class Tiger extends Animal implements Carnivores {
             }}
         else{
        this.setStrength(this.getStrength()-2);
-       this.setHungerLevel(getHungerLevel()-2);
-       animal.setStrength(getStrength()-3);
-       animal.setHungerLevel(getHungerLevel()-3);
+       this.setHungerLevel(this.getHungerLevel()-2);
+       animal.setStrength(animal.getStrength()-3);
+       animal.setHungerLevel(animal.getHungerLevel()-3);
 
 
      

@@ -15,9 +15,9 @@ public class Fox extends Animal implements Carnivores {
             }}
          else{
        this.setStrength(this.getStrength()-3);
-       this.setHungerLevel(getHungerLevel()-3);
-       animal.setStrength(getStrength()-1);
-       animal.setHungerLevel(getHungerLevel()-1);
+       this.setHungerLevel(this.getHungerLevel()-3);
+       animal.setStrength(animal.getStrength()-1);
+       animal.setHungerLevel(animal.getHungerLevel()-1);
      
        
         }}
