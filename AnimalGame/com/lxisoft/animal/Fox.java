@@ -10,21 +10,25 @@ public class Fox extends Animal implements Carnivores {
     @Override
     public void fight(Animal animal) {
         if (animal instanceof Herbivores){
-            if(((Herbivores)animal).escapeFromEnemy() == true){
-                System.out.println(animal.getName()+" luckily escaped");
-            }
-            else{
-              
-                animal.setStrength(animal.getStrength()-1);
-                animal.setHungerLevel(animal.getHungerLevel()-1);
+            try{
+           if(((Herbivores)animal).escapeFromEnemy() == true){
+           }
+           
+            }catch(Exception e){
+                System.out.println("femfefmefm");
             }}
-         else{
-       this.setStrength(this.getStrength()-3);
-       this.setHungerLevel(this.getHungerLevel()-3);
-       animal.setStrength(animal.getStrength()-1);
-       animal.setHungerLevel(animal.getHungerLevel()-1);
-     
-       
-        }}
     
-}
+            else{
+        
+                animal.setStrength(animal.getStrength()-3);
+                animal.setHungerLevel(animal.getHungerLevel()-3);
+            }
+           if(animal instanceof Carnivores) {
+           this.setStrength(this.getStrength()-1);
+           this.setHungerLevel(this.getHungerLevel()-1);
+           animal.setStrength(animal.getStrength()-3);
+           animal.setHungerLevel(animal.getHungerLevel()-3);
+         
+           }
+        }
+    }

@@ -12,8 +12,8 @@ public class Deer extends Animal implements Herbivores {
     @Override
     public boolean escapeFromEnemy() {
         Random r = new Random();
-        int girrrandom = r.nextInt(3);
-        if(girrrandom ==1){
+        int girrrandom = r.nextInt(1);
+        if(girrrandom ==0){
         return true;
         }
         else{

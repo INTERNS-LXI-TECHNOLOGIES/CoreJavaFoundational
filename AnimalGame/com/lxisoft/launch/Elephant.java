@@ -17,8 +17,8 @@ public class Elephant extends Animal implements Herbivores {
     public boolean escapeFromEnemy() {
         // TODO Auto-generated method stub
         Random r = new Random();
-        int girrrandom = r.nextInt(4);
-        if(girrrandom ==1){
+        int girrrandom = r.nextInt(1);
+        if(girrrandom ==0){
         return true;
         }
         else{

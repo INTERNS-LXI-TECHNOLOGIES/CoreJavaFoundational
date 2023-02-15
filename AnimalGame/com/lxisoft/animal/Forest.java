@@ -16,11 +16,12 @@ public class Forest {
         
         animals.add(new Lion("lion", 9,10,6, new Location(4,9)));
         animals.add(new Deer("Deer", 6, 5,9, new Location(7,10)));
-        animals.add(new Tiger("Tiger", 8 ,7 ,3,new Location(4,6)));
-        animals.add(new Fox("Fox", 3,5,8, new Location(4,1)));
+       
         animals.add(new Giraffe("Giraffe", 5, 4, 10,new Location(5, 6)));
         animals.add(new Cheetah("Cheetah",7,7,8, new Location(5,8)));
         animals.add(new Elephant("elphant",9,6,6, new Location(6,2)));
+        // animals.add(new Tiger("Tiger", 8 ,7 ,3,new Location(4,6)));
+        // animals.add(new Fox("Fox", 3,5,8, new Location(4,1)));
 
 
     }
@@ -34,7 +35,7 @@ public class Forest {
       
       Animal nearestAnimal = animals.get(0);
       Random ran1 = new Random();
-      int random1 = ran1.nextInt(6);
+      int random1 = ran1.nextInt(4);
       Animal firstAnimal = animals.get(random1);
 
       double distance1 = 1000;
@@ -113,8 +114,8 @@ public class Forest {
             animals.get(2).setLocation(new Location(random6, random2));
             animals.get(3).setLocation(new Location(random2, random3));
             animals.get(4).setLocation(new Location(random5, random6));
-            animals.get(5).setLocation(new Location(random2, random7));
-            animals.get(6).setLocation(new Location(random4, random3));
+            // animals.get(5).setLocation(new Location(random2, random7));
+            // animals.get(6).setLocation(new Location(random4, random3));
             System.out.println("current locations:");
             for(int f=0; f<animals.size(); f++){
               animals.get(f).locationData();
@@ -124,7 +125,8 @@ public class Forest {
      
      public void findWinner(){
            Animal largestStrength = animals.get(0);
-           Animal largestHl = animals.get(0);
+           Animal equalAnimal = animals.get(1);
+      
 
 
          for(int i = 0; i<animals.size(); i++){  
@@ -132,14 +134,22 @@ public class Forest {
             if (animals.get(i).getStrength() > largestStrength.getStrength()){   
                largestStrength =  animals.get(i);       
                }
-              
-           }
-              System.out.println(largestStrength.toString());
-              
-              
+              }
+              for(int t=0; t<animals.size(); t++){
+               if (animals.get(t).getStrength()== largestStrength.getStrength()){   
+                equalAnimal = animals.get(t) ;  
+               }
+               
+                }
+               
            
-          } 
-             
+           if(largestStrength.equals(equalAnimal)){
+              System.out.println(largestStrength.toString());
+              System.out.println(equalAnimal.toString());
             
-  }
-
+           }
+              else{
+                System.out.println(largestStrength.toString());
+              }
+           
+            }}
