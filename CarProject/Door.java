@@ -3,7 +3,7 @@ public class Door extends Part
 private String brand;
 private String colour;
 
-public Door( String partNumber, String brand, String colour)
+public Door(String brand, String colour)
 {
 
 this.brand = brand;
@@ -31,7 +31,7 @@ this.colour = colour;
 
 public String toString()
 {
-return super.toString() + "Part Number:" + partNumber + "\n" + "Brand:" + brand + "\n" + "Colour:" + colour ;
+return super.toString() + "Brand:" + brand + "\n" + "Colour:" + colour ;
 
 }
 }

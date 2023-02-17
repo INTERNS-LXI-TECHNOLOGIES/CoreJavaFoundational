@@ -3,7 +3,7 @@ public class Tyre extends Part
 private String brand;
 private String colour;
 
-public Tyre(String partNumber, String brand, String colour)
+public Tyre(String brand, String colour)
 {
 super.partNumber = partNumber;
 this.brand = brand;
@@ -30,6 +30,6 @@ this.colour = colour;
 
 public String toString()
 {
-return super.toString + "Part Number" + partNumber + "\n" + "Brand:" + brand + "\n" + "Colour:" + colour;	
+return super.toString + "Brand:" + brand + "\n" + "Colour:" + colour;	
 }
 }

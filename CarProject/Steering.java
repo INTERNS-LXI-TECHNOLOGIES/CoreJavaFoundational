@@ -3,7 +3,7 @@ public class Steering extends Part
 private String brand;
 private double radius;
 	
-public Steering(String partNumber, String brand, double radius)
+public Steering(String brand, double radius)
 {
 
 super.partNumber = partNumber;
@@ -31,6 +31,6 @@ this.radius = radius;
 
 public String toString()
 {
-return super.toString + "Part Number:" + partNumber + "\n" + "Brand:"+ brand +"\n" + "Radius:" + radius;
+return super.toString + "Brand:"+ brand +"\n" + "Radius:" + radius;
 }
 }

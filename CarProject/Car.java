@@ -55,6 +55,6 @@ this.registrationNumber = registrationNumber;
 
 public String toString()
 {
-return "Model:" + model + "\n" + "Colour:" + colour + "\n" + "Variant:" + variant + "\t" + "Registration Number:" + registrationNumber;
+return + "Model:" + model + "\n" + "Colour:" + colour + "\n" + "Variant:" + variant + "\t" + "Registration Number:" + registrationNumber;
 }
 }
