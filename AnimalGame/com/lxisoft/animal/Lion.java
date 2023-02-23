@@ -8,15 +8,15 @@ public class Lion extends Animal implements Carnivores{
     }
 
     @Override
-    public void fight(Animal animal) {
-        try{
+    public void fight(Animal animal) throws LuckFactorException{
+    
        if (animal instanceof Herbivores){
        
        if(((Herbivores)animal).escapeFromEnemy() == true){
-        }}}
-        catch(Exception e){
-            System.out.println(e);
-        }
+        throw new LuckFactorException();
+        }}
+       
+        
         if(animal instanceof Herbivores){
     
             animal.setStrength(animal.getStrength()-3);
@@ -30,6 +30,7 @@ public class Lion extends Animal implements Carnivores{
      
        }
     }
+   
     }
     
  

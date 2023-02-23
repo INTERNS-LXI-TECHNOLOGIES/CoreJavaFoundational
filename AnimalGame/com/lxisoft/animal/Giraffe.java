@@ -27,5 +27,6 @@ public class Giraffe extends Animal implements Herbivores {
             this.setStrength(this.getStrength()-1);
             animal.setStrength(animal.getStrength()-1);
         }
-     }
+    }
+
 }

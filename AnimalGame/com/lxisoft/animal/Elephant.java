@@ -1,4 +1,4 @@
-package com.lxisoft.launch;
+package com.lxisoft.animal;
 
 import java.util.Random;
 
@@ -31,5 +31,8 @@ public class Elephant extends Animal implements Herbivores {
             animal.setStrength(animal.getStrength()-1);
         }
      }
-    
+        
+
+  
 }
+    

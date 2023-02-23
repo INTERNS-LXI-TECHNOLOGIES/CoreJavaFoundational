@@ -2,12 +2,12 @@ package com.lxisoft.animal;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Animal {
+public class Animal implements Comparable<Animal>{
    private String name;
    private double strength;
    private double hungerLevel;
    private int vision;
-   Location location;
+   private Location location;
    private static String Feature;
 
    
@@ -72,9 +72,43 @@ public class Animal {
     void locationData(){
      System.out.println(this.name+ " location x= " + this.location.locationx+ " location y= " + this.location.locationy);
     }
-        public String toString(){
-        return   "The Winner is "+ this.name.toUpperCase() + " with strength: " + 
-         this.strength + " Hunger Level: " + this.hungerLevel + " vision " +this.vision;
+    public String toString(){
+        System.out.println(this.name.toUpperCase() + " with strength: " + 
+         this.strength + " Hunger Level: " + this.hungerLevel + " vision " +this.vision);
+         return name;
+        
+    }
+    public boolean equals(Object o){
+        if(o instanceof Animal&& o != null){
+            if (this.getStrength() ==((Animal)o).getStrength()){
+                return true;
+
+                
+            }
+
+        }
+        else {
+          return false;
+        
+        }
+        return false;
     }
 
+    @Override
+    public int compareTo(Animal o) {
+        if(this.getStrength()== ((Animal)o).getStrength()){
+            return 0;
+        }
+        else if(this.getStrength() > ((Animal)o).getStrength()){
+            return 1;
+        }
+        if(this.getStrength()<((Animal)o).getStrength()){
+            return -1;
+        }
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+  
+   
 }

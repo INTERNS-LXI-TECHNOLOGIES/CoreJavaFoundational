@@ -8,15 +8,14 @@ public class Fox extends Animal implements Carnivores {
     }
 
     @Override
-    public void fight(Animal animal) {
+    public void fight(Animal animal) throws LuckFactorException {
         if (animal instanceof Herbivores){
-            try{
+            
            if(((Herbivores)animal).escapeFromEnemy() == true){
+            throw new LuckFactorException();
            }
-           
-            }catch(Exception e){
-                System.out.println("femfefmefm");
-            }}
+          
+            }
     
             else{
         
@@ -31,4 +30,5 @@ public class Fox extends Animal implements Carnivores {
          
            }
         }
+     
     }

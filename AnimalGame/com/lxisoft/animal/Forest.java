@@ -4,11 +4,10 @@ import java.util.Random;
 
 import javax.xml.catalog.CatalogFeatures.Feature;
 
-import com.lxisoft.launch.Elephant;
-
 
 public class Forest {
      ArrayList<Animal> animals = new ArrayList<Animal>();
+     ArrayList<Animal> eqanimals = new ArrayList<Animal>();
   
 //animal details 
     public void animalDetails(){
@@ -16,19 +15,18 @@ public class Forest {
         
         animals.add(new Lion("lion", 9,10,6, new Location(4,9)));
         animals.add(new Deer("Deer", 6, 5,9, new Location(7,10)));
-       
         animals.add(new Giraffe("Giraffe", 5, 4, 10,new Location(5, 6)));
         animals.add(new Cheetah("Cheetah",7,7,8, new Location(5,8)));
         animals.add(new Elephant("elphant",9,6,6, new Location(6,2)));
-        // animals.add(new Tiger("Tiger", 8 ,7 ,3,new Location(4,6)));
-        // animals.add(new Fox("Fox", 3,5,8, new Location(4,1)));
+        animals.add(new Tiger("Tiger", 8 ,7 ,3,new Location(4,6)));
+        animals.add(new Fox("Fox", 3,5,8, new Location(4,1)));
 
 
     }
        public void showDetails(){
         for (int n=0; n<animals.size(); n++){
-          animals.get(n).anmialData();
-        
+          animals.get(n).toString();
+    
        }
       }
     public void animalFight(){
@@ -72,7 +70,10 @@ public class Forest {
 
 
          else if(firstAnimal instanceof Carnivores && nearestAnimal instanceof Herbivores){
-            ((Carnivores)firstAnimal).fight(nearestAnimal);
+            try{((Carnivores)firstAnimal).fight(nearestAnimal);}
+            catch(LuckFactorException e){
+              e.printStackTrace();
+            }
             if(((Herbivores)nearestAnimal).escapeFromEnemy() == false){
               System.out.println(firstAnimal.getName()+ " strength decresed to "+ firstAnimal.getStrength()  + 
               " hungerlevel decresed to "+ firstAnimal.getHungerLevel());
@@ -84,9 +85,12 @@ public class Forest {
              
              roamAnimal();
     }
+                          
          
           else{
-            ((Carnivores)firstAnimal).fight(nearestAnimal);
+            try{
+            ((Carnivores)firstAnimal).fight(nearestAnimal);}
+            catch(LuckFactorException e){}
             System.out.println(firstAnimal.getName()+ " strength decresed to "+ firstAnimal.getStrength()  + 
            " hungerlevel decresed to "+ firstAnimal.getHungerLevel());
           System.out.println(nearestAnimal.getName()
@@ -94,8 +98,7 @@ public class Forest {
           roamAnimal();
           }
 
-    
-         
+
          }
          
         
@@ -114,8 +117,8 @@ public class Forest {
             animals.get(2).setLocation(new Location(random6, random2));
             animals.get(3).setLocation(new Location(random2, random3));
             animals.get(4).setLocation(new Location(random5, random6));
-            // animals.get(5).setLocation(new Location(random2, random7));
-            // animals.get(6).setLocation(new Location(random4, random3));
+            animals.get(5).setLocation(new Location(random2, random7));
+            animals.get(6).setLocation(new Location(random4, random3));
             System.out.println("current locations:");
             for(int f=0; f<animals.size(); f++){
               animals.get(f).locationData();
@@ -124,32 +127,45 @@ public class Forest {
         }
      
      public void findWinner(){
-           Animal largestStrength = animals.get(0);
-           Animal equalAnimal = animals.get(1);
+           Animal winner = animals.get(0);
       
-
-
          for(int i = 0; i<animals.size(); i++){  
-        
-            if (animals.get(i).getStrength() > largestStrength.getStrength()){   
-               largestStrength =  animals.get(i);       
-               }
-              }
-              for(int t=0; t<animals.size(); t++){
-               if (animals.get(t).getStrength()== largestStrength.getStrength()){   
-                equalAnimal = animals.get(t) ;  
-               }
-               
-                }
-               
-           
-           if(largestStrength.equals(equalAnimal)){
-              System.out.println(largestStrength.toString());
-              System.out.println(equalAnimal.toString());
-            
+          for(int w =i+1; w<animals.size(); w++ ){
+           if (animals.get(i).compareTo(animals.get(w))>0){
+             winner = animals.get(i);
            }
-              else{
-                System.out.println(largestStrength.toString());
+        
+         
+            
+
+          }
+         }
+         System.out.println("winner "+winner);
+            // if (animals.get(i).getStrength() > largestStrength.getStrength()){   
+            //    largestStrength =  animals.get(i);       
+              
+            //    }
+            //   }
+              
+            //     System.out.println("the winner is " + largestStrength.toString());
+
+                System.out.println("equal Animals"+'\n'+ "==============================");
+
+                for(int p=0; p<animals.size()-1; p++){
+                  for(int j=p+1;j<animals.size(); j++ ){
+  
+                   if( animals.get(p).equals(animals.get(j))){
+                    System.out.println(animals.get(p).getName()+ " ====== "+ animals.get(j).getName());
+                 
+                
+                   
+                   }
+                      
+                  }
+                 }
+              
+                 
+                }
+
               }
-           
-            }}
+            
