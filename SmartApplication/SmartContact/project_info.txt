@@ -1,0 +1,4 @@
+Requirements
+
+1. Add new contact(name, phone number, email)
+2. list contacts
