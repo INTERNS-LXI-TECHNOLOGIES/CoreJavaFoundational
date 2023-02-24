@@ -7,8 +7,37 @@ int studentId;
 int monthNumber;
 int dayNumber;	
 Scanner s = new Scanner(System.in);
-
 School school = new School();
+
+public int getStudentId()
+{
+return studentId;
+}
+public void setStudentId(int studentId)
+{
+this.studentId = studentId;	
+}
+
+public int getMonthNumber()
+{
+return monthNumber;	
+}
+public void setMonthNumber(int monthNumber)
+{
+this.monthNumber = monthNumber;	
+}
+
+public int getDayNumber()
+{
+return dayNumber;	
+}
+public void setDayNumber(int dayNumber)
+{
+this.dayNumber = dayNumber;
+}
+
+
+
  boolean flag = true;
 boolean programContinue = true;
 public void viewThings(){
@@ -56,7 +85,7 @@ programContinue = quit();
 public boolean quit()
 {
 
-System.out.println("Do you want to continue");
+System.out.println("Do you want to continue? Press 'y' to continue, 'n' to exit");
 String c = s.nextLine();
 boolean programContinue = false ;
 if(c.equals("n"))
@@ -65,18 +94,19 @@ if(c.equals("n"))
 }
 return flag;
 }
+ //setMonthNumber
 
  void enterSchoolDetails()
 {
     System.out.println("Enter School Address");
-	school.schoolAddress = s.nextLine();
+	school.setSchoolAddress(s.nextLine());
 }
 
  void enterClassRoomDetails()
 {
 	
 	System.out.println("Enter Class Room Number");
-	school.classRoom.classRoomNumber = s.nextLine();
+	school.getClassRoom().setClassRoomNumber(s.nextLine());
 	
 }
 
@@ -84,17 +114,17 @@ return flag;
  void showAttendanceReport()
 {
 	System.out.println("Enter Student ID");
-    studentId =Integer.parseInt(s.nextLine());
+     setStudentId(Integer.parseInt(s.nextLine()));
     
 	
 	
     System.out.println("Enter Month");
-    monthNumber =Integer.parseInt(s.nextLine());
+    setMonthNumber(Integer.parseInt(s.nextLine()));
 	
 	
-	for(Day days:school.classRoom.students[studentId].months[monthNumber].days)
+	for(Day days:school.getClassRoom().getStudents()[studentId].getMonths()[monthNumber].getDays())
 	{
-		System.out.println(days.present);
+		System.out.println(days.getPresent());
 		
 		
 	}
@@ -106,12 +136,16 @@ return flag;
  
 {
 	while(flag){
+
+	System.out.println("Enter Student ID");
+    setStudentId(Integer.parseInt(s.nextLine()));
+	
 	
 	System.out.println("Enter Student Name");
-	String studentName = s.nextLine();
+	String setStudentName = s.nextLine();
 	
 	System.out.println("Enter Student gender");
-	String studentGender = s.nextLine();
+	String setStudentGender = s.nextLine();
 	flag=quit();
 }
 }
@@ -119,41 +153,17 @@ return flag;
  void markYourAttendance()
 {
 	System.out.println("Enter Student ID");
-    studentId =Integer.parseInt(s.nextLine());
+    setStudentId(Integer.parseInt(s.nextLine()));
     
 	
 	
     System.out.println("Enter Month");
-    monthNumber =Integer.parseInt(s.nextLine());
+    setMonthNumber(Integer.parseInt(s.nextLine()));
 
 
     System.out.println("Enter Day");
-    dayNumber = Integer.parseInt(s.nextLine());
+    setDayNumber(Integer.parseInt(s.nextLine()));
 	
-  school.classRoom.students[studentId].months[monthNumber].days[dayNumber].present = true;	
+  school.getClassRoom().getStudents()[studentId].getMonths()[monthNumber].getDays()[dayNumber].setPresent(true);	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

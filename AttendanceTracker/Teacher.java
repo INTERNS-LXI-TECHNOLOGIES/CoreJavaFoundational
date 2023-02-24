@@ -1,7 +1,18 @@
 public class Teacher
 {
 String teacherName;	
-public Teacher(){
+
+public String getTeacherName()
+{
+return teacherName;	
+}
+public void setTeacherName(String teacherName)
+{
+this.teacherName = teacherName;	
+}
+
+public Teacher()
+{	
 }
 public Teacher(String teacherName)
 {

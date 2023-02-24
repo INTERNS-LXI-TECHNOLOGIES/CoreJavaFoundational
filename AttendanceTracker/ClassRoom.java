@@ -1,9 +1,36 @@
 public class ClassRoom
 {
-String classRoomNumber;
+private String classRoomNumber;
 
-Teacher teacher;
-Student[] students = new Student[6];
+private Teacher teacher;
+private Student[] students = new Student[6];
+
+public String getClassRoomNumber()
+{
+return classRoomNumber;
+}
+public void setClassRoomNumber(String classRoomNumber)
+{
+this.classRoomNumber = classRoomNumber;	
+}
+
+public Teacher getTeacher()
+{
+return teacher;
+}
+public void setTeacher(Teacher teacher)
+{
+this.teacher = teacher;	
+}
+
+public Student[] getStudents()
+{
+return students;
+}
+public void setStudents(Student[] students)
+{
+this.students = students;	
+}
 
 public ClassRoom(){
 	this.classRoomNumber = "";

@@ -1,12 +1,17 @@
 public class Month
 {
 
-Day[] days = new Day[31];
+private Day[] days = new Day[31];
 
 
-public Month(Day[] days)
+public Day[] getDays()
 {
-	this.days=days;
+return days;	
+}
+
+public void setDays(Day[] days)
+{
+this.days=days;
 }
 
 

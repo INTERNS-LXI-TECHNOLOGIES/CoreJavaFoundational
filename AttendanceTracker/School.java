@@ -1,8 +1,24 @@
 public class School
 {
-String schoolAddress;	
+private String schoolAddress;	
 
-ClassRoom classRoom = new ClassRoom();
+private ClassRoom classRoom = new ClassRoom();
+
+public ClassRoom getClassRoom()
+{
+return classRoom;	
+}
+
+
+public String getSchoolAddress()
+{
+return schoolAddress;	
+}
+public void setSchoolAddress(String schoolAddress)
+{
+this.schoolAddress = schoolAddress;
+}
+
 public School()
 {
 }
