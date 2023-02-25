@@ -40,7 +40,7 @@ public class Contact
               if(persons.getName()!=null)
                 {
                   list = list+persons;
-                return list; 
+                System.out.println(list); 
                 }
 
 		  	 

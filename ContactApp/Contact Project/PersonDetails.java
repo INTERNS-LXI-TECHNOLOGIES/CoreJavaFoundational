@@ -42,7 +42,7 @@ private String emailId;
 	{
 		
 		
-		return "Namerrrrrr: " + name + "\n"
+		return "Name: " + name + "\n"
 		+"Number: " + number + "\n"
 		+ "emailId: " + emailId;
 		
