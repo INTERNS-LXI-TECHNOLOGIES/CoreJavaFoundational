@@ -44,7 +44,7 @@ private String emailId;
 		
 		return "Name: " + name + "\n"
 		+"Number: " + number + "\n"
-		+ "emailId: " + emailId;
+		+ "emailId: " + emailId + "\n";
 		
 		
 	}

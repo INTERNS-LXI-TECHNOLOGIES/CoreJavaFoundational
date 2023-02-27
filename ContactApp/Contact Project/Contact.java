@@ -40,13 +40,11 @@ public class Contact
               if(persons.getName()!=null)
                 {
                   list = list+persons;
-                System.out.println(list); 
-                }
+				}
 
 		  	 
 		 }
-		   return ""; 
+		  return list; 
 	     }		 
-	 
 }
 	
