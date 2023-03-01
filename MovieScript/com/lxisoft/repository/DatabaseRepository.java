@@ -10,7 +10,7 @@ public class DatabaseRepository implements Repository {
 
     public List <Dialogue>  findAll(){
 
-        List<Dialogue> dialogue = new ArrayList <Dialogue>();
+        List <Dialogue> dialogue = new ArrayList <Dialogue>();
 
         try {
 
