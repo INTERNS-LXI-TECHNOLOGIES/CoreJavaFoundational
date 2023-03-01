@@ -15,7 +15,8 @@ public class ViewController
         return controller;
        }
      
-		public void viewThing(){
+		public void viewThing()
+		{
 			boolean programContinue = true;
 			
 				 while (programContinue)
@@ -26,7 +27,7 @@ public class ViewController
 			
 			
 			    System.out.println("Enter 1 :VEHICLE DETAILS");
-		        System.out.println("Enter 2 :CHECK VEHICLE DETAILS");
+		        System.out.println("Enter 2 :PRINT VEHICLE DETAILS");
 		        System.out.println("Enter 3 :QUIT");
 		        
 
@@ -42,19 +43,19 @@ public class ViewController
 					
 					
 			     case "2":
-                  checkDetails();
+                  printVehicleDetails();
 				 
                       break;
 					  
-				case "3":
+				 case "3":
 				
                     System.out.print("Quit");			
 					programContinue = false;
                       break;
 					  
-				default:
+				 default:
 					System.out.println("Invalid Expression");		
-			}
+			      }
 		}
 		}
 			
@@ -92,13 +93,12 @@ public class ViewController
 									
 									
 								 case "2":
-								  //fourWheelerDetails();
-								 
-									  break;
+								  fourWheelerDetails();
+								   break;
 									  
 								
 								case "3":
-								  //heavyCatogoryDetails();
+								  heavyCatogoryDetails();
 									  break;
 									  
 									  case "4":
@@ -112,15 +112,17 @@ public class ViewController
 	        public void twoWheelerDetails()	
 		     {
 					boolean flag = true;	
-					int i = 0;	
+					int i= 0;	
 					while (flag)
-						{
-						if(controller.getVehicles()[i]==null)
-						{
-							controller.getVehicles()[i]=new Bike();
+					{	
+					for (int p = 0;p<10;p++)
+					{	
+						
+						if(controller.getVehicles()[p]==null){
+					       controller.getVehicles()[p]=new Bike();
 						}
-						  
-                          System.out.println("Enter  bike/scooty registration number");
+					}	  
+                           System.out.println("Enter  bike/scooty registration number");
                            controller.getVehicles()[i].setRegisterNumber(s.nextLine());
    
                             System.out.println("Enter Date");
@@ -128,29 +130,43 @@ public class ViewController
    
 					        System.out.println("enter brand");
 							((Bike)controller.getVehicles()[i]).setBrand(s.nextLine());
+							
 					        System.out.println("Enter pollution controll center name");
 					        controller.getVehicles()[i].setCenterName(s.nextLine());
-   
+							i++;
                             System.out.println("Enter yes to continue no to quit");
                             String response = s.nextLine();
-				        
+				             
                         if(response.equals("no"))
 		                 {
                           flag = false;
-                         }
+ 						 }
+						}
+					
 					}
-			}
+			
 					
 					
-			/*public void fourWheelerDetails()	
+			    public void fourWheelerDetails()	
 				{
-					boolean flag=true;
-					while (flag)
-						{
-							
-							
+                  boolean flag=true;
+				  int i = 0;
+				    while(flag)
+					{
+					 for (int k = 0; k<10; k++)
+					{	
+					 if(controller.getVehicles()[k]==null){
+						controller.getVehicles()[k]=new Car();
+					  }
+				       
+					}
                        System.out.println("Enter  car registration number");
                        controller.getVehicles()[i].setRegisterNumber(s.nextLine());
+					   
+					   System.out.println("enter brand");
+					   ((Car)controller.getVehicles()[i]).setBrand(s.nextLine());
+					   
+					   
    
                        System.out.println("Enter Date");
                        controller.getVehicles()[i].setDate(s.nextLine());
@@ -158,7 +174,7 @@ public class ViewController
 					   System.out.println("Enter pollution controll center name");
 					   controller.getVehicles()[i].setCenterName(s.nextLine());
    
-   
+                        i++;
                        System.out.println("Enter yes to continue no to quit");
                        String response = s.nextLine();
 				        
@@ -166,30 +182,41 @@ public class ViewController
 		                 {
                           flag = false;
                          }
-						} 									
-				}*/
 					
+					}
+				    
+					}	 									
+				
+				
+				
 					
-					
-					
-					
-					
-					
-			/*public void heavyCatogoryDetails()	
+			public void heavyCatogoryDetails()	
 				{
-				boolean flag=true;
-				while (flag)
-					{
-								
+			boolean flag=true;
+			int i = 0;
+			while (flag)
+			  {
+				for (int n = 0;n<10;n++)
+				  {
+					  
+                     if(controller.getVehicles()[n]==null){
+						  controller.getVehicles()[n]=new Lorry();
+					  }
+
+                      
+				  }  
                        System.out.println("Enter  lorry registration number");
-                       String re =s.nextLine();
-   
+                       controller.getVehicles()[i].setRegisterNumber(s.nextLine());
+					   
+					   System.out.println("enter brand");
+					   ((Lorry)controller.getVehicles()[i]).setBrand(s.nextLine());
+					   
                        System.out.println("Enter Date");
-                       String st = s.nextLine();
+                       controller.getVehicles()[i].setDate(s.nextLine());
 					  
 					   System.out.println("Enter pollution controll center name");
-					   String pl = s.nextLine();
-   
+					    controller.getVehicles()[i].setCenterName(s.nextLine());
+						i++;
                        System.out.println("Enter yes to continue no to quit");
                        String response = s.nextLine();
 				        
@@ -201,16 +228,11 @@ public class ViewController
 							 }
 						  
                          }
-
-					}
-				}*/
+                   
+			  }
+			}
 			
-
-
-	           
-
-
-          public void checkDetails()
+          public void printVehicleDetails()
                {
                     System.out.println(controller);    
 			    }

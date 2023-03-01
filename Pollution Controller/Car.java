@@ -6,7 +6,7 @@ private String brand;
 
 public String getBrand()
     {
-	  return Brand;
+	  return brand;
     }
     public void setBrand(String brand)
         {
@@ -21,10 +21,10 @@ public String getBrand()
 
 
 
-String toString()
+public String toString()
 {
 	
-return "Brand" + brand;	
+return "Brand" + brand+super.toString();	
 	
 }	
 	

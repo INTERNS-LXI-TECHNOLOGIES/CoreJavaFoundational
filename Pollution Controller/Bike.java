@@ -25,7 +25,7 @@ public String getBrand()
 public String toString()
 {
 	
-return "Brand" + brand;	
+return "Brand" + brand+super.toString();	
 	
 }
 }
