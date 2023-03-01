@@ -42,7 +42,7 @@ classroom.setStudent(students);
 
 }
 
-school1.printdetails();
+school1.printDetails();
 
 }
 

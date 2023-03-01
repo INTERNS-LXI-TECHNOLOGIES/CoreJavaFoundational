@@ -48,7 +48,7 @@ public void setPlace(String newPlace) {
 }
 
 
-public void printdetails() {
+public void printDetails() {
 
 System.out.println("\n.....SCHOOL.....\n");
 
