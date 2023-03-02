@@ -3,6 +3,8 @@ package pollution;
 public class Vehicle {
 
     private String brandName;
+    private String regNo;
+
     public String getBrandName() {
         return brandName;
     }
@@ -15,16 +17,11 @@ public class Vehicle {
     public void setRegNo(String regNo) {
         this.regNo = regNo;
     }
-    private String regNo;
-
-    
+  
     @Override
     public String toString() {
         
         return "Vehicle :"  + brandName + "\n" +  "regNo :" + regNo+ "\n";
     }
-    
-    
-
-    
+      
 }

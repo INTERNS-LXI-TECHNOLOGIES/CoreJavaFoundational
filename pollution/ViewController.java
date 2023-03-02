@@ -1,10 +1,12 @@
 package pollution;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ViewController {
-   
     Scanner sc = new Scanner(System.in);
     PollutionCenter pollutionCenter = new PollutionCenter();
+    //List<Car> carList=new ArrayList<Car>();
 
     
 
@@ -27,7 +29,6 @@ System.out.println("\t  Press 3 : Quit \n");
 				addPollition();
 					
 					break;
-					
 					
 			     case ("2"):
                    
@@ -66,8 +67,7 @@ System.out.println("\t  Press 3 : Quit \n");
 				addCar();
 					
 					break;
-					
-					
+						
 			     case ("2"):
                    
 				 addLorry();
@@ -94,28 +94,37 @@ System.out.println("\t  Press 3 : Quit \n");
 
     public void addCar() {
 
-        int j=0;
+        
         boolean c = true;
         String response;
+        // Car benz=new Car();
+        // benz.setBrandName("response car");
+           // carList.add(benz);
+            //System.out.println("car list obj"+carList.toString());
+
+
         while(c){
 
-            for (int i =0; i<10;){
+            for (int i =0; i<10; i++){
                 
                 if (pollutionCenter.vehicles[i]==null){
                 pollutionCenter.vehicles[i] = new Car();
               
                 }
-                i++;
-                break;
-            }
+               
+                
+            
             System.out.println("\t  Add Car Brand Name \n");
 
-            pollutionCenter.vehicles[j].setBrandName(sc.nextLine());
+            pollutionCenter.vehicles[i].setBrandName(sc.nextLine());
 
             System.out.println("\t  Add Car Register Number \n");
-            pollutionCenter.vehicles[j].setRegNo(sc.nextLine());
+            pollutionCenter.vehicles[i].setRegNo(sc.nextLine());
 
-            j++;
+            
+            break;
+            }
+            
             System.out.println("\t  Type Yes to Continue No to Quit \n");
 
             response = sc.nextLine();
@@ -132,27 +141,30 @@ System.out.println("\t  Press 3 : Quit \n");
 
     public void addLorry() {
 
-        int j=0;
+        
         boolean c = true;
         String response;
         while(c){
 
-            for (int i =0; i<10;){
+            for (int i =0; i<10;i++){
                 if (pollutionCenter.vehicles[i]==null){
-                pollutionCenter.vehicles[i] = new Lorry();
-                
+                    pollutionCenter.vehicles[i] = new Lorry();
+                    
                 }
-                i++;
-                break;
-            }
+                
+                
+            
             System.out.println("\t  Add Lorry Brand Name \n");
             
-            pollutionCenter.vehicles[j].setBrandName(sc.nextLine());
+            pollutionCenter.vehicles[i].setBrandName(sc.nextLine());
 
             System.out.println("\t  Add Lorry Register Number \n");
-            pollutionCenter.vehicles[j].setRegNo(sc.nextLine());
+            pollutionCenter.vehicles[i].setRegNo(sc.nextLine());
+
             
-            j++;
+            break;
+            }
+            
             System.out.println("\t  Type Yes to Continue No to Quit \n");
 
             response = sc.nextLine();
@@ -168,28 +180,29 @@ System.out.println("\t  Press 3 : Quit \n");
 
     public void addTwoWheeler() {
 
-        int j=0;
+        
         boolean c = true;
         String response;
         while(c){
 
-            for (int i =0; i<10;){
+            for (int i =0; i<10; i++){
                 if (pollutionCenter.vehicles[i]==null){
-                pollutionCenter.vehicles[i] = new Twowheeler();
+                    pollutionCenter.vehicles[i] = new Twowheeler();
                 
                 }
-                i++;
-                break;
-            }
+               
+                
+            
             System.out.println("\t  Add Twowheeler Brand Name \n");
             
-            pollutionCenter.vehicles[j].setBrandName(sc.nextLine());
+            pollutionCenter.vehicles[i].setBrandName(sc.nextLine());
 
             System.out.println("\t  Add Twowheeler Register Number \n");
-            pollutionCenter.vehicles[j].setRegNo(sc.nextLine());
+            pollutionCenter.vehicles[i].setRegNo(sc.nextLine());
 
-
-            j++;
+            break;
+            }
+            
             System.out.println("\t  Type Yes to Continue No to Quit \n");
 
             response = sc.nextLine();

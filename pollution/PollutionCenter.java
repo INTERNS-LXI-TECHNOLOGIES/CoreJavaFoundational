@@ -8,7 +8,16 @@ public class PollutionCenter {
 
     @Override
     public String toString() {
-        return "PollutionCenter : " + Arrays.toString(vehicles);
+        String details = "" ;
+
+        for (Vehicle vehicle : vehicles) {
+
+            //if(vehicle.getBrandName()!=null)
+
+             details = details+vehicle;
+             
+        }
+        return details;
     }
 
     
