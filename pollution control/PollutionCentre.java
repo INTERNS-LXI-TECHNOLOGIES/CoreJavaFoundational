@@ -23,11 +23,11 @@ public class PollutionCentre
 	  public String toString(){
 		String source = "Center Name :"+" "+ centreName;
 		for(Vehicle machine:vehicles){
-			
-			source = source+machine;
+			if(machine!=null)
+			{
+			    source = source+machine;
+		    }
 		}
-		
-		
 		return source;
 	}
 

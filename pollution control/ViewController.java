@@ -4,7 +4,7 @@ public class ViewController
    
   PollutionCentre center = new PollutionCentre();
   Scanner scan= new Scanner(System.in);
-  
+  int i = 0;
   public void viewInfo(){
 	  System.out.println("            POLLUTION CENTRE                   ");
 	  boolean flag = true;
@@ -83,29 +83,37 @@ public class ViewController
   
   public void enterCarDetails()
   {
-	int i = 0;
+	
 	boolean respond = true;
 	while(respond)
 	{
-		
-		if(center!=null)
+		for(int j=0;j<10;j++){
+		   if(center.getVehicle()[j]==null)
 		{
-			center.getVehicle()[i] = new Car();
+		  center.getVehicle()[j] = new Car();
+		  break;
 			
 		}
-	 System.out.println(" Enter Register number"+"\n");
-	 center.getVehicle()[i].setRegno(scan.nextLine()); 
-	 System.out.println("Enter Date"+"\n");
-	 center.getVehicle()[i].setDate(scan.nextLine());
-	 System.out.println("Centre"+"\n");
-     center.setCentreName(scan.nextLine());
-	 System.out.println("\n How many Passenger"+"\n");
-	 center.getVehicle()[i].setPassenger(scan.nextLine());
-	 i++;
-     System.out.println("\n"+i+" "+"Register Number Entered \n\n");
-     System.out.println("\n"+i+" "+"Date Entered \n\n");
-     System.out.println("Type YES to continue NO to quit \n\n");
-     String response = scan.nextLine();
+		}
+		System.out.println(" Enter Register number"+"\n");
+	    center.getVehicle()[i].setRegno(scan.nextLine());
+		if(center.getVehicle()[i].getRegno()==center.getVehicle()[i].getRegno())
+		{
+		  	System.out.println("This vehicle is already certified");
+        }
+          	
+	      System.out.println("Enter Date"+"\n");
+	      center.getVehicle()[i].setDate(scan.nextLine());
+	      System.out.println("Centre"+"\n");
+          center.setCentreName(scan.nextLine());
+	      System.out.println("\n How many Passenger"+"\n");
+	      center.getVehicle()[i].setPassenger(scan.nextLine());
+	      i++;
+          System.out.println("\n"+i+" "+"Register Number Entered \n\n");
+          System.out.println("\n"+i+" "+"Date Entered \n\n");
+          System.out.println("Type YES to continue NO to quit \n\n");
+	   
+       String response = scan.nextLine();
         if(response.equals("no"))
 		{
 		  respond = false;
@@ -116,14 +124,14 @@ public class ViewController
 }
     public void enterLorryDetails()
 	{
-		int i = 0;
+		
 	    boolean respond = true;
 		
 	    while(respond)
 		{
 			
 		for(int j=0;j<10;j++){
-		   if(center.getVehicle()[i]==null)
+		   if(center.getVehicle()[j]==null)
 		{
 			center.getVehicle()[j] = new Lorry();
 			break;
