@@ -1,6 +1,7 @@
 package com.lxisoft.animal;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.*;
 
 public class Animal implements Comparable<Animal>{
    private String name;
@@ -64,11 +65,7 @@ public class Animal implements Comparable<Animal>{
         this.strength = Math.round(this.strength/2);
     
     }
-    void  anmialData(){
-       
-       System.out.println(  "-> " + this.name + " "  +  "strength: " + this.strength + " Hunger Level: " + this.hungerLevel 
-        +  " vision: " + this.vision );
-    }
+
     void locationData(){
      System.out.println(this.name+ " location x= " + this.location.locationx+ " location y= " + this.location.locationy);
     }
@@ -96,19 +93,11 @@ public class Animal implements Comparable<Animal>{
 
     @Override
     public int compareTo(Animal o) {
-        if(this.getStrength()== ((Animal)o).getStrength()){
-            return 0;
+        return (int) (this.getStrength() - o.getStrength());
+           
         }
-        else if(this.getStrength() > ((Animal)o).getStrength()){
-            return 1;
-        }
-        if(this.getStrength()<((Animal)o).getStrength()){
-            return -1;
-        }
-        // TODO Auto-generated method stub
-        return 0;
+
     }
 
   
    
-}
