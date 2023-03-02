@@ -1,0 +1,5 @@
+Requirements
+
+1. Add different vegetables
+2. list all vegetables, juicy vegetables, vegetables with root edible, vegetables with stem edible etc.
+3. Implement encapsulation, toString, package, super class and interface

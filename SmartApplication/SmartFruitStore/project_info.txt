@@ -1,0 +1,5 @@
+Requirements
+
+1. Add different fruits
+2. list all fruits, juicy fruits, single seeded fruit, and multi seeded fruit
+3. Implement encapsulation, toString, package, super class and interface
