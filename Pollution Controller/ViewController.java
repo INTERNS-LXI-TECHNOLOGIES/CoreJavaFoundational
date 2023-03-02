@@ -4,12 +4,52 @@ public class ViewController
 {
  
 	 
-	 
 	private PollutionController controller = new PollutionController();
     Scanner s = new Scanner(System.in);
+	int i = 0;
+	
+	
+	
+	/*public Bike bike = new Bike();
+	
+	 
+	 public Bike getBike()
+    {
+	  return bike;
+    }
+    public void setBike(Bike bike)
+        {
+	      this.brand = brand;
+		}
+
+	 
+	public Car car = new Car();
+	
+	 
+	 public Car getCar()
+    {
+	  return car;
+    }
+    public void setCar(Car car)
+        {
+	      this.car = car;
+		}
+
 	 
 	 
+	 public Lorry l = new Lorry();
+	
 	 
+	 public Lorry getLorry()
+    {
+	  return l;
+    }
+    public void setLorry(Lorry lorry)
+        {
+	      this.l = l;
+		}*/ 
+	 
+	 	 
 	public PollutionController getController()
        {
         return controller;
@@ -112,7 +152,7 @@ public class ViewController
 	        public void twoWheelerDetails()	
 		     {
 					boolean flag = true;	
-					int i= 0;	
+					
 					while (flag)
 					{	
 					for (int p = 0;p<10;p++)
@@ -129,7 +169,7 @@ public class ViewController
                             controller.getVehicles()[i].setDate(s.nextLine());
    
 					        System.out.println("enter brand");
-							((Bike)controller.getVehicles()[i]).setBrand(s.nextLine());
+							//((Bike)bike).controller.getVehicles()[i].setBrand(s.nextLine());
 							
 					        System.out.println("Enter pollution controll center name");
 					        controller.getVehicles()[i].setCenterName(s.nextLine());
@@ -150,7 +190,7 @@ public class ViewController
 			    public void fourWheelerDetails()	
 				{
                   boolean flag=true;
-				  int i = 0;
+				  
 				    while(flag)
 					{
 					 for (int k = 0; k<10; k++)
@@ -164,8 +204,7 @@ public class ViewController
                        controller.getVehicles()[i].setRegisterNumber(s.nextLine());
 					   
 					   System.out.println("enter brand");
-					   ((Car)controller.getVehicles()[i]).setBrand(s.nextLine());
-					   
+					   //((Car)car).controller.getVehicles()[i].setBrand(s.nextLine());
 					   
    
                        System.out.println("Enter Date");
@@ -193,7 +232,7 @@ public class ViewController
 			public void heavyCatogoryDetails()	
 				{
 			boolean flag=true;
-			int i = 0;
+			
 			while (flag)
 			  {
 				for (int n = 0;n<10;n++)
@@ -209,7 +248,7 @@ public class ViewController
                        controller.getVehicles()[i].setRegisterNumber(s.nextLine());
 					   
 					   System.out.println("enter brand");
-					   ((Lorry)controller.getVehicles()[i]).setBrand(s.nextLine());
+					   //((Lorry)lorry).controller.getVehicles()[i].setBrand(s.nextLine());
 					   
                        System.out.println("Enter Date");
                        controller.getVehicles()[i].setDate(s.nextLine());

@@ -45,9 +45,36 @@ String centerName;
 
   public String toString()
 	{
-	 return "Register Number" + registerNumber + "\n Date" + date+"\n Center Name"+centerName;	
+	 return      "Register Number:"  + registerNumber + "\n"
+				 + "Date:" + date+ "\n" 
+				 + "Center Name:" + centerName + "\n";	
 	
     }
 
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
