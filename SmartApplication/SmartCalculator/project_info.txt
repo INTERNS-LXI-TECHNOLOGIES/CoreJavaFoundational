@@ -1,0 +1,4 @@
+Requirements
+
+1. Do an operation(division, multiplication, subtraction and addition)
+2. list past operations and results
