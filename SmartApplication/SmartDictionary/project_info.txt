@@ -1,0 +1,4 @@
+Requirements
+
+1. Add new word(word, meaning, clause)
+2. list words
