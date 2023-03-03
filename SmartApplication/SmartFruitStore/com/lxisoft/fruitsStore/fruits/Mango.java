@@ -8,8 +8,5 @@ public class Mango extends Fruit implements SingleSeedable {
     public String toString() {
         return "Mango Details : " + super.toString();
     }
-
-
-    
-    
+      
 }

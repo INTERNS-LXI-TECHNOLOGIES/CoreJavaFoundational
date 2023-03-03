@@ -21,8 +21,8 @@ public class ViewController {
         System.out.println("\t  ----- Welcome To Fruits Store ----- \n");
 
         System.out.println("\t  Press 1 :  Add Fruits  \n");
-        System.out.println("\t  Press 2 : View Fruits Details  \n");
-        System.out.println("\t  Press 3 : Quit \n");
+        System.out.println("\t  Press 2 :  View Fruits Details  \n");
+        System.out.println("\t  Press 3 :  Quit \n");
 
         String st = s.nextLine();
 
@@ -62,11 +62,11 @@ public class ViewController {
       while (cs){
 
         System.out.println("\t  Press 1 :  Show All Fruits  \n");
-        System.out.println("\t  Press 2 : Show MultiSeed Fruits \n");
-        System.out.println("\t  Press 3 : Show SeedLess Fruits \n");
-        System.out.println("\t  Press 4 : Show SingleSeed Fruits \n");
-        System.out.println("\t  Press 5 : Show Juicy Fruits \n");
-        System.out.println("\t  Press 6 : Quit \n");
+        System.out.println("\t  Press 2 :  Show MultiSeed Fruits \n");
+        System.out.println("\t  Press 3 :  Show SeedLess Fruits \n");
+        System.out.println("\t  Press 4 :  Show SingleSeed Fruits \n");
+        System.out.println("\t  Press 5 :  Show Juicy Fruits \n");
+        System.out.println("\t  Press 6 :  Quit \n");
 
         String st = s.nextLine();
 
@@ -74,27 +74,26 @@ public class ViewController {
         {
 
           case ("1"):
-          store.viewMultiSeedFruits();
+          store.viewAllFruits();
 					
 					break;
 					
 			    case ("2"):
-            System.out.println("MultiSeed Fruit");
+            store.viewMultiSeedFruits();
 				 
               break;
 
               case ("3"):
-              System.out.println("SeedLess Fruit");
-				 
+            System.out.println("not completed");
               break;
 
               case ("4"):
-              System.out.println("SingleSeed Fruit");
+              System.out.println("not completed");
             
               break;
 
               case ("5"):
-              System.out.println("Juicy Fruit");
+              System.out.println("not completed");
 				 
               break;
 
@@ -135,7 +134,7 @@ public class ViewController {
             System.out.println("\t  Press 2 :  SeedLess  \n");
             System.out.println("\t  Press 3 :  SingleSeed  \n");
             System.out.println("\t  Press 4 :  Juicy  \n");
-            System.out.println("\t  Press 5 : Quit \n");
+            System.out.println("\t  Press 5 :  Quit \n");
 
 
             String count  = s.nextLine();

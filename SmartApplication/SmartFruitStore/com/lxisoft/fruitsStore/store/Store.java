@@ -37,7 +37,11 @@ public class Store {
     Scanner sc = new Scanner(System.in);
 
     List <Fruit>  fruits = new ArrayList<Fruit> ();
-    
+
+    Apple apple = new Apple();
+    Grapes grapes = new Grapes();
+    Mango mango = new Mango();
+    Orange orange = new Orange();
 
     public void addApple() {
 
@@ -52,7 +56,7 @@ public class Store {
 
         //for(int i = 1; i<=appleNo; i++){
 
-            Apple apple = new Apple();
+           
 
             System.out.println("\t  ----- Add Fruit Name ----- \n");
             apple.setFruitName(sc.nextLine());
@@ -87,7 +91,7 @@ public class Store {
 
         //for(int i = 1; i<=grapesNo; i++){
 
-            Grapes grapes = new Grapes();
+            
             System.out.println("\t  ----- Add Fruit Name ----- \n");
             grapes.setFruitName(sc.nextLine());
 
@@ -118,7 +122,6 @@ public class Store {
 
         //for(int i = 1; i<=mangoNo; i++){
 
-            Mango mango = new Mango();
 
             System.out.println("\t  ----- Add Fruit Name ----- \n");
             mango.setFruitName(sc.nextLine());
@@ -151,7 +154,6 @@ public class Store {
 
         //for(int i = 1; i<=orangeNo; i++){
 
-            Orange orange = new Orange();
 
             System.out.println("\t  ----- Add Fruit Name ----- \n");
             orange.setFruitName(sc.nextLine());
@@ -173,9 +175,32 @@ public class Store {
     //}
 
 
-        public void viewMultiSeedFruits() {
+        public void viewAllFruits() {
 
             System.out.println(fruits);
+            
+        }
+
+        public void viewMultiSeedFruits() {
+
+            for (Fruit fruit : fruits) {
+
+                System.out.println(fruit);
+
+                //if(apple instanceof MultiSeedable){
+
+                    System.out.println("\t\t MultiSeed Fruits \n");
+                    System.out.println(fruit);
+
+                //}
+                
+            }
+            
+        }
+
+        public void viewSeedLessFruits() {
+
+            //timeOut
             
         }
     
