@@ -5,9 +5,6 @@ String registerNumber;
 String date;
 String centerName;
 
-
-
-
 	
 	public String getRegisterNumber()
     {

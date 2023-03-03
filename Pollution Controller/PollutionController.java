@@ -19,7 +19,7 @@ public void setVehicles(Vehicle[] vehicles)
 	
 		
 	
-	public PollutionController(){
+public PollutionController(){
 }
   
 

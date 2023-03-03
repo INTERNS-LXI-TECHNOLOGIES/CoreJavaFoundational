@@ -3,8 +3,6 @@ public class  Bike extends Vehicle
 
 private String brand;
 
-
-
 public String getBrand()
     {
 	  return brand;
@@ -13,14 +11,6 @@ public String getBrand()
         {
 	      this.brand = brand;
 		}
-
-
-
-
-
-
-
-
 
 public String toString()
 {

@@ -2,70 +2,18 @@ import java.util.Scanner;
 
 public class ViewController
 {
- 
-	 
 	private PollutionController controller = new PollutionController();
     Scanner s = new Scanner(System.in);
 	int i = 0;
 	
-	
-	
-	/*public Bike bike = new Bike();
-	
-	 
-	 public Bike getBike()
-    {
-	  return bike;
-    }
-    public void setBike(Bike bike)
-        {
-	      this.brand = brand;
-		}
-
-	 
-	public Car car = new Car();
-	
-	 
-	 public Car getCar()
-    {
-	  return car;
-    }
-    public void setCar(Car car)
-        {
-	      this.car = car;
-		}
-
-	 
-	 
-	 public Lorry l = new Lorry();
-	
-	 
-	 public Lorry getLorry()
-    {
-	  return l;
-    }
-    public void setLorry(Lorry lorry)
-        {
-	      this.l = l;
-		}*/ 
-	 
-	 	 
-	public PollutionController getController()
-       {
-        return controller;
-       }
-     
 		public void viewThing()
 		{
 			boolean programContinue = true;
 			
 				 while (programContinue)
 		{
-
-	
              System.out.println("\n----POLLUTION CONTROLL----\n");
-			
-			
+		
 			    System.out.println("Enter 1 :VEHICLE DETAILS");
 		        System.out.println("Enter 2 :PRINT VEHICLE DETAILS");
 		        System.out.println("Enter 3 :QUIT");
@@ -99,12 +47,7 @@ public class ViewController
 		}
 		}
 			
-			public void contactDetails()
-			{
-			
-	
-}
-
+		
        public void vehicleDetails()
      {
 	              
@@ -169,7 +112,7 @@ public class ViewController
                             controller.getVehicles()[i].setDate(s.nextLine());
    
 					        System.out.println("enter brand");
-							//((Bike)bike).controller.getVehicles()[i].setBrand(s.nextLine());
+							((Bike)controller.getVehicles()[i]).setBrand(s.nextLine());
 							
 					        System.out.println("Enter pollution controll center name");
 					        controller.getVehicles()[i].setCenterName(s.nextLine());
@@ -185,8 +128,6 @@ public class ViewController
 					
 					}
 			
-					
-					
 			    public void fourWheelerDetails()	
 				{
                   boolean flag=true;
@@ -195,7 +136,8 @@ public class ViewController
 					{
 					 for (int k = 0; k<10; k++)
 					{	
-					 if(controller.getVehicles()[k]==null){
+					 if(controller.getVehicles()[k]==null)
+					 {
 						controller.getVehicles()[k]=new Car();
 					  }
 				       
@@ -204,7 +146,7 @@ public class ViewController
                        controller.getVehicles()[i].setRegisterNumber(s.nextLine());
 					   
 					   System.out.println("enter brand");
-					   //((Car)car).controller.getVehicles()[i].setBrand(s.nextLine());
+					   ((Car)controller.getVehicles()[i]).setBrand(s.nextLine());
 					   
    
                        System.out.println("Enter Date");
@@ -226,9 +168,6 @@ public class ViewController
 				    
 					}	 									
 				
-				
-				
-					
 			public void heavyCatogoryDetails()	
 				{
 			boolean flag=true;
@@ -242,19 +181,18 @@ public class ViewController
 						  controller.getVehicles()[n]=new Lorry();
 					  }
 
-                      
-				  }  
+                   }  
                        System.out.println("Enter  lorry registration number");
                        controller.getVehicles()[i].setRegisterNumber(s.nextLine());
 					   
 					   System.out.println("enter brand");
-					   //((Lorry)lorry).controller.getVehicles()[i].setBrand(s.nextLine());
+					   ((Lorry)controller.getVehicles()[i]).setBrand(s.nextLine());
 					   
                        System.out.println("Enter Date");
                        controller.getVehicles()[i].setDate(s.nextLine());
 					  
 					   System.out.println("Enter pollution controll center name");
-					    controller.getVehicles()[i].setCenterName(s.nextLine());
+					   controller.getVehicles()[i].setCenterName(s.nextLine());
 						i++;
                        System.out.println("Enter yes to continue no to quit");
                        String response = s.nextLine();
