@@ -97,10 +97,6 @@ System.out.println("\t  Press 3 : Quit \n");
         
         boolean c = true;
         String response;
-        // Car benz=new Car();
-        // benz.setBrandName("response car");
-           // carList.add(benz);
-            //System.out.println("car list obj"+carList.toString());
 
 
         while(c){
