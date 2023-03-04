@@ -1,8 +1,10 @@
+import java.util.*;
+import java.text.*;
 public class Vehicle{
 	
 	
 	private String registernumber;
-	private String date;
+	private Date date;
 	private String passenger;
 	
 	public String getPassenger()
@@ -23,12 +25,12 @@ public class Vehicle{
 	{
 		this.registernumber = registernumber;
 	}
-	public String getDate()
+	public Date getDate()
 	{
 		return date;
 	}
 	
-	public void setDate(String date)
+	public void setDate(Date date)
 	{
 		this.date = date;
 	}
