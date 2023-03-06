@@ -1,4 +1,10 @@
 package com.lxisoft.animal;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -8,36 +14,88 @@ import javax.xml.catalog.CatalogFeatures.Feature;
 
 
 public class Forest {
+
      TreeSet<Animal> animals = new TreeSet<Animal>();
-   
+     
+    public Forest(){
+      
+    }
   
 //animal details 
     public void animalDetails(){
-      System.out.println("welcome to the Forest - Amazon" + '\n'+ "prestented animals" + '\n' + "================");
-        
-        animals.add(new Lion("lion", 9,10,6, new Location(4,9)));
-        animals.add(new Deer("Deer", 6, 5,9, new Location(7,10)));
-        animals.add(new Giraffe("Giraffe", 5, 4, 10,new Location(5, 6)));
-        animals.add(new Cheetah("Cheetah",7,7,8, new Location(5,8)));
-        animals.add(new Elephant("elphant",9,6,6, new Location(6,2)));
-        animals.add(new Tiger("Tiger", 8 ,7 ,3,new Location(4,6)));
-        animals.add(new Fox("Fox", 3,5,8, new Location(4,1)));
+
+      try{
+        BufferedReader reader = new BufferedReader(new FileReader("animals.txt"));
+        String data[];
+        //ArrayList<Animal> animalList = new ArrayList<Animal>();
+        String line = "";
+        while((line = reader.readLine()) != null){
+        data = line.split(",");
+
+        if ("lion".compareTo(data[0]) == 0){
+          animals.add(new Lion(data[0], Integer.parseInt( data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
+           new Location(Integer.parseInt(data[4]),Integer.parseInt(data[5]))));
+        }
+        else if ("deer".compareTo(data[0]) == 0){
+          animals.add(new Deer(data[0], Integer.parseInt( data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
+           new Location(Integer.parseInt(data[4]),Integer.parseInt(data[5]))));
+        }
+        else if("tiger".compareTo(data[0])==0){
+          animals.add(new Tiger(data[0],Integer.parseInt(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
+           new Location(Integer.parseInt(data[4]) , Integer.parseInt(data[5]))));
+
+        }
+        else if("giraffe".compareTo(data[0])==0){
+          animals.add(new Giraffe(data[0],Integer.parseInt(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
+           new Location(Integer.parseInt(data[4]) , Integer.parseInt(data[5]))));
+        }
+        else if("fox".compareTo(data[0])==0){
+          animals.add(new Fox(data[0],Integer.parseInt(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
+           new Location(Integer.parseInt(data[4]) , Integer.parseInt(data[5]))));
+        }
+
+        //this.showDetails();
+        //System.out.println(line[0]);
+       // System.out.println(line[1]);
+        // String parts[] =line.split(",");
+        // System.out.println(parts.toString());
+    
+        }
+  
+          reader.close();
+  
+        }
+         catch (IOException yy) {
+                yy.printStackTrace();
+                // TODO: exception
+        }
+
+     
       
     }
        public void showDetails(){
+        
         for (Animal n:animals){
           System.out.println(n);
         
-    
-       }
+        }
       }
     public void animalFight(){
       
-      
-      Animal nearestAnimal = animals.first();  
-      Random ran1 = new Random();
-      int random1 = ran1.nextInt(4);
+      Random random1 = new Random();
+       int counter1 =random1.nextInt(5);
+       int counter =0;
+      Animal nearestAnimal = animals.last();  
       Animal firstAnimal = animals.first();
+   
+      for(Animal nn:animals){
+       
+        if(counter == counter1){
+          firstAnimal =nn;
+        }
+       
+        counter++;
+      }
 
       double distance1 = 1000;
    
@@ -127,9 +185,30 @@ public class Forest {
            for(Animal y: animals){
             animals2.add(y);
            }
-           Animal winner = animals2.last();
+          Animal winner = animals2.last();
            
-         System.out.println(winner);
+         System.out.println("winner is "+winner);
+
+         //writing to the file.......
+         ArrayList<String> names = new ArrayList<String>();
+           for(Animal hh: animals){
+          names.add(hh.toString());
+  
+          }
+          try {
+          BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+          writer.write("Results after the fights "+'\n'+"=========================");
+           for(String an:names){
+    
+          writer.write('\n'+an);
+         
+           }
+          
+           writer.write('\n'+"===================="+'\n'+ "The winner is "+ winner.toString());
+          writer.close();
+        } catch (Exception e) {
+          // TODO: handle exception
+        }
   
 
                 // System.out.println("equal Animals"+'\n'+ "==============================");

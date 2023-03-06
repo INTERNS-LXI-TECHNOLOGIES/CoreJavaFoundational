@@ -66,14 +66,16 @@ public class Animal implements Comparable<Animal>{
     
     }
 
-    void locationData(){
+    public String locationData(){
      System.out.println(this.name+ " location x= " + this.location.locationx+ " location y= " + this.location.locationy);
+    return this.name+ " location x= " + this.location.locationx+ " location y= " + this.location.locationy;
     }
     public String toString(){
-        System.out.println(this.name.toUpperCase() + " with strength: " + 
-         this.strength + " Hunger Level: " + this.hungerLevel + " vision " +this.vision);
-         return name;
+      return  this.name.toUpperCase() + " with strength: " + 
+         this.strength + " Hunger Level: " + this.hungerLevel + " vision " +this.vision;
         
+        
+    
     }
     public boolean equals(Object o){
         if(o instanceof Animal&& o != null){
