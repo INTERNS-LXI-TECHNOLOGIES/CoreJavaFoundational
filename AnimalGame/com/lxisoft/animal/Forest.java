@@ -15,80 +15,31 @@ import javax.xml.catalog.CatalogFeatures.Feature;
 
 public class Forest {
 
-     TreeSet<Animal> animals = new TreeSet<Animal>();
      
-    public Forest(){
-      
-    }
+  Fileutility fileutility = new Fileutility();
   
+     
+   
 //animal details 
     public void animalDetails(){
-
-      try{
-        BufferedReader reader = new BufferedReader(new FileReader("animals.txt"));
-        String data[];
-        //ArrayList<Animal> animalList = new ArrayList<Animal>();
-        String line = "";
-        while((line = reader.readLine()) != null){
-        data = line.split(",");
-
-        if ("lion".compareTo(data[0]) == 0){
-          animals.add(new Lion(data[0], Integer.parseInt( data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
-           new Location(Integer.parseInt(data[4]),Integer.parseInt(data[5]))));
-        }
-        else if ("deer".compareTo(data[0]) == 0){
-          animals.add(new Deer(data[0], Integer.parseInt( data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
-           new Location(Integer.parseInt(data[4]),Integer.parseInt(data[5]))));
-        }
-        else if("tiger".compareTo(data[0])==0){
-          animals.add(new Tiger(data[0],Integer.parseInt(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
-           new Location(Integer.parseInt(data[4]) , Integer.parseInt(data[5]))));
-
-        }
-        else if("giraffe".compareTo(data[0])==0){
-          animals.add(new Giraffe(data[0],Integer.parseInt(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
-           new Location(Integer.parseInt(data[4]) , Integer.parseInt(data[5]))));
-        }
-        else if("fox".compareTo(data[0])==0){
-          animals.add(new Fox(data[0],Integer.parseInt(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
-           new Location(Integer.parseInt(data[4]) , Integer.parseInt(data[5]))));
-        }
-
-        //this.showDetails();
-        //System.out.println(line[0]);
-       // System.out.println(line[1]);
-        // String parts[] =line.split(",");
-        // System.out.println(parts.toString());
-    
-        }
-  
-          reader.close();
-  
-        }
-         catch (IOException yy) {
-                yy.printStackTrace();
-                // TODO: exception
-        }
-
-     
+     fileutility.ReadAnimals();
       
+     
     }
-       public void showDetails(){
-        
-        for (Animal n:animals){
-          System.out.println(n);
-        
-        }
-      }
+    public void showDetails(){
+     for(Animal n: fileutility.animals){
+      System.out.println(n);
+     }
+    }
     public void animalFight(){
       
       Random random1 = new Random();
        int counter1 =random1.nextInt(5);
        int counter =0;
-      Animal nearestAnimal = animals.last();  
-      Animal firstAnimal = animals.first();
+      Animal nearestAnimal = fileutility.animals.last();  
+      Animal firstAnimal = fileutility.animals.first();
    
-      for(Animal nn:animals){
+      for(Animal nn:fileutility.animals){
        
         if(counter == counter1){
           firstAnimal =nn;
@@ -99,7 +50,7 @@ public class Forest {
 
       double distance1 = 1000;
    
-      for(Animal t: animals){ 
+      for(Animal t: fileutility.animals){ 
         if (t== firstAnimal) {
           System.out.println();
         }
@@ -169,11 +120,11 @@ public class Forest {
           Random ran = new Random();
         
          
-            for(Animal f:animals){
+            for(Animal f:fileutility.animals){
               f.setLocation(new Location(ran.nextInt(10), ran.nextInt(10)));
             }
             System.out.println("current locations:");
-            for(Animal f:animals){
+            for(Animal f:fileutility.animals){
               f.locationData();
             }
            
@@ -182,33 +133,16 @@ public class Forest {
      public void findWinner(){
           TreeSet<Animal> animals2 = new TreeSet<Animal>();
       
-           for(Animal y: animals){
+           for(Animal y: fileutility.animals){
             animals2.add(y);
            }
           Animal winner = animals2.last();
            
          System.out.println("winner is "+winner);
+        // fileutility.WriteAnimals();
 
-         //writing to the file.......
-         ArrayList<String> names = new ArrayList<String>();
-           for(Animal hh: animals){
-          names.add(hh.toString());
-  
-          }
-          try {
-          BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
-          writer.write("Results after the fights "+'\n'+"=========================");
-           for(String an:names){
-    
-          writer.write('\n'+an);
-         
-           }
-          
-           writer.write('\n'+"===================="+'\n'+ "The winner is "+ winner.toString());
-          writer.close();
-        } catch (Exception e) {
-          // TODO: handle exception
-        }
+
+        
   
 
                 // System.out.println("equal Animals"+'\n'+ "==============================");

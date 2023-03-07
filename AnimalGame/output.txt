@@ -1,9 +1,9 @@
 Results after the fights 
 =========================
-FOX with strength: 4.0 Hunger Level: 5.0 vision 8
-DEER with strength: 5.0 Hunger Level: 5.0 vision 9
-GIRAFFE with strength: 6.0 Hunger Level: 4.0 vision 9
-TIGER with strength: 8.0 Hunger Level: 7.0 vision 7
+FOX with strength: -8.0 Hunger Level: -7.0 vision 8
+DEER with strength: 6.0 Hunger Level: 5.0 vision 9
+GIRAFFE with strength: 7.0 Hunger Level: 4.0 vision 9
+TIGER with strength: 6.0 Hunger Level: 5.0 vision 7
 LION with strength: 9.0 Hunger Level: 10.0 vision 6
 ====================
 The winner is LION with strength: 9.0 Hunger Level: 10.0 vision 6
