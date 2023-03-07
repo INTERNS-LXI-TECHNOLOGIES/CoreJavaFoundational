@@ -32,7 +32,7 @@ System.out.println("\t  Press 3 : Quit \n");
 					
 			     case ("2"):
                    
-				 viewCertificate();
+				 //viewCertificate();
                       break;
 					  
 				case ("3"):
@@ -64,23 +64,24 @@ System.out.println("\t  Press 3 : Quit \n");
             switch (count)
 			     {
 				case ("1"):
-				addCar();
+				pollutionCenter.addCar();
 					
 					break;
 						
 			     case ("2"):
                    
-				 addLorry();
+				 pollutionCenter.addLorry();
                       break;
 
                       case ("3"):
                    
-                      addTwoWheeler();
+                      pollutionCenter.addTwoWheeler();
                       break;
 					  
 				case ("4"):
 				
-                    System.out.print("Quit");			
+                    System.out.print("Quit");
+                    System.out.println("\n");			
 					c = false;
                       break;
 					  
@@ -92,132 +93,13 @@ System.out.println("\t  Press 3 : Quit \n");
 
     }
 
-    public void addCar() {
 
-        
-        boolean c = true;
-        String response;
+   
 
-
-        while(c){
-
-            for (int i =0; i<10; i++){
-                
-                if (pollutionCenter.vehicles[i]==null){
-                pollutionCenter.vehicles[i] = new Car();
-              
-                }
-               
-                
-            
-            System.out.println("\t  Add Car Brand Name \n");
-
-            pollutionCenter.vehicles[i].setBrandName(sc.nextLine());
-
-            System.out.println("\t  Add Car Register Number \n");
-            pollutionCenter.vehicles[i].setRegNo(sc.nextLine());
-
-            
-            break;
-            }
-            
-            System.out.println("\t  Type Yes to Continue No to Quit \n");
-
-            response = sc.nextLine();
-            if (response.equals("no")){
-
-                c = false;
-            }
-            
-
-
-        }
-        
-    }
-
-    public void addLorry() {
-
-        
-        boolean c = true;
-        String response;
-        while(c){
-
-            for (int i =0; i<10;i++){
-                if (pollutionCenter.vehicles[i]==null){
-                    pollutionCenter.vehicles[i] = new Lorry();
-                    
-                }
-                
-                
-            
-            System.out.println("\t  Add Lorry Brand Name \n");
-            
-            pollutionCenter.vehicles[i].setBrandName(sc.nextLine());
-
-            System.out.println("\t  Add Lorry Register Number \n");
-            pollutionCenter.vehicles[i].setRegNo(sc.nextLine());
-
-            
-            break;
-            }
-            
-            System.out.println("\t  Type Yes to Continue No to Quit \n");
-
-            response = sc.nextLine();
-            if (response.equals("no")){
-
-                c = false;
-            }
-
-
-        }
-        
-    }
-
-    public void addTwoWheeler() {
-
-        
-        boolean c = true;
-        String response;
-        while(c){
-
-            for (int i =0; i<10; i++){
-                if (pollutionCenter.vehicles[i]==null){
-                    pollutionCenter.vehicles[i] = new Twowheeler();
-                
-                }
-               
-                
-            
-            System.out.println("\t  Add Twowheeler Brand Name \n");
-            
-            pollutionCenter.vehicles[i].setBrandName(sc.nextLine());
-
-            System.out.println("\t  Add Twowheeler Register Number \n");
-            pollutionCenter.vehicles[i].setRegNo(sc.nextLine());
-
-            break;
-            }
-            
-            System.out.println("\t  Type Yes to Continue No to Quit \n");
-
-            response = sc.nextLine();
-            if (response.equals("no")){
-
-                c = false;
-            }
-            
-
-
-        }
-
-        
-    }
-
-    public void viewCertificate() {
+   /*  public void viewCertificate() {
 
         System.out.println(pollutionCenter);
         
-    }
+    }*/
     
 }
