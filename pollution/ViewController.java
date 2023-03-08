@@ -1,6 +1,4 @@
-package pollution;
-import java.util.ArrayList;
-import java.util.List;
+//package pollution;
 import java.util.Scanner;
 
 public class ViewController {
@@ -32,7 +30,7 @@ System.out.println("\t  Press 3 : Quit \n");
 					
 			     case ("2"):
                    
-				 //viewCertificate();
+				 viewCertificate();
                       break;
 					  
 				case ("3"):
@@ -94,12 +92,12 @@ System.out.println("\t  Press 3 : Quit \n");
     }
 
 
-   
+    public void viewCertificate() {
 
-   /*  public void viewCertificate() {
+        pollutionCenter.viewVehicleDetails();
 
-        System.out.println(pollutionCenter);
+
         
-    }*/
+    }
     
 }
