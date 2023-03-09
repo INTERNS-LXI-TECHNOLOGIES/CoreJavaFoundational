@@ -1,6 +1,4 @@
 
-import java.util.Date;
-
 public class VehicleInfo {
     private String center;
     private String date;

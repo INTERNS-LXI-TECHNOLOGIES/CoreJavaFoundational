@@ -2,7 +2,6 @@
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -14,17 +13,16 @@ Scanner sc = new Scanner(System.in);
 VehicleInfo vehicleInfo = new VehicleInfo();
 Date d = new Date();
 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-Car car = new Car();
-Lorry lorry = new Lorry();
-Twowheeler twowheeler = new Twowheeler();
+
 
 public void addCar() {
 
+        Car car = new Car();
         System.out.println("\t  You Selected Car \n");
 
         System.out.println("\t  Add Car Brand Name \n");
 
-       car.setBrandName(sc.nextLine());
+        car.setBrandName(sc.nextLine());
 
         System.out.println("\t  Add Car Register Number \n");
         car.setRegNo(sc.nextLine());
@@ -42,6 +40,8 @@ public void addCar() {
         }
 
         public void addLorry() {
+
+                Lorry lorry = new Lorry();
                     
                 System.out.println("\t  You Selected Lorry \n");
                 
@@ -57,6 +57,7 @@ public void addCar() {
         
                 System.out.println("\t  Date Updated \n");
                
+                
                 vehicleInfo.setDate(formatter.format(d));
 
                 vehicles.add(lorry);
@@ -64,6 +65,8 @@ public void addCar() {
             }
 
             public void addTwoWheeler() {
+
+                    Twowheeler twowheeler = new Twowheeler();
         
                     System.out.println("\t  You Selected TwoWheeler \n");
 

@@ -1,9 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
+
 //package pollution;
 
 public class Vehicle {
 
     private String brandName;
     private String regNo;
+
+    List <VehicleInfo> info = new ArrayList<VehicleInfo>();
 
     public String getBrandName() {
         return brandName;
