@@ -5,12 +5,13 @@ import java.text.*;
 
 public class ViewController
 {
-   
+    
   PollutionCentre center = new PollutionCentre();
   Scanner scan= new Scanner(System.in);
   DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+  Date date = new Date();
   int i = 0;
-  String receive;
+  int j = 0;
   
   public void viewInfo(){
 	  System.out.println("            POLLUTION CENTRE                   ");
@@ -19,8 +20,9 @@ public class ViewController
 	  do
 	  {
 		System.out.println("     Click. 1  To view Vehicle Information    \n");  
-		System.out.println("     Click. 2  To Print Vehicle Certificate \n");  
-		System.out.println("     Click. 3  To  Quit                        \n");  
+		System.out.println("     Click. 2  Check Vehicle Information      \n");  
+		System.out.println("     Click. 3  To Print Vehicle Certificate   \n");  
+		System.out.println("     Click. 4  To  Quit                       \n");  
 		int info = Integer.parseInt(scan.nextLine());
         
         switch(info){
@@ -31,10 +33,14 @@ public class ViewController
 			break;
 			
 			case 2:
-			printDetails();
+			System.out.println("Check Vehicle");
 			break;
 			
 			case 3:
+		    printDetails();
+		    break;
+			
+			case 4:
 			System.out.println("Quit");
 			flag = false;
 			break;
@@ -75,8 +81,9 @@ public class ViewController
 		enterLorryDetails();
 		break;
 	
+		
 		case 3:
-		System.out.println("Quit");
+	    System.out.println("Quit");
 		flag = false;
 		break;
 		
@@ -94,48 +101,61 @@ public class ViewController
 	boolean respond = true;
 	while(respond)
 	{
-		for(int j=0;j<10;j++){
-		   if(center.getVehicle()[j]==null)
+		System.out.println(" Enter Register number"+"\n");
+		String regNo = scan.nextLine();		
+		boolean vehicleExists =false ;
+		//boolean dateCheck = true ;
+		for(int j=0;center.getVehicle()[j]!=null;j++)
 		{
-		  center.getVehicle()[j] = new Car();
-		  break;
-			
+		  if((center.getVehicle()[j].getRegno()!=null)&&(center.getVehicle()[j].getRegno().equals(regNo)))
+		  {
+			System.out.println("\n ***This vehicle is already Certified*** \n");
+			vehicleExists = true ;
+		  }
+		   
 		}
-		}
-		  System.out.println(" Enter Register number"+"\n");
-		  //String registerNumber = scan.nextLine(); 
-		  //if(center.getVehicle()[i].getRegno().equals(registerNumber))
-		  //{
-			//System.out.println("Register number is already entered!!!!");
-	      //}else if(center.getVehicle()[i].getRegno()!=registerNumber)
-		  //{
-		    center.getVehicle()[i].setRegno(scan.nextLine());
-		  //}
+		
+		if(!vehicleExists)
+		{
+		 center.getVehicle()[i] = new Car();  
+		 center.getVehicle()[i].setRegno(regNo);
+		 System.out.println("\n Mode of Transport"+"\n");
+	     center.getVehicle()[i].setType(scan.nextLine());
+		 System.out.println("\n How many Passengers..?"+"\n");
+		 center.getVehicle()[i].setPassenger(scan.nextLine());
+		 try
+		    {				
+		    System.out.println("Enter Date"+"\n");
+			center.getVehicle()[i].getInfo()[j].setDate(df.format(date));
+			}catch(Exception e) 
+		    { 
+		     e.printStackTrace();
+		    }
 		 
-		  System.out.println("Enter Date"+"\n");
-		  try{
-		  Date date = df.parse(scan.nextLine()); 
-	      center.getVehicle()[i].setDate(date);
-		  }catch(ParseException e) { e.printStackTrace();}
-	      System.out.println("Centre"+"\n");
-          center.setCentreName(scan.nextLine());
-	      System.out.println("\n How many Passenger"+"\n");
-	      center.getVehicle()[i].setPassenger(scan.nextLine());
-		  i++;
-		  System.out.println("\n"+i+" "+"Register Number Entered \n\n");
-		  
-          System.out.println("\n"+i+" "+"Date Entered \n\n");
-          System.out.println("Type YES to continue NO to quit \n\n");
+			System.out.println("Centre"+"\n");
+            center.getVehicle()[i].getInfo()[j].setCentreName(scan.nextLine());
+			i++;
+			j++;
+		    System.out.println("\n"+i+" "+"Register Number Entered \n\n");
+		    System.out.println("\n"+j+" "+"Date Entered \n\n");
+		
+		}  
+        System.out.println("Type YES to continue NO to quit \n\n");
 	   
-          String response = scan.nextLine();
+        String response = scan.nextLine();
         if(response.equals("no"))
 		{
 		  respond = false;
-		}	 
+		}
+          
+		  
+         		
 	  
 	  
   }
-}
+  }
+  
+  
     public void enterLorryDetails()
 	{
 		
@@ -143,30 +163,51 @@ public class ViewController
 		
 	    while(respond)
 		{
-			
-		for(int j=0;j<10;j++){
-		   if(center.getVehicle()[j]==null)
+	    System.out.println(" Enter Register number"+"\n");
+        String regNo = scan.nextLine();		
+		boolean vehicleExists =false ;
+		for(int j=0;center.getVehicle()[j]!=null;j++)
 		{
-			center.getVehicle()[j] = new Lorry();
-			break;
-			
-		}
-		}	
+		  if((center.getVehicle()[j].getRegno()!=null)&&(center.getVehicle()[j].getRegno().equals(regNo)))
+		  {
+			System.out.println("\n ***This vehicle is already Certified*** \n");
+			vehicleExists = true ;
+		  }
+		   
+		  
+		}  
 		
-		  System.out.println(" Enter Register number"+"\n");
-	      center.getVehicle()[i].setRegno(scan.nextLine()); 
-	      System.out.println("Enter Date"+"\n");
-		  try{
-		  Date date = df.parse(scan.nextLine()); 
-	      center.getVehicle()[i].setDate(date);
-		  }catch(ParseException e) { e.printStackTrace();}
-		  System.out.println("Centre"+"\n");
-          center.setCentreName(scan.nextLine());
-	      System.out.println("\n How many Passenger"+"\n");
-	      center.getVehicle()[i].setPassenger(scan.nextLine());
-	      i++;
-			System.out.println("\n"+i+" "+"Register Number Entered \n\n");
-            System.out.println("\n"+i+" "+"Date Entered \n\n");
+		   if( !vehicleExists)
+		  {
+		   center.getVehicle()[i] = new Lorry();
+		   center.getVehicle()[i].setRegno(regNo);
+		   System.out.println("\n Mode of Transport"+"\n");
+	       center.getVehicle()[i].setType(scan.nextLine());
+		   System.out.println("\n How many Passenger"+"\n");
+	       center.getVehicle()[i].setPassenger(scan.nextLine());
+		   
+			
+		   try
+		    {				
+		    System.out.println("Enter Date"+"\n");
+			center.getVehicle()[i].getInfo()[j].setDate(df.format(date));
+			}catch(Exception e) 
+		    { 
+		     e.printStackTrace();
+		    }
+		 
+			System.out.println("Centre"+"\n");
+            center.getVehicle()[i].getInfo()[j].setCentreName(scan.nextLine());
+		   }
+		   i++;
+		   j++;
+		   System.out.println("\n"+i+" "+"Register Number Entered \n\n");
+           System.out.println("\n"+j+" "+"Date Entered \n\n");
+	      
+		   
+		   
+          
+	      
             System.out.println("Type YES to continue NO to quit \n\n");
             String response = scan.nextLine();
             if(response.equals("no"))
@@ -175,14 +216,34 @@ public class ViewController
 		    }
 			
 			
+		}
 			
 		}
+	
+		/*public void checkDetails()
+		{
+			
+		  
+		  try
+		  {
+		   System.out.println("Enter Date"+"\n");
+	       vehicle.getInfo()[i].setDate(df.format(date));  
+		  }
+		  catch(ParseException e) 
+		  { 
+		    e.printStackTrace();
+		  }
+		  System.out.println("Centre"+"\n");
+          vehicle.getInfo()[i].setCentreName(scan.nextLine());	
+			
+			
+			
+			
+		}*/
 		
 		
 		
-		
-		
-	}
+	
 
    public void printDetails()
    {

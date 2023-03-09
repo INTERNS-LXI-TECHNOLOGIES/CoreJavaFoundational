@@ -1,19 +1,19 @@
 public class PollutionCentre
 {
-	private String centreName;
+	//private String centreName;
 	private Vehicle[] vehicles = new Vehicle[10];
 	
 	public PollutionCentre()
 	{		
 	}
-	public String getCentreName()
+	/*public String getCentreName()
 	{
 		return centreName;
 	}
 	public void setCentreName(String centrename)
 	{
 		this.centreName = centrename;
-	}
+	}*/
 	
 	public Vehicle[] getVehicle()
 	{
@@ -21,11 +21,11 @@ public class PollutionCentre
 	}
 	
 	  public String toString(){
-		String source = "Center Name :"+" "+ centreName;
+		String source = "";
 		for(Vehicle machine:vehicles){
 			if(machine!=null)
 			{
-			    source = source+machine;
+			   source = source+machine;
 		    }
 		}
 		return source;

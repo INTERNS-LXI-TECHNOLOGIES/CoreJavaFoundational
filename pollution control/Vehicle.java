@@ -1,11 +1,30 @@
-import java.util.*;
-import java.text.*;
 public class Vehicle{
 	
-	
-	private String registernumber;
-	private Date date;
+	private String registerNumber;
+	private String type;
 	private String passenger;
+	private VehicleInfo[] info = new VehicleInfo[10];
+	
+	
+	public String getRegno()
+	{
+	  return registerNumber;
+	}
+	
+	public void setRegno(String registerNumber)
+	{
+		this.registerNumber = registerNumber;
+	}
+	
+	public String getType()
+	{
+	   return type;	
+	}
+	
+	public void setType(String type)
+	{
+	  this.type = type; 	
+    }
 	
 	public String getPassenger()
 	{
@@ -16,31 +35,44 @@ public class Vehicle{
 	{
 		this.passenger = passenger;
 	}
-	public String getRegno()
+	
+	public VehicleInfo[] getInfo()
 	{
-		return registernumber;
+	  return info;	
 	}
 	
-	public void setRegno(String registernumber)
+	public Vehicle()
 	{
-		this.registernumber = registernumber;
-	}
-	public Date getDate()
-	{
-		return date;
+		for(int i=0;i<10;i++)
+		{
+			info[i] = new VehicleInfo();	
+		}
 	}
 	
-	public void setDate(Date date)
+	
+	/*public boolean equals(Vehicle v)
 	{
-		this.date = date;
-	}
+		
+		if(this.registernumber.equals(v.registernumber))
+		{
+			return true;
+		}else{
+			return false;
+		}
+	}*/
 	
 	
 	public String toString()
 	{
 		
-		String details = "Register number :"+registernumber+"\n"+"Date :"+date+"\n"+"Passengers :"+" "+passenger+"\n\n";
-		
+		String details = "      Registeration Number :"+" "+registerNumber+"\n"+"      Type :"+" "+type+"\n"+"      Passengers :"+" "+passenger+"\n\n";
+		//System.out.println(info.toString());
+		for(VehicleInfo infos: info){
+			if(infos.getCentreName()!=null)
+			{
+			 details = details+infos;
+			}
+		}
 		return details;
 		
 		
