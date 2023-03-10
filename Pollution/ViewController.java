@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class ViewController {
@@ -5,8 +7,11 @@ public class ViewController {
      
     Scanner sc = new Scanner(System.in);
     PollutionCenter pollution = new PollutionCenter();
+    Date date = new Date();
+    VehicleInfo vehicleInfo = new  VehicleInfo(); 
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     
-    public void vechilePollutionDetails(){
+      public void vechilePollutionDetails(){
     boolean count = true;
 
         while(count){
@@ -41,7 +46,9 @@ public class ViewController {
 
         break; 
 
-        }}}
+        }
+      }
+    }
         public void vehicleDetails()
         {
       boolean count = true;
@@ -85,25 +92,19 @@ public class ViewController {
             public void bikeDetails()
             {
 
-            boolean count = true;
-            
-            while (count)
-            {
+              Bike bike = new Bike();
+
+           
 
             System.out.println("Enter owner name:");
-            String en = sc.nextLine();
+            bike.setOwnerName(sc.nextLine());
 
             System.out.println("Enter register number:");
-            String re = sc.nextLine();
+            bike.setRegisterNo(sc.nextInt());
 
             System.out.println("Enter date:");
-            String da = sc.nextLine();
-
-            System.out.println("Enter yes or no");
-            String yn = sc.nextLine();
-
-           count = false;
-          }
+            vehicleInfo.setDate(dateFormat.format(date));
+          
         }
         
     
@@ -111,59 +112,65 @@ public class ViewController {
         public void carDetails()
             {
 
-            boolean count = true;
-            
-            while (count)
-            {
+              Car car = new Car();
+
+          
 
             System.out.println("Enter owner name:");
-            String en = sc.nextLine();
+            car.setOwnerName(sc.nextLine());
+
 
             System.out.println("Enter register number:");
-            String re = sc.nextLine();
+            car.setRegisterNo(sc.nextInt());
 
             System.out.println("Enter date:");
-            String da = sc.nextLine();
+            vehicleInfo.setDate(dateFormat.format(date));
 
-            System.out.println("Enter yes or no");
-            String yn = sc.nextLine();
+           pollution.vehicleList.add(car);
 
-           count = false;
+           
+
+
+          
           }
-        }
+        
         
         
         
         public void lorryDetails()
             {
 
-            boolean count = true;
+            Lorry lorry = new Lorry();
             
-            while (count)
-            {
+
+        
+            
+            
 
             System.out.println("Enter owner name:");
-            String en = sc.nextLine();
+            lorry.setOwnerName(sc.nextLine());  
 
             System.out.println("Enter register number:");
-            String re = sc.nextLine();
+             lorry.setRegisterNo(sc.nextInt()); 
 
             System.out.println("Enter date:");
-            String da = sc.nextLine();
+           vehicleInfo.setDate(dateFormat.format(date));
 
-            System.out.println("Enter yes or no");
-            String yn = sc.nextLine();
 
-           count = false;
-          }
+           
           }
           
         
          public void printDetailsOfVehicle()
           {
 
-          System.out.println(pollution);  
+          System.out.println(pollution); 
+          
+         System.out.println( vehicleInfo);
+
           }
+
+
           
         
           }
