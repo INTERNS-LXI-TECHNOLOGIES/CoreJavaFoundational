@@ -1,10 +1,7 @@
-//package pollution;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class PollutionCenter {
 
@@ -35,6 +32,7 @@ public void addCar() {
         vehicleInfo.setDate(formatter.format(d));
 
         vehicles.add(car);
+
 
        
         }

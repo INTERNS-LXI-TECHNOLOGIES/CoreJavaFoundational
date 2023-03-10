@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-//package pollution;
-
 public class Vehicle {
 
     private String brandName;

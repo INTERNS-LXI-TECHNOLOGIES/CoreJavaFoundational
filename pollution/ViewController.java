@@ -1,11 +1,9 @@
-//package pollution;
+
 import java.util.Scanner;
 
 public class ViewController {
     Scanner sc = new Scanner(System.in);
     PollutionCenter pollutionCenter = new PollutionCenter();
-    //List<Car> carList=new ArrayList<Car>();
-
     
 
     public void pollutionDetails(){

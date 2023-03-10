@@ -1,4 +1,3 @@
-//package pollution;
 
 public class Lorry extends Vehicle {
 
