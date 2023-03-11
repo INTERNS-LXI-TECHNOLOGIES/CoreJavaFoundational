@@ -31,6 +31,7 @@ public void addCar() {
         
         vehicleInfo.setDate(formatter.format(d));
 
+        car.info.add(vehicleInfo);
         vehicles.add(car);
 
 
@@ -58,6 +59,7 @@ public void addCar() {
                 
                 vehicleInfo.setDate(formatter.format(d));
 
+                lorry.info.add(vehicleInfo);
                 vehicles.add(lorry);
     
             }
@@ -83,6 +85,7 @@ public void addCar() {
                
                     vehicleInfo.setDate(formatter.format(d));
 
+                    twowheeler.info.add(vehicleInfo);    
                     vehicles.add(twowheeler);
     
                 
@@ -91,7 +94,7 @@ public void addCar() {
             public void viewVehicleDetails() {
 
                 System.out.println(vehicles);
-                System.out.println(vehicleInfo);
+                //System.out.println(vehicleInfo);
                 
             }
     }

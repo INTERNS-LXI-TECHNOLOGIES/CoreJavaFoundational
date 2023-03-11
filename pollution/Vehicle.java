@@ -24,7 +24,9 @@ public class Vehicle {
     @Override
     public String toString() {
         
-        return "Vehicle :"  + brandName + "\n" +  "regNo :" + regNo+ "\n";
+        return "Vehicle :"  + brandName + "\n" +  "regNo :" + regNo+ "\n" + info + "\n";
+
+        
     }
       
 }
