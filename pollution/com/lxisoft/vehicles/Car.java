@@ -1,3 +1,5 @@
+package com.lxisoft.vehicles;
+
 
 public class Car extends Vehicle {
 
@@ -9,3 +11,4 @@ public class Car extends Vehicle {
     
     
 }
+

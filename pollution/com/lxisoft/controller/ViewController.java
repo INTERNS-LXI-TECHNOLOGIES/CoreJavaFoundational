@@ -1,5 +1,8 @@
+package com.lxisoft.controller;
 
 import java.util.Scanner;
+
+import com.lxisoft.view.PollutionCenter;
 
 public class ViewController {
     Scanner sc = new Scanner(System.in);
@@ -99,3 +102,4 @@ System.out.println("\t  Press 3 : Quit \n");
     }
     
 }
+

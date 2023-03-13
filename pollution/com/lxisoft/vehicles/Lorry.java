@@ -1,3 +1,5 @@
+package com.lxisoft.vehicles;
+
 
 public class Lorry extends Vehicle {
 
@@ -7,3 +9,4 @@ public class Lorry extends Vehicle {
     }
     
 }
+

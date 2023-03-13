@@ -1,5 +1,7 @@
+package com.lxisoft.vehicles;
 
-public class Twowheeler extends Vehicle {
+
+public class TwoWheeler extends Vehicle {
 
 
     @Override
@@ -8,3 +10,4 @@ public class Twowheeler extends Vehicle {
     }
     
 }
+

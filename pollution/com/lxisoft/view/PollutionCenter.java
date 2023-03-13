@@ -1,6 +1,13 @@
+package com.lxisoft.view;
+
 
 import java.text.SimpleDateFormat;
 import java.util.*;
+
+import com.lxisoft.vehicles.Car;
+import com.lxisoft.vehicles.Lorry;
+import com.lxisoft.vehicles.TwoWheeler;
+import com.lxisoft.vehicles.Vehicle;
 
 
 public class PollutionCenter {
@@ -66,7 +73,7 @@ public void addCar() {
 
             public void addTwoWheeler() {
 
-                    Twowheeler twowheeler = new Twowheeler();
+                    TwoWheeler twowheeler = new TwoWheeler();
         
                     System.out.println("\t  You Selected TwoWheeler \n");
 
@@ -93,10 +100,14 @@ public void addCar() {
 
             public void viewVehicleDetails() {
 
+                System.out.println(" ------------------------------\n");
+
                 System.out.println(vehicles);
                 //System.out.println(vehicleInfo);
+                System.out.println(" ------------------------------\n");
                 
             }
     }
     
+
 

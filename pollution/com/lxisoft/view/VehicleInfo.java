@@ -1,3 +1,5 @@
+package com.lxisoft.view;
+
 
 public class VehicleInfo {
     private String center;
@@ -24,3 +26,4 @@ public class VehicleInfo {
     
 
 }
+

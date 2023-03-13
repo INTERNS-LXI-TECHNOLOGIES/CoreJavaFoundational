@@ -1,12 +1,16 @@
+package com.lxisoft.vehicles;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import com.lxisoft.view.VehicleInfo;
 
 public class Vehicle {
 
     private String brandName;
     private String regNo;
 
-    List <VehicleInfo> info = new ArrayList<VehicleInfo>();
+   public List <VehicleInfo> info = new ArrayList<VehicleInfo>();
 
     public String getBrandName() {
         return brandName;
@@ -30,3 +34,4 @@ public class Vehicle {
     }
       
 }
+
