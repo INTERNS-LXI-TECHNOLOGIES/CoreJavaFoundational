@@ -14,20 +14,22 @@ import javax.xml.catalog.CatalogFeatures.Feature;
 
 
 public class Forest {
+  TreeSet <Animal> animals = new TreeSet< Animal>();
 
      
-  Fileutility fileutility = new Fileutility();
+  Utility fileutility = new FileUtility();
+  Utility dataBase = new DataBase();
   
      
    
 //animal details 
     public void animalDetails(){
-     fileutility.ReadAnimals();
-      
+     //animals = fileutility.Read();
+    animals = dataBase.Read();
      
     }
     public void showDetails(){
-     for(Animal n: fileutility.animals){
+     for(Animal n: animals){
       System.out.println(n);
      }
     }
@@ -36,10 +38,10 @@ public class Forest {
       Random random1 = new Random();
        int counter1 =random1.nextInt(5);
        int counter =0;
-      Animal nearestAnimal = fileutility.animals.last();  
-      Animal firstAnimal = fileutility.animals.first();
+      Animal nearestAnimal = animals.last();  
+      Animal firstAnimal = animals.first();
    
-      for(Animal nn:fileutility.animals){
+      for(Animal nn:animals){
        
         if(counter == counter1){
           firstAnimal =nn;
@@ -50,7 +52,7 @@ public class Forest {
 
       double distance1 = 1000;
    
-      for(Animal t: fileutility.animals){ 
+      for(Animal t: animals){ 
         if (t== firstAnimal) {
           System.out.println();
         }
@@ -59,7 +61,6 @@ public class Forest {
 
       double square2 = Math.pow((t.getLocation().getLocationy()-firstAnimal.getLocation().getLocationy() ) , 2);
       
-
       double distance2 = Math.sqrt((square2+square));
 
       if( distance2 < distance1 ){
@@ -120,11 +121,11 @@ public class Forest {
           Random ran = new Random();
         
          
-            for(Animal f:fileutility.animals){
+            for(Animal f:animals){
               f.setLocation(new Location(ran.nextInt(10), ran.nextInt(10)));
             }
             System.out.println("current locations:");
-            for(Animal f:fileutility.animals){
+            for(Animal f:animals){
               f.locationData();
             }
            
@@ -133,13 +134,13 @@ public class Forest {
      public void findWinner(){
           TreeSet<Animal> animals2 = new TreeSet<Animal>();
       
-           for(Animal y: fileutility.animals){
+           for(Animal y: animals){
             animals2.add(y);
            }
           Animal winner = animals2.last();
            
          System.out.println("winner is "+winner);
-        // fileutility.WriteAnimals();
+        fileutility.Write(animals);
 
 
         

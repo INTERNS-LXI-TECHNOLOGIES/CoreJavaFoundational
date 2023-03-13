@@ -6,15 +6,17 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.TreeSet;
 
-public class Fileutility {
-    
+import javax.management.loading.PrivateMLet;
 
-    TreeSet <Animal> animals = new TreeSet< Animal>();
+public class FileUtility implements Utility{
     
-    public TreeSet<Animal> ReadAnimals(){
-       
+    
+    private TreeSet<Animal> Read(){
+        TreeSet <Animal> animals = new TreeSet< Animal>();
+
     try{
         BufferedReader reader = new BufferedReader(new FileReader("animals.txt"));
         String data[];
@@ -58,34 +60,37 @@ public class Fileutility {
 
 
 
-    }
-public void WriteAnimals(){
-    ArrayList<String> names = new ArrayList<String>();
-    for(Animal hh: animals){
-   names.add(hh.toString());
+}
+@Override 
+public void Write(Set<Animal> animals){
+  ArrayList<String> names = new ArrayList<String>();
+  for(Animal hh: animals){
+ names.add(hh.toString());
 
-   }
-   try {
-   BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
-   writer.write("Results after the fights "+'\n'+"=========================");
-    for(String an:names){
-
-   writer.write('\n'+an);
-  
-    }
-    
-    TreeSet<Animal> animals3 = new TreeSet<Animal>();
-      
-           for(Animal y: animals){
-            animals3.add(y);
-           }
-          Animal winner = animals3.last();
-           
-    writer.write('\n'+"===================="+'\n'+ "The winner is "+ winner.toString());
-   writer.close();
- } catch (Exception e) {
-   // TODO: handle exception
  }
+ try {
+ BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+ writer.write("Results after the fights "+'\n'+"=========================");
+  for(String an:names){
+
+ writer.write('\n'+an);
+
+  }
+  
+  TreeSet<Animal> animals3 = new TreeSet<Animal>();
+    
+         for(Animal y: animals){
+          animals3.add(y);
+         }
+        Animal winner = animals3.last();
+         
+  writer.write('\n'+"===================="+'\n'+ "The winner is "+ winner.toString());
+ writer.close();
+} catch (Exception e) {
+ // TODO: handle exception
+}
+  
+}
 }
 
-}
+
