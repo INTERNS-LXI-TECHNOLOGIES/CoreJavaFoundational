@@ -1,3 +1,5 @@
+package com.lxisoft.vehicle;
+
 public class VehicleInfo {
 
     private String date;

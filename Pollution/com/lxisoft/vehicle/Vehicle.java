@@ -1,6 +1,8 @@
+package com.lxisoft.vehicle;
+
 import java.util.Date;
 
-public class Vehicle{
+public class Vehicle {
 
     private String ownerName;
     private int registerNo;
@@ -29,6 +31,5 @@ public class Vehicle{
         return "Vehicle ownerName=" + ownerName + ", registerNo=" + registerNo + ", date=" + date;
     }
 
-        
     
 }

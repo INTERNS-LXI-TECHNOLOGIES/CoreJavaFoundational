@@ -1,6 +1,12 @@
+package com.lxisoft.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import com.lxisoft.factor.PollutionCenter;
+import com.lxisoft.vehicle.VehicleInfo;
+import com.lxisoft.vehicles.Bike;
+import com.lxisoft.vehicles.Car;
+import com.lxisoft.vehicles.Lorry;
 
 public class ViewController {
 
@@ -128,13 +134,7 @@ public class ViewController {
 
            pollution.vehicleList.add(car);
 
-           
-
-
-          
-          }
-        
-        
+        }
         
         
         public void lorryDetails()
@@ -142,23 +142,16 @@ public class ViewController {
 
             Lorry lorry = new Lorry();
             
-
-        
-            
-            
-
             System.out.println("Enter owner name:");
             lorry.setOwnerName(sc.nextLine());  
 
             System.out.println("Enter register number:");
-             lorry.setRegisterNo(sc.nextInt()); 
+            lorry.setRegisterNo(sc.nextInt()); 
 
             System.out.println("Enter date:");
-           vehicleInfo.setDate(dateFormat.format(date));
-
-
-           
-          }
+            vehicleInfo.setDate(dateFormat.format(date));
+            
+        }
           
         
          public void printDetailsOfVehicle()
@@ -169,19 +162,7 @@ public class ViewController {
          System.out.println( vehicleInfo);
 
           }
-
-
-          
+}
         
-          }
-        
-
-        
-        
-
-        
-        
-
-    
     
 

@@ -1,7 +1,11 @@
+package com.lxisoft.factor;
 import java.util.*;
+
+import com.lxisoft.vehicle.Vehicle;
+
 public class PollutionCenter {
 
-    List<Vehicle> vehicleList = new ArrayList<Vehicle>();
+    public List<Vehicle> vehicleList = new ArrayList<Vehicle>();
 
 
 
@@ -15,4 +19,6 @@ public String toString() {
 
     
 }
+
+    
 
