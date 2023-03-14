@@ -42,13 +42,13 @@ public class Vehicle{
 	  return info;	
 	}
 	
-	public Vehicle()
+	/*public Vehicle()
 	{
 		for(int i=0;i<10;i++)
 		{
 			info.add(i,new VehicleInfo());	
 		}
-	}
+	}*/
 	
 	
 	/*public boolean equals(Vehicle v)
