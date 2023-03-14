@@ -45,19 +45,6 @@ public void setVehicleInf(VehicleInfo[] vehicleInf)
 	    this.vehicleInf = vehicleInf;
        }
 	
-	
-    /*public boolean equals(Vehicle v)
-	{
-		if(this.registerNumber.equals(v.registerNumber))
-		{
-			return true;
-		}else
-		{
-			return false;
-		}*/
-		
-	
-
 	public String toString()
 	{
 	   String returnValue = "Register Number:"  + registerNumber;
