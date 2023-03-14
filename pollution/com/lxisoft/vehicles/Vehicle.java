@@ -10,7 +10,14 @@ public class Vehicle {
     private String brandName;
     private String regNo;
 
-   public List <VehicleInfo> info = new ArrayList<VehicleInfo>();
+   private List <VehicleInfo> info = new ArrayList<VehicleInfo>();
+
+   public List<VehicleInfo> getInfo() {
+    return info;
+}
+public void setInfo(List<VehicleInfo> info) {
+    this.info = info;
+}
 
     public String getBrandName() {
         return brandName;

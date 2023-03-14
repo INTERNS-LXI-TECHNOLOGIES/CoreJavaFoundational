@@ -7,7 +7,7 @@ public class Tdd {
         
         ViewController view = new ViewController();
 
-        view.pollutionDetails();
+        view.logIn();
     }
     
 }          
