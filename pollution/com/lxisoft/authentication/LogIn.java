@@ -20,7 +20,7 @@ public class LogIn {
     }
 
     public LogIn() {
-        this.userName = "Admin";
+        this.userName = "admin";
         this.passWord = "admin@1";
     }
 

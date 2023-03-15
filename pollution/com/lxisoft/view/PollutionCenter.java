@@ -12,7 +12,7 @@ import com.lxisoft.vehicles.Vehicle;
 
 public class PollutionCenter {
 
-List <Vehicle> vehicles = new ArrayList<Vehicle>();
+public List <Vehicle> vehicles = new ArrayList<Vehicle>();
 Scanner sc = new Scanner(System.in);
 VehicleInfo vehicleInfo = new VehicleInfo();
 Date d = new Date();
