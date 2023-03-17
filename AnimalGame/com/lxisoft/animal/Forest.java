@@ -17,8 +17,8 @@ public class Forest {
   TreeSet <Animal> animals = new TreeSet< Animal>();
 
      
-  Utility fileutility = new FileUtility();
-  Utility dataBase = new DataBase();
+ // Utility fileutility = new FileUtility();
+  Utility dataBase = new DataBase(null);
   
      
    
@@ -136,12 +136,17 @@ public class Forest {
       
            for(Animal y: animals){
             animals2.add(y);
+            
            }
           Animal winner = animals2.last();
            
          System.out.println("winner is "+winner);
-        fileutility.Write(animals);
+        dataBase.Write(animals);
 
+// for (Animal h: animals){
+//   if(h.compareTo(animals))
+
+       
 
         
   

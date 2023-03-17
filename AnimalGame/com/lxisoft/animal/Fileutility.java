@@ -26,7 +26,7 @@ public class FileUtility implements Utility{
         data = line.split(",");
 
         if ("lion".compareTo(data[0]) == 0){
-          animals.add(new Lion(data[0], Integer.parseInt( data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
+          animals.add(new Lion(data[0], Integer.parseInt(data[1]), Integer.parseInt(data[2]), Integer.parseInt(data[3]),
            new Location(Integer.parseInt(data[4]),Integer.parseInt(data[5]))));
         }
         else if ("deer".compareTo(data[0]) == 0){

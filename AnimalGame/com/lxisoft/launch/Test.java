@@ -30,13 +30,12 @@ public class Test{
       forest.showDetails();
     
       for(int y =1; y<6; y++){
-      System.out.println("======================="+'\n'+ "Round -> " + y +'\n' + "==========================");
+      System.out.println("======================="+'\n'+"Round -> "+ y +'\n'+"==========================");
       forest.animalFight();
       }
       System.out.println("======================="+'\n'+"current position"+'\n');
-  
-    forest.showDetails();
-       System.out.println("========================");
+      forest.showDetails();
+      System.out.println("========================");
       forest.findWinner();
    
        }
