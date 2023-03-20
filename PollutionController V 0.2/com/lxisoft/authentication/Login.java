@@ -32,10 +32,25 @@ private String passWord;
 	
 	
 	
+	
+	
+	private String submit;
+
+	
+   public String getSubmit()
+     {
+	  return submit;
+     }
+   public void setSubmit(String submit)
+        {
+	      this.submit = submit;
+		}
+	
+	
 public Login()
 {
-	this.userId="AmruthaSajeev";
-	this.passWord="amrutha101sajeev";
+	this.userId="abc";
+	this.passWord="123";
 	
 }	
 

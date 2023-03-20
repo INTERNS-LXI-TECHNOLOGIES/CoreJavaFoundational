@@ -1,23 +1,31 @@
 package com.lxisoft.control;
+
 import com.lxisoft.info.Vehicle;
 import com.lxisoft.child.Bike;
 import com.lxisoft.child.Car;
 import com.lxisoft.child.Lorry;
 
-
-
-
 import java.util.*;
 
-
-
 public class PollutionController
+
 {
-List <Vehicle> vehicles = new ArrayList<Vehicle>();
+private List <Vehicle> vehicles = new ArrayList<Vehicle>();
 
 
+	public List<Vehicle> getVehicleI()
+    {
+	  return vehicles;
+	 
+    }
+public void setVehicleI(List<Vehicle>vehicles)
+        {
+	      this.vehicles=vehicles;
+		}
+ 
 	
 public PollutionController(){
+	
 } 
 public String toString()
 {
@@ -45,14 +53,15 @@ else if(vehicle instanceof Car)
 
 else if(vehicle instanceof Lorry)
 {	
-
- a=a+"\t  <<<Lorry Details>>>  \n"+vehicle;	
+a=a+"\t  <<<Lorry Details>>>  \n"+vehicle;	
 }
 
 
 }
 	
-}	
+}
+
+	
  return a;
 }	
 }
