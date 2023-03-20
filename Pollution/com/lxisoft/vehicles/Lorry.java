@@ -9,7 +9,7 @@ public class Lorry extends Vehicle {
 
     public String toString()
     {
-        return "MODEL" + model + super.toString();
+        return super.toString();
 
     }
     

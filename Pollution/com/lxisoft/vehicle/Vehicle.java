@@ -1,12 +1,16 @@
 package com.lxisoft.vehicle;
 
-import java.util.Date;
+import java.util.*;
 
 public class Vehicle {
 
+   public List<VehicleInfo>vehicleInfo = new ArrayList<VehicleInfo>();
+
     private String ownerName;
-    private int registerNo;
-    private Date date;
+    private String registerNo;
+
+    public boolean temp = false;
+    
     
     public String getOwnerName() {
         return ownerName;
@@ -14,21 +18,33 @@ public class Vehicle {
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
     }
-    public int getRegisterNo() {
+    public String getRegisterNo() {
         return registerNo;
     }
-    public void setRegisterNo(int registerNo) {
+    public void setRegisterNo(String registerNo) {
         this.registerNo = registerNo;
     }
-    public Date getDate() {
-        return date;
+
+    public boolean equals(Object obj){
+
+        if(obj != null && obj instanceof Vehicle ) 
+        if(((Vehicle) obj).getRegisterNo().equals(this.registerNo))
+        {
+
+            temp =true;
+
+
+        }
+
+        return temp;
+
+
     }
-    public void setDate(Date date) {
-        this.date = date;
-    }
+   
     @Override
     public String toString() {
-        return "Vehicle ownerName=" + ownerName + ", registerNo=" + registerNo + ", date=" + date;
+        return "Vehicle Owner Name =" + ownerName + "\n" + "Register No =" +  
+        registerNo + "\n" + "Vehicle Info" + vehicleInfo;
     }
 
     

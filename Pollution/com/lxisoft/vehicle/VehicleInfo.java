@@ -20,7 +20,7 @@ public class VehicleInfo {
     }
     @Override
     public String toString() {
-        return "VehicleInfo date=" + date + ", centreName=" + centreName;
+        return "VehicleInfo date =" + date + "centreName =" + centreName;
     }
 
     

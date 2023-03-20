@@ -2,7 +2,12 @@ package com.lxisoft.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+
+import javax.lang.model.util.ElementScanner6;
+
+import com.lxisoft.factor.Login;        
 import com.lxisoft.factor.PollutionCenter;
+import com.lxisoft.vehicle.Vehicle;
 import com.lxisoft.vehicle.VehicleInfo;
 import com.lxisoft.vehicles.Bike;
 import com.lxisoft.vehicles.Car;
@@ -16,152 +21,233 @@ public class ViewController {
     Date date = new Date();
     VehicleInfo vehicleInfo = new  VehicleInfo(); 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    Login login = new Login();
+
+    public void login(){
+
+      boolean temp = true;
+
+      while(temp){
+
     
-      public void vechilePollutionDetails(){
-    boolean count = true;
+        System.out.println("----USER NAME----- \n");
 
-        while(count){
+      System.out.print("USER NAME : ");
+      String userName = sc.nextLine();
 
-            System.out.println("..............WELCOME TO POLLUTION CENTER..............\n");
-            System.out.println("....Choose The Below Option....");
+        System.out.println("----PASSWORD---- \n");
 
-            System.out.println("....SELECT VECHICLE DETAILS....");
-            System.out.println("\t ENTER 1:VEHICLE DETAILS");
-            System.out.println("\t ENTER 2:PRINT VEHICLE DETAILS");
-            System.out.println("\t ENTER 3:QUIT");
+      System.out.print("PASSWORD : ");
+      String password = sc.nextLine();
+
+      System.out.println("\n Enter Yes to Login : ");
+      String response = sc.nextLine();
+     
+     if(login.getUserName().equals(userName) && login.getPassword().equals(password)){
+
+      if(response.equalsIgnoreCase("yes")){
+
+        temp = false;
+       
+        crudDetails();
+
+      }
+
+      }
+
+      else{
+
+        System.out.println("Invalid Login and Password");
+
+      }
+    }
+
+  }
+
+    
+
+    public void crudDetails(){
+
+      boolean flag = true;
+
+      do {
+
+        System.out.println("..........MAIN MENU.......... \n");
+        System.out.println("-----Press 1. Create---- \n");
+        System.out.println("-----Press 2. Read---- \n");
+        System.out.println("-----Press 3. Update---- \n");
+        System.out.println("-----Press 4. Delete---- \n");
+        System.out.println("-----Press 5. Quit---- \n");
+
+        int fact = Integer.parseInt(sc.nextLine());
+
+        switch(fact){
+
+          case 1:
+            createCertificate();
+            break;
+
+          case 2:
+            printDetailsOfVehicle();
+            break;
+
+          case 3:
+            System.out.println("Update");
+            break;
+
+          case 4:
+          delete();
+            break;
+
+          case 5:
+            System.out.println("Quit");
+            flag = false;
+            break;
+
+            default:
+            System.out.println("Default");
+
+        }
+  }
+      while(flag);
+}
+
+public void createCertificate()
+            {
+
+              System.out.println("Available plots are Car , Lorry , Bike");
+
+              System.out.println("Enter Vechile Type");
+
+              String type = sc.nextLine();
+
+              if(type.equalsIgnoreCase("Bike")){
+
+                 Bike bike = new Bike();
+
+                 System.out.println("Enter Register Number: \n");
+                 bike.setRegisterNo(sc.nextLine());
+
+                 if(pollution.getVehicleList().contains(bike)){
+
+                  System.out.println("This Vehicle is Certified");
+                }
+
+                System.out.println("Enter Owner Name: \n");
+                bike.setOwnerName(sc.nextLine());
+
+                System.out.println("Enter Date: \n");
+                vehicleInfo.setDate(dateFormat.format(date));
+
+            System.out.println("Center Name: \n");
+            vehicleInfo.setCentreName(sc.nextLine());
+
+            pollution.getVehicleList().add(bike);
+
+            bike.vehicleInfo.add(vehicleInfo);
+                 
+              
+          
+          }
+
+          else if(type.equalsIgnoreCase("Car")){
+
+             Car car = new Car();
+
+             System.out.println("Enter Register Number: \n");
+                car.setRegisterNo(sc.nextLine());
+
+                if(pollution.getVehicleList().contains(car)){
+
+                  System.out.println("This Vehicle is Certified");
+                }
+
+                System.out.println("Enter Owner Name: \n");
+                car.setOwnerName(sc.nextLine());
+
+            System.out.println("Enter Date: \n");
+            vehicleInfo.setDate(dateFormat.format(date));
+
+            System.out.println("Center Name: \n");
+            vehicleInfo.setCentreName(sc.nextLine());
+          
+
+           pollution.getVehicleList().add(car);
+
+           car.vehicleInfo.add(vehicleInfo);
+      }
+
+      else if(type.equalsIgnoreCase("Lorry")){
+
+        Lorry lorry = new Lorry();
+
+        System.out.println("Enter Register Number: \n");
+        lorry.setRegisterNo(sc.nextLine()); 
+
+        if(pollution.getVehicleList().contains(lorry)){
+
+          System.out.println("This Vehicle is Certified");
+        }
 
 
-            String condition = sc.nextLine();
-        
-        switch(condition){
+            System.out.println("Enter Owner Name: \n");
+            lorry.setOwnerName(sc.nextLine());  
 
-        case "1":
-              vehicleDetails();
+           System.out.println("Enter Date: \n");
+            vehicleInfo.setDate(dateFormat.format(date));
 
-        break;
+            System.out.println("Center Name: \n");
+            vehicleInfo.setCentreName(sc.nextLine());
 
-        case "2":
+            pollution.getVehicleList().add(lorry);
 
-          printDetailsOfVehicle();
+            lorry.vehicleInfo.add(vehicleInfo);
+          
 
-        break;
+      }
 
-        case "3":
-          System.out.println("Quit");
-          count = false;
+      else
+        System.out.println("The vechile is not Checked Here");
+    }
 
-        break; 
+    public void updateCertificate(){
+
+      System.out.println("------Updated Certificate-----");
+      
+
+
+
+
+
+    }
+
+      public void delete(){
+
+        Vehicle v = new Vehicle();
+        System.out.print("\n Enter Register Number :");
+        v.setRegisterNo(sc.nextLine());
+        int i = pollution.getVehicleList().indexOf(v);
+        if(pollution.getVehicleList().contains(v)){
+          
+           pollution.getVehicleList().remove(i);
+
+           System.out.println("Deleted");
 
         }
       }
-    }
-        public void vehicleDetails()
-        {
-      boolean count = true;
-      while (count)
-      {
-
-            System.out.println("Enter 1 for: bike details");
-            System.out.println("Enter 2 for: car details");
-            System.out.println("Enter 3 for: lorry details");
-            System.out.println("Enter 4 for:  back");
-
-               String copy = sc.nextLine();
-        
-               switch(copy){
-
-                case "1":
-                      bikeDetails();
-        
-                break;
-        
-                case "2":
-        
-                  carDetails();
-        
-                break;
-        
-                case "3":
-                  lorryDetails();
-        
-                break; 
-
-                case "4":
-                System.out.println("back");
-                count = false;
-      
-                break; 
-
-               }}}
-
-
-            public void bikeDetails()
-            {
-
-              Bike bike = new Bike();
-
-           
-
-            System.out.println("Enter owner name:");
-            bike.setOwnerName(sc.nextLine());
-
-            System.out.println("Enter register number:");
-            bike.setRegisterNo(sc.nextInt());
-
-            System.out.println("Enter date:");
-            vehicleInfo.setDate(dateFormat.format(date));
-          
-        }
-        
-    
-        
-        public void carDetails()
-            {
-
-              Car car = new Car();
-
-          
-
-            System.out.println("Enter owner name:");
-            car.setOwnerName(sc.nextLine());
-
-
-            System.out.println("Enter register number:");
-            car.setRegisterNo(sc.nextInt());
-
-            System.out.println("Enter date:");
-            vehicleInfo.setDate(dateFormat.format(date));
-
-           pollution.vehicleList.add(car);
-
-        }
-        
-        
-        public void lorryDetails()
-            {
-
-            Lorry lorry = new Lorry();
             
-            System.out.println("Enter owner name:");
-            lorry.setOwnerName(sc.nextLine());  
-
-            System.out.println("Enter register number:");
-            lorry.setRegisterNo(sc.nextInt()); 
-
-            System.out.println("Enter date:");
-            vehicleInfo.setDate(dateFormat.format(date));
-            
-        }
           
-        
-         public void printDetailsOfVehicle()
+          public void printDetailsOfVehicle()
           {
 
           System.out.println(pollution); 
           
-         System.out.println( vehicleInfo);
+         //System.out.println( vehicleInfo);
 
           }
+
+          
+    
 }
         
     

@@ -5,14 +5,23 @@ import com.lxisoft.vehicle.Vehicle;
 
 public class PollutionCenter {
 
-    public List<Vehicle> vehicleList = new ArrayList<Vehicle>();
+    private List<Vehicle> vehicleList = new ArrayList<Vehicle>();
+
+
+
+public List<Vehicle> getVehicleList() {
+        return vehicleList;
+    }
+ public void setVehicleList(List<Vehicle> vehicleList) {
+        this.vehicleList = vehicleList;
+    }
 
 
 
 @Override
 public String toString() {
-    System.out.println(vehicleList);
-    return "PollutionCenter vehicleList =" + vehicleList ;
+    
+    return "Vehicle Details :" + vehicleList;
 
 }
 
