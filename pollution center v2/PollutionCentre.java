@@ -4,10 +4,9 @@ import java.text.*;
 public class PollutionCentre
 {
 	
-	int i = 0;
-    int j = 0;
 	
-	private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
+	
+	private List<Vehicle> vehicles = new ArrayList<Vehicle>();
 	Scanner scan= new Scanner(System.in);
 	
 	public PollutionCentre()
@@ -15,7 +14,7 @@ public class PollutionCentre
 	}
 	
 	
-	public ArrayList<Vehicle> getVehicle()
+	public List<Vehicle> getVehicle()
 	{
 	  return vehicles; 
 	}
@@ -26,13 +25,8 @@ public class PollutionCentre
 	
 	
 	  public String toString(){
-		String source = "";
-		for(Vehicle machine:vehicles){
-			   
-			source = source+machine;
-		    
-		}
-		return source;
+	
+		return vehicles.toString();
 	}
 
 

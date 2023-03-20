@@ -4,8 +4,8 @@ public class Vehicle{
 	private String registerNumber;
 	private String type;
 	private String passenger;
-	private ArrayList<VehicleInfo> info = new ArrayList<VehicleInfo>();
-	
+	private List<VehicleInfo> info = new ArrayList<VehicleInfo>();
+	boolean response = false;
 	
 	public String getRegno()
 	{
@@ -37,10 +37,11 @@ public class Vehicle{
 		this.passenger = passenger;
 	}
 	
-	public  ArrayList<VehicleInfo> getInfo()
+	public List<VehicleInfo> getInfo()
 	{
 	  return info;	
 	}
+	
 	
 	/*public Vehicle()
 	{
@@ -51,16 +52,16 @@ public class Vehicle{
 	}*/
 	
 	
-	/*public boolean equals(Vehicle v)
+	public boolean equals(Object o)
 	{
 		
-		if(this.registernumber.equals(v.registernumber))
+		if(o!=null&&o instanceof Vehicle)
+		if(((Vehicle)o).getRegno().equals(this.registerNumber))
 		{
-			return true;
-		}else{
-			return false;
+		   response = true;
 		}
-	}*/
+		return response;
+	}
 	
 	
 	public String toString()
@@ -68,11 +69,11 @@ public class Vehicle{
 		
 		String details = "      Registeration Number :"+" "+registerNumber+"\n"+"      Type :"+" "+type+"\n"+"      Passengers :"+" "+passenger+"\n\n";
 		//System.out.println(info.toString());
-		for(VehicleInfo infos: info){
+		
 			
-			details = details+infos;
+			details = details+info.toString();
 			
-		}
+		
 		return details;
 		
 		

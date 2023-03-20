@@ -4,7 +4,7 @@ public class VehicleInfo{
 
     private String centreName;
 	private String date;
-	
+	boolean response = false;
 	
 	public String getCentreName()
 	{
@@ -23,6 +23,17 @@ public class VehicleInfo{
 	public void setDate(String date)
 	{
 		this.date = date;
+	}
+	
+	public boolean equals(Object o)
+	{
+		
+		if(o!=null&&o instanceof VehicleInfo)
+		if(((VehicleInfo)o).getDate().equals(this.date))
+		{
+		   response = true;
+		}
+		return response;
 	}
 
 
