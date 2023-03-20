@@ -1,8 +1,7 @@
 package com.lxisoft.controller;
-
 import java.util.Scanner;
-
 import com.lxisoft.authentication.LogIn;
+import com.lxisoft.vehicles.Vehicle;
 import com.lxisoft.view.PollutionCenter;
 
 public class ViewController {
@@ -10,24 +9,24 @@ public class ViewController {
     Scanner sc = new Scanner(System.in);
     PollutionCenter pollutionCenter = new PollutionCenter();
     
-    public void logIn() {
+        public void logIn() {
 
-    LogIn logIn = new LogIn();
+        LogIn logIn = new LogIn();
 
-    boolean c = true;
+        boolean c = true;
     
     while(c){
 
-    System.out.println("\t  -----Welcome To Pollution Service----- \n");
+        System.out.println("\t  -----Welcome To Pollution Service----- \n");
 
-    System.out.println("\t   Please Log In   \n");
+        System.out.println("\t   Please Log In   \n");
 
-    System.out.println("\t   Enter UserName \n");
+        System.out.println("\t   Enter UserName \n");
 
-    String uname= sc.nextLine();
-    System.out.println("\t    Enter Password \n");
+        String uname= sc.nextLine();
+        System.out.println("\t    Enter Password \n");
 
-    String pword = sc.nextLine();
+        String pword = sc.nextLine();
 
     if(logIn.getUserName().equals(uname) && logIn.getPassWord().equals(pword)){
 
@@ -37,162 +36,155 @@ public class ViewController {
         break;
 
     }
+
     else {
 
-        System.out.println("\t   Invalid Username Or Password  \n");
+        System.out.println("\t   Invalid Username or Password  \n");
         
     } 
-    
-    System.out.println("Enter yes to continue no to quit");
+        System.out.println("Enter yes to continue no to quit");
         String response = sc.nextLine();
         
-        if(response.equals("no"))
+    if(response.equals("no"))
      {
         break;
-   }
-}
-}
+
+    }}}
 
 public void homePage() {
 
-    boolean c = true;
-        while(c){
+           
+        Vehicle v = new Vehicle();
 
-            System.out.println("\t  -----Welcome To Pollution Service----- \n");
+        System.out.println("\t  -----Welcome To Pollution Service----- \n");
 
-            System.out.println("\t  Press 1 : Enter Register Number \n");
+        System.out.println("\t  Press 1 : Enter Register Number \n");
 
-            String register = sc.nextLine();
-            
-            System.out.println("Enter M to Main Menu , Q to quit");
-            String response = sc.nextLine();
-            
-            if(response.equals("M"))
-         {
-            mainMenu();
-            break;
-            
-       } 
+        v.setRegNo(sc.nextLine());
 
-       else{
+    if (pollutionCenter.vehicles.contains(v)){
 
-        System.out.print("Quit  \n");			
-					c = false;
-                      break;
-
-
-       }
-					
-			}}
-
-
-            public void mainMenu() {
-                
-                boolean c = true;
-                while(c){
-
-                System.out.println("\t  -----Welcome To Pollution Service----- \n");
-
-                System.out.println("\t\t  -Choose Options Below- \n");
-
-                
-                System.out.println("\t  Press 1 : Create \n");
-                System.out.println("\t  Press 2 : Read  \n");
-                System.out.println("\t  Press 3 : Update \n");
-                System.out.println("\t  Press 4 : Delete \n");
-                System.out.println("\t  Press 5 : Quit \n");
-                String count  = sc.nextLine();
-				 
-				
-			    switch (count)
-			     {
-				case ("1"):
-				addPollition();
-					
-					break;
-					
-			     case ("2"):
-                 viewCertificate();
-				 
-                      break;
-
-                      case ("3"):
-                
-                    System.out.println("Update");
-                      break;
-
-                      case ("4"):
-                
-                      System.out.println("Delete");
-                      break;
-					  
-				case ("5"):
-				
-                    System.out.print("Quit");			
-					c = false;
-                      break;
-					  
-				default:
-					System.out.println("Invalid Expression");		
-			}
-
-                }
-            }
-    
-
-    public void addPollition(){
-        boolean c = true;
-        while(c){
-            System.out.println("\t  Select Vehicle Type  \n");
-            
-            System.out.println("\t  Press 1 : Add Car \n");
-            System.out.println("\t  Press 2 : Add Lorry  \n");
-            System.out.println("\t  Press 3 : Add TwoWheeler  \n");
-            System.out.println("\t  Press 4 : Quit \n");
-
-
-            String count  = sc.nextLine();
-
-            switch (count)
-			     {
-				case ("1"):
-				pollutionCenter.addCar();
-					
-					break;
-						
-			     case ("2"):
-                   
-				 pollutionCenter.addLorry();
-                      break;
-
-                      case ("3"):
-                   
-                      pollutionCenter.addTwoWheeler();
-                      break;
-					  
-				case ("4"):
-				
-                    System.out.print("Quit");
-                    System.out.println("\n");			
-					c = false;
-                      break;
-					  
-				default:
-					System.out.println("Invalid Expression");		
-			}
-
-        }
+        System.out.println(pollutionCenter.vehicles);
 
     }
 
+    else{
 
-    public void viewCertificate() {
+        mainMenu();
+
+    }}
+
+public void mainMenu() {
+                
+        boolean c = true;
+    while(c){
+
+        System.out.println("\t  -----Welcome To Pollution Service----- \n");
+
+        System.out.println("\t\t  -Choose Options Below- \n");
+
+                
+        System.out.println("\t  Press 1 : Create \n");
+        System.out.println("\t  Press 2 : Read  \n");
+        System.out.println("\t  Press 3 : Update \n");
+        System.out.println("\t  Press 4 : Delete \n");
+        System.out.println("\t  Press 5 : Quit \n");
+        String count  = sc.nextLine();
+				 
+				
+	switch (count)
+			     {
+		case ("1"):
+		addPollition();			
+		break;
+					
+		case ("2"):
+        viewCertificate();	 
+        break;
+
+        case ("3"):
+                
+        System.out.println("Update");
+        break;
+
+        case ("4"):
+        deleteCertificate();
+        break;
+					  
+		case ("5"):
+				
+        System.out.print("Quit");			
+		c = false;
+        break;
+					  
+		default:
+		System.out.println("Invalid Expression");		
+			
+    }}}
+    
+public void addPollition(){
+        boolean c = true;
+    while(c){
+        System.out.println("\t  Enter Vehicle Type  \n");
+            
+        System.out.println("\t   Aavailable Portals : car, lorry, bike, b to Back \n");
+            
+        String count  = sc.nextLine();
+
+    switch (count)
+			    {
+
+		case ("car"):
+		pollutionCenter.addCar();
+		break;
+						
+		case ("lorry"):           
+		pollutionCenter.addLorry();
+        break;
+
+        case ("bike"):        
+        pollutionCenter.addTwoWheeler();
+        break;
+					  
+		case ("b"):
+		System.out.println("\n");			
+		c = false;
+        break;
+					  
+		default:
+		System.out.println("Invalid Expression");
+
+	}}}
+
+
+public void deleteCertificate() {
+        boolean s = true;
+
+    while(s){    
+        Vehicle v = new Vehicle();
+
+        System.out.println("\t  Enter Register Number \n");
+        v.setRegNo(sc.nextLine());
+        int i = pollutionCenter.vehicles.indexOf(v);
+    if (pollutionCenter.vehicles.contains(v)){
+
+        pollutionCenter.vehicles.remove(i);
+        System.out.println("CERTIFICATE DELETED \n");
+    }
+
+        System.out.println("Do you want to continue yes to continue no to quit \n");
+        String response = sc.nextLine();
+        
+    if(response.equals("no"))
+            {
+
+        mainMenu();
+        s=false;
+       
+    }}}
+
+public void viewCertificate() {
 
         pollutionCenter.viewVehicleDetails();
-
-
-        
-    }
     
-}
-
+    }}

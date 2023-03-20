@@ -6,25 +6,21 @@ public class LogIn {
     private String passWord;
 
 
-    public String getUserName() {
+public String getUserName() {
         return userName;
     }
-    public void setUserName(String userName) {
+public void setUserName(String userName) {
         this.userName = userName;
     }
-    public String getPassWord() {
+public String getPassWord() {
         return passWord;
     }
-    public void setPassWord(String passWord) {
+public void setPassWord(String passWord) {
         this.passWord = passWord;
     }
 
-    public LogIn() {
+public LogIn() {
         this.userName = "admin";
-        this.passWord = "admin@1";
-    }
-
+        this.passWord = "admin";
     
-    
-    
-}
+    }}
