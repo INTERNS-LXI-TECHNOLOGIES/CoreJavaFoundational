@@ -6,8 +6,8 @@ import com.lxisoft.view.PollutionCenter;
 
 public class ViewController {
    
-    Scanner sc = new Scanner(System.in);
-    PollutionCenter pollutionCenter = new PollutionCenter();
+        Scanner sc = new Scanner(System.in);
+        PollutionCenter pollutionCenter = new PollutionCenter();
     
         public void logIn() {
 
@@ -58,7 +58,7 @@ public void homePage() {
 
         System.out.println("\t  -----Welcome To Pollution Service----- \n");
 
-        System.out.println("\t  Press 1 : Enter Register Number \n");
+        System.out.println("\t    Enter Register Number \n");
 
         v.setRegNo(sc.nextLine());
 
@@ -102,9 +102,8 @@ public void mainMenu() {
         viewCertificate();	 
         break;
 
-        case ("3"):
-                
-        System.out.println("Update");
+        case ("3"):      
+        updateVehicle();
         break;
 
         case ("4"):
@@ -170,6 +169,34 @@ public void deleteCertificate() {
 
         pollutionCenter.vehicles.remove(i);
         System.out.println("CERTIFICATE DELETED \n");
+    }
+
+        System.out.println("Do you want to continue yes to continue no to quit \n");
+        String response = sc.nextLine();
+        
+    if(response.equals("no"))
+            {
+
+        mainMenu();
+        s=false;
+       
+    }}}
+
+public void updateVehicle() {
+        boolean s = true;
+
+    while(s){    
+        Vehicle v = new Vehicle();
+
+        System.out.println("\t  Enter Register Number \n");
+        v.setRegNo(sc.nextLine());
+        int i = pollutionCenter.vehicles.indexOf(v);
+    if (pollutionCenter.vehicles.contains(v)){
+
+        System.out.println("\t  Enter Brand Name \n");
+        pollutionCenter.vehicles.get(i).setBrandName(sc.nextLine());
+        
+        System.out.println("CERTIFICATE UPDATED \n");
     }
 
         System.out.println("Do you want to continue yes to continue no to quit \n");
