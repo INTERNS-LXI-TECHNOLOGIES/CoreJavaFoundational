@@ -1,3 +1,4 @@
+package com.diviso.production;
 import java.util.Scanner;
 import java.util.*;
 import java.text.*;

@@ -1,3 +1,4 @@
+package com.diviso.production;
 public class Lorry extends Vehicle{
 	
 	
