@@ -122,39 +122,9 @@ public void mainMenu() {
     }}}
     
 public void addPollition(){
-        boolean c = true;
-    while(c){
-        System.out.println("\t  Enter Vehicle Type  \n");
-            
-        System.out.println("\t   Aavailable Portals : car, lorry, bike, b to Back \n");
-            
-        String count  = sc.nextLine();
+        pollutionCenter.createCertificate();
 
-    switch (count)
-			    {
-
-		case ("car"):
-		pollutionCenter.addCar();
-		break;
-						
-		case ("lorry"):           
-		pollutionCenter.addLorry();
-        break;
-
-        case ("bike"):        
-        pollutionCenter.addTwoWheeler();
-        break;
-					  
-		case ("b"):
-		System.out.println("\n");			
-		c = false;
-        break;
-					  
-		default:
-		System.out.println("Invalid Expression");
-
-	}}}
-
+	}
 
 public void deleteCertificate() {
         boolean s = true;

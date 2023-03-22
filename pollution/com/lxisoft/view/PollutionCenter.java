@@ -16,17 +16,31 @@ public class PollutionCenter {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
 
-public void addCar() {
+public void createCertificate() {
+
+        System.out.println("\t  Enter Vehicle Type  \n");
+            
+        System.out.println("\t   Aavailable Portals : car, lorry, bike, b to Back \n");
+
+        String count  = sc.nextLine();
+
+        if(count.equalsIgnoreCase("car")){
 
         Car car = new Car();
+
         System.out.println("\t  You Selected Car \n");
+
+        System.out.println("\t  Add Car Register Number \n");
+        car.setRegNo(sc.nextLine());
+
+        if(vehicles.contains(car))
+
+        System.out.println("\t  Vehicle Certified \n");
 
         System.out.println("\t  Add Car Brand Name \n");
 
         car.setBrandName(sc.nextLine());
 
-        System.out.println("\t  Add Car Register Number \n");
-        car.setRegNo(sc.nextLine());
 
         System.out.println("\t  Center Name \n");
         vehicleInfo.setCenter(sc.nextLine());
@@ -40,18 +54,24 @@ public void addCar() {
 
         }
 
-public void addLorry() {
+        else if(count.equalsIgnoreCase("lorry")){
 
         Lorry lorry = new Lorry();
                     
         System.out.println("\t  You Selected Lorry \n");
+
+        System.out.println("\t  Add Lorry Register Number \n");
+        lorry.setRegNo(sc.nextLine());
+
+        if(vehicles.contains(lorry))
+
+        System.out.println("\t  Vehicle Certified \n");
                 
         System.out.println("\t  Add Lorry Brand Name \n");
                 
         lorry.setBrandName(sc.nextLine());
     
-        System.out.println("\t  Add Lorry Register Number \n");
-        lorry.setRegNo(sc.nextLine());
+       
 
         System.out.println("\t  Center Name \n");
         vehicleInfo.setCenter(sc.nextLine());
@@ -66,20 +86,23 @@ public void addLorry() {
     
         }
 
-public void addTwoWheeler() {
-
+        else if(count.equalsIgnoreCase("bike")){
         TwoWheeler twowheeler = new TwoWheeler();
         
          System.out.println("\t  You Selected TwoWheeler \n");
 
+         System.out.println("\t  Add Twowheeler Register Number \n");
+        twowheeler.setRegNo(sc.nextLine());
+
+        if(vehicles.contains(twowheeler))
+
+        System.out.println("\t  Vehicle Certified \n");
                     
         System.out.println("\t  Add Twowheeler Brand Name \n");
                     
         twowheeler.setBrandName(sc.nextLine());
         
-        System.out.println("\t  Add Twowheeler Register Number \n");
-        twowheeler.setRegNo(sc.nextLine());
-
+        
         System.out.println("\t  Center Name \n");
         vehicleInfo.setCenter(sc.nextLine());
         
@@ -90,7 +113,7 @@ public void addTwoWheeler() {
         twowheeler.getInfo().add(vehicleInfo);    
         vehicles.add(twowheeler);
           
-        }
+        }}
 
 public void viewVehicleDetails() {
 

@@ -45,6 +45,6 @@ public boolean equals(Object obj) {
 @Override
 public String toString() {
         
-        return "Vehicle :"  + brandName + "\n" +  "regNo :" + regNo+ "\n" + info + "\n";
+        return "Brand :"  + brandName + "\n" +  "regNo :" + regNo+ "\n" + info + "\n";
 
     }}
