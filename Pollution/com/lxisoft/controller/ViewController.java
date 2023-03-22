@@ -2,9 +2,7 @@ package com.lxisoft.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-
 import javax.lang.model.util.ElementScanner6;
-
 import com.lxisoft.factor.Login;        
 import com.lxisoft.factor.PollutionCenter;
 import com.lxisoft.vehicle.Vehicle;
@@ -16,55 +14,48 @@ import com.lxisoft.vehicles.Lorry;
 public class ViewController {
 
      
-    Scanner sc = new Scanner(System.in);
-    PollutionCenter pollution = new PollutionCenter();
-    Date date = new Date();
-    VehicleInfo vehicleInfo = new  VehicleInfo(); 
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-    Login login = new Login();
+      Scanner sc = new Scanner(System.in);
+      PollutionCenter pollution = new PollutionCenter();
+      Date date = new Date();
+      VehicleInfo vehicleInfo = new  VehicleInfo(); 
+      SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+      Login login = new Login();
 
     public void login(){
 
       boolean temp = true;
 
-      while(temp){
+        while(temp){
 
-    
-        System.out.println("----USER NAME----- \n");
-
-      System.out.print("USER NAME : ");
-      String userName = sc.nextLine();
-
-        System.out.println("----PASSWORD---- \n");
-
-      System.out.print("PASSWORD : ");
-      String password = sc.nextLine();
-
-      System.out.println("\n Enter Yes to Login : ");
-      String response = sc.nextLine();
+          System.out.println("----USER NAME----- \n");
+          System.out.print("USER NAME : ");
+          String userName = sc.nextLine();
+          System.out.println("----PASSWORD---- \n");
+          System.out.print("PASSWORD : ");
+          String password = sc.nextLine();
+          System.out.println("\n Enter Yes to Login : ");
+          String response = sc.nextLine();
      
-     if(login.getUserName().equals(userName) && login.getPassword().equals(password)){
+          if(login.getUserName().equals(userName) && login.getPassword().equals(password)){
 
-      if(response.equalsIgnoreCase("yes")){
+            if(response.equalsIgnoreCase("yes")){
 
-        temp = false;
+                temp = false;
        
-        crudDetails();
+                crudDetails();
 
-      }
+          }
 
-      }
+            }
 
-      else{
+          else{
 
-        System.out.println("Invalid Login and Password");
+            System.out.println("Invalid Login and Password");
 
-      }
-    }
+          }
+       }
 
   }
-
-    
 
     public void crudDetails(){
 
@@ -92,11 +83,12 @@ public class ViewController {
             break;
 
           case 3:
-            System.out.println("Update");
+            updateCertificate();
+            
             break;
 
           case 4:
-          delete();
+          deleteCertificate();
             break;
 
           case 5:
@@ -113,25 +105,25 @@ public class ViewController {
 }
 
 public void createCertificate()
-            {
+{
 
-              System.out.println("Available plots are Car , Lorry , Bike");
+    System.out.println("Available plots are Car , Lorry , Bike");
+    System.out.println("Enter Vechile Type");
+    String type = sc.nextLine();
 
-              System.out.println("Enter Vechile Type");
+      if(type.equalsIgnoreCase("Bike")){
 
-              String type = sc.nextLine();
+        Bike bike = new Bike();
 
-              if(type.equalsIgnoreCase("Bike")){
+          System.out.println("Enter Register Number: \n");
+          bike.setRegisterNo(sc.nextLine());
 
-                 Bike bike = new Bike();
+            if(pollution.getVehicleList().contains(bike)){
 
-                 System.out.println("Enter Register Number: \n");
-                 bike.setRegisterNo(sc.nextLine());
+                System.out.println("This Vehicle is Certified");
 
-                 if(pollution.getVehicleList().contains(bike)){
-
-                  System.out.println("This Vehicle is Certified");
-                }
+                
+            }
 
                 System.out.println("Enter Owner Name: \n");
                 bike.setOwnerName(sc.nextLine());
@@ -139,12 +131,11 @@ public void createCertificate()
                 System.out.println("Enter Date: \n");
                 vehicleInfo.setDate(dateFormat.format(date));
 
-            System.out.println("Center Name: \n");
-            vehicleInfo.setCentreName(sc.nextLine());
+                System.out.println("Center Name: \n");
+                vehicleInfo.setCentreName(sc.nextLine());
 
-            pollution.getVehicleList().add(bike);
-
-            bike.vehicleInfo.add(vehicleInfo);
+                pollution.getVehicleList().add(bike);
+                bike.vehicleInfo.add(vehicleInfo);
                  
               
           
@@ -212,39 +203,52 @@ public void createCertificate()
 
     public void updateCertificate(){
 
+      Vehicle v = new Vehicle();
+        System.out.print("\n Enter Register Number :");
+        v.setRegisterNo(sc.nextLine());
+        int i = pollution.getVehicleList().indexOf(v);
+
+          if(pollution.getVehicleList().contains(v)){
+
+            System.out.println("Enter Owner Name: \n");
+          
+            pollution.getVehicleList().get(i).setOwnerName(sc.nextLine());
+
+
+
       System.out.println("------Updated Certificate-----");
+
+
       
+  }
+}
 
-
-
-
-
-    }
-
-      public void delete(){
+      public void deleteCertificate(){
 
         Vehicle v = new Vehicle();
         System.out.print("\n Enter Register Number :");
         v.setRegisterNo(sc.nextLine());
         int i = pollution.getVehicleList().indexOf(v);
-        if(pollution.getVehicleList().contains(v)){
+
+          if(pollution.getVehicleList().contains(v)){
           
-           pollution.getVehicleList().remove(i);
+            pollution.getVehicleList().remove(i);
 
-           System.out.println("Deleted");
+            System.out.println("Deleted");
 
-        }
+          }
       }
             
           
-          public void printDetailsOfVehicle()
-          {
-
-          System.out.println(pollution); 
+      public void printDetailsOfVehicle()
+  
+      
+      {
+        System.out.println(pollution); 
           
          //System.out.println( vehicleInfo);
 
-          }
+      }
 
           
     
