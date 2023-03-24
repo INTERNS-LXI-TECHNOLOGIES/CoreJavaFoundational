@@ -67,23 +67,6 @@ public class ViewController
 
    String search = s.nextLine();
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
    crudDeatils();
 
      }
@@ -95,11 +78,11 @@ public class ViewController
 		boolean itsContinue = true;
              while (itsContinue)		
 			  {
-		        System.out.println("Enter 1 :Create");
+		        System.out.println("\nEnter 1 :Create");
 		        System.out.println("Enter 2 :Read");
 		        System.out.println("Enter 3 :Update");
 				System.out.println("Enter 4 :Delete");
-				System.out.println("Enter 5 :Back");
+				System.out.println("Enter 5 :Back\n");
 		        
 		
 		        String crud = s.nextLine();
@@ -119,13 +102,13 @@ public class ViewController
 					  
 					  
 					  case "3":
-                 enterVehicleInfo();
+                 updateMethods();
 				 
                       break;
 					  
 					  
 					  case "4":
-                  enterVehicleInfo();
+                  deleteMethod();
 				 
                       break;
 					  
@@ -146,48 +129,64 @@ public class ViewController
   
   
 		public void enterVehicleInfo()
-		{
+		  {
 			boolean programContinue = true;
 			
 				 while (programContinue)
-		{
+		  {
              System.out.println("\n----POLLUTION CONTROL----\n");
 		
-			    System.out.println("note: available portals car, lorry, bike,(q to quit)");
+			    System.out.println("note: available portals are [car, lorry, bike]");
+				System.out.println("\nEnter 'q' to quit \n");	
+				String vehicle  = s.nextLine();
 				
-		         String vehicle  = s.nextLine();
-				 System.out.println("selected :"+vehicle);
+				if(vehicle.equalsIgnoreCase("Q"))
+		                 {
+                          
+                           programContinue = false;
+						   
+					    } 
+				
+				 System.out.println("\nselected :"+vehicle);
 			    switch (vehicle)
 			     {
 				case "car":{
-				controller.getVehicleI().add(vehicleUpdates(new Car()));	
+				controller.getVehicleI().add(vehicleInformations(new Car()));	
 				
 				
 					break;
 				}
 					
 			     case "lorry":
-                  controller.getVehicleI().add(vehicleUpdates(new Lorry()));
+                  controller.getVehicleI().add(vehicleInformations(new Lorry()));
 				 
                       break;
 					  
 				 case "bike":
-				controller.getVehicleI().add(vehicleUpdates(new Bike()));
+				controller.getVehicleI().add(vehicleInformations(new Bike()));
                     			
 					
                       break;
 					  
 					  case "q":
 					  System.out.print("Quit");
-					  programContinue=false;
+					  
+					  String rps = s.nextLine();
+					  if(rps.equalsIgnoreCase("Q"))
+		                 {
+                          
+                          programContinue = false;
+						   
+					    } 
+						
 					  break;
 					  
 				 default:
 					System.out.println("Invalid Expression");		
 			      }
-		  }
-		}
-	        public Vehicle vehicleUpdates(Vehicle v)
+		   }
+		 }
+	        public Vehicle vehicleInformations(Vehicle v)
 		    {
 				
 				
@@ -197,26 +196,29 @@ public class ViewController
 					{
 					
 					
-				    System.out.println("Enter your Registration Number");
+				    System.out.println("\n Enter your Registration Number \n");
 					v.setRegisterNumber(s.nextLine());
 					
 					if(controller.getVehicleI().contains(v)){
 						
 						System.out.println("\t                    THIS VEHICLE ALREADY REGISTERED\n ");
-							System.out.println("\t   Your Certificate Valid For The Next 6 Months From The Date Of Registration.\n");
-							System.out.println("\t              Thank You For Your Service....!!!! ");
+						System.out.println("\t   Your Certificate Valid For The Next 6 Months From The Date Of Registration.\n");
+						System.out.println("\t              Thank You For Your Service....!!!! ");
    
 						flag = false;
-					    }else{
+					    }
+						
+						else{
+							
 				if(v instanceof Car){
-				    System.out.println("Enter your Brand");
+				    System.out.println("\n Enter your Brand \n");
 				    ((Car)v).setBrand(s.nextLine());
 					
 					VehicleInfo info = new VehicleInfo();
-					System.out.println("Enter your Center Name");
+					System.out.println("\n Enter your Center Name \n");
 					info.setCenterName(s.nextLine());
 					
-					System.out.println("    Date Updated   \n");
+					System.out.println("\n    Date Updated   \n");
 					info.setDate(formater.format(date));
 					v.getVehicleInfm().add(info);
 					break;
@@ -226,14 +228,14 @@ public class ViewController
                else if(v instanceof Lorry)
 			    {
 					
-					System.out.println("Enter your Brand");
+					System.out.println("\n Enter your Brand \n");
 				    ((Lorry)v).setBrand(s.nextLine());
 					
 					VehicleInfo info = new VehicleInfo();
-					System.out.println("Enter your Center Name");
+					System.out.println("\n Enter your Center Name\n");
 					info.setCenterName(s.nextLine());
 					
-					System.out.println("    Date Updated   \n");
+					System.out.println("\n    Date Updated   \n");
 					info.setDate(formater.format(date));
 					v.getVehicleInfm().add(info);
 					break;
@@ -242,30 +244,28 @@ public class ViewController
 				   
 				 else {
 					 
-					 System.out.println("Enter your Brand");
+					 System.out.println("\nEnter your Brand\n");
 				    ((Bike)v).setBrand(s.nextLine());
 					
 					VehicleInfo info = new VehicleInfo();
-					System.out.println("Enter your Center Name");
+					System.out.println("\n Enter your Center Name\n");
 					info.setCenterName(s.nextLine());
 					
-					System.out.println("    Date Updated   \n");
+					System.out.println("\n   Date Updated   \n");
 					info.setDate(formater.format(date));
 					v.getVehicleInfm().add(info);
 					  break;
 				     }
-					 
-				    
-				        
+					    
                         
 				}
-				System.out.println("Enter yes to continue no to quit");
+				    System.out.println("Enter yes to continue no to quit \n");
                     String response = s.nextLine();
 				      if(response.equalsIgnoreCase("No"))
 		                 {
                           
                            flag=false;
-						   //crudDeatils();
+						   
 					    } 
 					}
 				} catch(Exception ex){
@@ -277,27 +277,78 @@ public class ViewController
              
           public void printVehicleDetails()
                {
-				   
+				 Vehicle vcl = new Vehicle();
+				 System.out.println("\n Enter Register Number \n");
+				 vcl.setRegisterNumber(s.nextLine());
+				 int i = controller.getVehicleI().indexOf(vcl);
+				 if(controller.getVehicleI().contains(vcl)){
 				   
 				    System.out.println("....................................................................................");
+					System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+				    System.out.println("....................................................................................\n");
 				    System.out.println("\t     KERALA STATE MOTOR VEHICLE DEPARTMENT - PALAKKAD \n");
 				   
 				    System.out.println("YOUR 'POLLUTION CONTROLLER CERTIFICATION' IS VALID FOR THE  NEXT 6 MONTHS \n");
 					System.out.println("....................................................................................");
                     
-                    System.out.println(controller);
+                    System.out.println(controller.getVehicleI().get(i));
 					
 					
                     System.out.println("\t              ThankYou For Your Service....!!!!    ");
-                    System.out.println("....................................................................................\n");
-					
+                    System.out.println("....................................................................................");
+					System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+					System.out.println("....................................................................................\n");
 			   
-               
+				 }
 			   
 			   
 			   }
 
                
+         public void deleteMethod()
+               {
+	 
+	            Vehicle vcl = new Vehicle();
+				
+				System.out.println("\n Enter Register Number \n");
+				vcl.setRegisterNumber(s.nextLine());
+	 
+	            int i = controller.getVehicleI().indexOf(vcl);
+	 
+	            if(controller.getVehicleI().contains(vcl))
+	            {
+		 
+				  controller.getVehicleI().remove(i);
+				  System.out.println("\n Deleted \n");
+		 
+                }
+	 }
+  
+        public void updateMethods()
+              {
+				 Vehicle vcl = new Vehicle();
+				 System.out.println("\n Enter Register Number \n");
+				 vcl.setRegisterNumber(s.nextLine());
+				 int i = controller.getVehicleI().indexOf(vcl);
+                 VehicleInfo vehiIn = new VehicleInfo();
+				 System.out.println("  Date Updated   \n");
+			     vehiIn.setDate(formater.format(date));
+                    
+					
+					if(controller.getVehicleI().contains(vcl)&& controller.getVehicleI().get(i).getVehicleInfm().contains(vehiIn)){
+					int j = controller.getVehicleI().get(i).getVehicleInfm().indexOf(vehiIn);
+					 System.out.println("\n Enter your CenterName \n");
+					 
+				     controller.getVehicleI().get(i).getVehicleInfm().get(j).setCenterName(s.nextLine());
+					 
+				     System.out.println("\n 'P' to print , 'N' to quit \n");
+				     String response = s.nextLine();
+				     
+				     System.out.println("\n updated");
+		 
+					}
+				 
+              }
   
 }
 

@@ -18,6 +18,28 @@ private String centerName;
         {
 	      this.date=date;
 		}
+		
+		
+		public boolean equals(Object o){
+	
+	boolean found= false;
+	if(o!=null&&o instanceof VehicleInfo)
+	if(((VehicleInfo)o).getDate().equals(this.date)){
+		found=true;
+	}
+		
+	return found;
+	
+}
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
 	public String getCenterName()
@@ -31,7 +53,7 @@ private String centerName;
 	public String toString()
 	{
 	
-	return         "\n Date:" + date+ "\n" 
+	return         "Date:" + date+ "\n" 
 				 + "Center Name:" + centerName + "\n";
 	
 	}

@@ -20,7 +20,7 @@ public String getBrand()
 public String toString()
 {
 	
-return "Lorry Brand:" + brand + "\n"+                                                                                                                                                                                                                                                                                                                                                           
+return "\t  <<<Lorry Details>>>  \n" + "Lorry Brand:" + brand + "\n"+                                                                                                                                                                                                                                                                                                                                                           
         super.toString();	
 	
 }

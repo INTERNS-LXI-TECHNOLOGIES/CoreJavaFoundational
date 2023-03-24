@@ -21,7 +21,7 @@ public String getBrand()
 public String toString()
 {
 	
-return "Bike Brand:" + brand + "\n"+
+return "\t  <<<Bike Details>>>  \n" + "Bike Brand:" + brand + "\n"+
         super.toString();	
 	
 }

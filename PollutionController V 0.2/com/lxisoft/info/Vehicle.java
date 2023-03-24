@@ -6,6 +6,7 @@ public class Vehicle
 {
 	
 	
+	
 private List <VehicleInfo> vehiclesIn = new ArrayList<VehicleInfo>();
  
 public List<VehicleInfo> getVehicleInfm()
@@ -13,14 +14,13 @@ public List<VehicleInfo> getVehicleInfm()
 	  return vehiclesIn;
 	 
     }
-public void setVehicleInfm(List<VehicleInfo>vehiclesIn)
+  public void setVehicleInfm(List<VehicleInfo>vehiclesIn)
         {
 	      this.vehiclesIn=vehiclesIn;
 		}
- 
- 
- 
-
+		
+		
+	  
  private String registerNumber;
 
 	public String getRegisterNumber()
@@ -34,6 +34,7 @@ public void setVehicleInfm(List<VehicleInfo>vehiclesIn)
 		}
 	
 public boolean equals(Object o){
+	
 	boolean found= false;
 	if(o!=null&&o instanceof Vehicle)
 	if(((Vehicle)o).getRegisterNumber().equals(this.registerNumber)){
@@ -43,10 +44,6 @@ public boolean equals(Object o){
 	return found;
 	
 }
-
-
-
-
 
 
 	public String toString()
