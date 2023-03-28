@@ -2,28 +2,11 @@ package com.lxisoft.game;
 //import com.lxisoft.game.Player;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import com.lxisoft.game.Dice;
 
-public class Board extends Dice {
+public class Board{
 	
 	private String boardName;
-	final static int WINPOINT = 30;
-	
-	static HashMap<Integer, Integer> snake = new HashMap<>();
-	static HashMap<Integer, Integer> ladder = new HashMap<>();
-	{
-		snake.put(27, 1);
-		snake.put(21, 9);
-		snake.put(19, 7);
-		snake.put(17, 4);
-
-		ladder.put(3, 22);
-		ladder.put(5, 8);
-		ladder.put(11, 26);
-		ladder.put(20, 29);
-	}
 		
 		
 	private List<Player> players = new ArrayList<Player>();
@@ -31,40 +14,22 @@ public class Board extends Dice {
 	
  	public void snakeNLadder(int number){
 		
-		PlayerSanthosh santhosh = new PlayerSanthosh();
-		Player santhosh1= santhosh.creatingPlayerSanthosh();
-		players.add(santhosh1);
-		
+		Player player = new Player();
+		player.setPlayerName("Santhosh");
+		players.add(player);
+		player.setPlayerName("Paramesh");
+		players.add(player);
+					
 		System.out.println("____Player DETAILS_____\n");
-		System.out.println("PlayerName: "+santhosh1.getPlayerName()+"\n");
-		
-		PlayerParamesh paramesh = new PlayerParamesh();
-		Player paramesh1= paramesh.creatingPlayerParamesh();
-		players.add(paramesh1);
-		System.out.println("PlayerName: "+paramesh1.getPlayerName()+"\n"); 
+		System.out.println("PlayerName: "+player.getPlayerName()+"\n");
+
+		//players.add(paramesh1); 
+		System.out.println("PlayerName: "+player.getPlayerName()+"\n"); 
 
 	}	
 	
-	public int calculatePlayerValue(int playerPosition, int diceValue) {
-		int playerNewPosition=playerPosition+diceValue;
-
-		if (playerNewPosition > WINPOINT)
-			return playerPosition;		
-
-		if (null !=snake.get(playerNewPosition)) {
-			System.out.println("Oops..swallowed by the snake..");
-			playerNewPosition=snake.get(playerNewPosition);
-		}
-		
-		if (null !=ladder.get(playerNewPosition)) {
-			System.out.println("YAY! climbing the ladder..");
-			playerNewPosition=ladder.get(playerNewPosition);
-		}
-		
-		return playerNewPosition;
-	}
 	
-	public boolean isWin(int playerPosition) {
+/* 	public boolean isWin(int playerPosition) {
 		return WINPOINT==playerPosition;
 	}
 	 
@@ -80,7 +45,7 @@ public class Board extends Dice {
 		    ? "\n\nFirst player's turn" : "\n\nSecond player's turn");
 		    System.out.println("Press 'r' to roll Dice");
 		    rPressed=scan.next();
-		    diceValue=rollDice();
+		    diceValue=Dice.rollDice();
 
 		    if (currentPlayer==-1) {
 		      player1Position=calculatePlayerValue(player1Position, diceValue);
@@ -103,44 +68,20 @@ public class Board extends Dice {
 		      }
 		      currentPlayer = -currentPlayer;
 		} while ("r".equals(rPressed));
-	}
-	
-// Creating Setter Below
-	  
-	 // Setter method for snake map
-	 
-    public void setSnake(HashMap<Integer, Integer> gSnakes) {
-        this.snake = gSnakes;
-    }
-	
-	public void setLadder(HashMap<Integer, Integer> gLadders) {
-        this.ladder = gLadders;
-    }
-	
-	public void setBoardName(String sNLBoard){
+	} */
+		
+public void setBoardName(String sNLBoard){
 	 this.boardName = sNLBoard;
 	}
-	
-	// Creating Getter Below
-	
-	// Getters method for snake map
- 
- public HashMap<Integer, Integer> gSnakes() {
-        return snake;
-    }  
-	
- public HashMap<Integer, Integer> gLadders() {
-        return ladder;
-    }  
-	
+
 public String getBoardName(){
 	 return this.boardName;
 }
 
-	public void print(){
-		
-		System.out.println (this.snake+"\n"+this.ladder+"\n"+this.boardName);
-			
-	}
+public void print()	{
+	System.out.println(boardName+"\n"+this.boardName+"\n");
+	
+}
+
 
 }

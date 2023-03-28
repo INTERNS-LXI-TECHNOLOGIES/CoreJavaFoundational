@@ -1,7 +1,7 @@
 package com.lxisoft.game;
 import java.util.Random;
 
-public class Dice {
+public class Dice extends Board{
 	
 //This method will generate random number from 1-6
 	
