@@ -23,6 +23,7 @@ public class TDD {
 		slGame.snakeNLadder(2);	
 		dice.rollDice();	
 		player.startGame();	
+		
 	}
 }
 

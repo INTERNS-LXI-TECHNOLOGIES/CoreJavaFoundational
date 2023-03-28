@@ -4,49 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import com.lxisoft.game.Board;
+import com.lxisoft.game.Cell;
 
 public class Player {
 	
 	private String playerName;
 	private int playerPosition;
-	final static int WINPOINT = 30;
 	
-	private HashMap<Integer, Integer> snakes = new HashMap<>();
-	private HashMap<Integer, Integer> ladders = new HashMap<>();
-	{
-		snakes.put(27, 1);
-		snakes.put(21, 9);
-		snakes.put(19, 7);
-		snakes.put(17, 4);
-
-		ladders.put(3, 22);
-		ladders.put(5, 8);
-		ladders.put(11, 26);
-		ladders.put(20, 29);
-	}
-
-	
-		public int calculatePlayerValue(int playerPosition, int diceValue) {
-		int playerNewPosition=playerPosition+diceValue;
-
-		if (playerNewPosition > WINPOINT)
-			return playerPosition;		
-
-		if (null !=snakes.get(playerNewPosition)) {
-			System.out.println("Oops..swallowed by the snake..");
-			playerNewPosition=snakes.get(playerNewPosition);
-		}
-		
-		if (null !=ladders.get(playerNewPosition)) {
-			System.out.println("YAY! climbing the ladder..");
-			playerNewPosition=ladders.get(playerNewPosition);
-		}
-		
-		return playerNewPosition;
-	}
+	Cell cell=new Cell();
 	
 	public boolean isWin(int playerPosition) {
-		return Player.WINPOINT==playerPosition;
+		return Cell.WINPOINT==playerPosition;
 	}
 	 
 	 	public void startGame() {
@@ -64,7 +32,7 @@ public class Player {
 		    diceValue=Dice.rollDice();
 
 		    if (currentPlayer==-1) {
-		      player1Position=calculatePlayerValue(player1Position, diceValue);
+		      player1Position=cell.calculatePlayerValue(player1Position, diceValue);
 		      System.out.println("First Player Position:"+player1Position);
 		      System.out.println("Second Player Position:"+player2Position);
 		      System.out.println("-------------------------");
@@ -73,7 +41,7 @@ public class Player {
 		         return;
 		      }
 		      } else {
-		        player2Position = calculatePlayerValue(player2Position, diceValue);
+		        player2Position = cell.calculatePlayerValue(player2Position, diceValue);
 		        System.out.println("First Player Position:"+player1Position);
 		        System.out.println("Second Player Position:"+player2Position);
 		        System.out.println("-------------------------");
@@ -102,36 +70,8 @@ public class Player {
 	return this.playerName;
 }
 
-
-
-// Creating Setter Below
-	  
-	 // Setter method for snake map
-	 
-    public void setSnakes(HashMap<Integer, Integer> gSnakes) {
-        this.snakes = gSnakes;
-    }
-	
-	public void setLadders(HashMap<Integer, Integer> gLadders) {
-        this.ladders = gLadders;
-    }
-
-	
-	// Creating Getter Below
-	
-	// Getters method for snake map
- 
- public HashMap<Integer, Integer> gSnakes() {
-        return snakes;
-    }  
-	
- public HashMap<Integer, Integer> gLadders() {
-        return ladders;
-    }  
-	
-	
-public void print()	{
-	System.out.println(playerName+"\n"+playerPosition+"\n"+this.snakes+"\n"+this.ladders+"\n");
+	public int getPosition(){
+	return this.playerPosition;
 }
-	
+
 }
