@@ -14,7 +14,7 @@ import javax.management.loading.PrivateMLet;
 public class FileUtility implements Utility{
     
     
-    private TreeSet<Animal> Read(){
+     public TreeSet<Animal> Read(){
         TreeSet <Animal> animals = new TreeSet< Animal>();
 
     try{

@@ -3,13 +3,13 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.*;
 
-public class Animal implements Comparable<Animal>{
+public class Animal implements Comparable <Animal>{
    private String name;
    private double strength;
    private double hungerLevel;
    private int vision;
    private Location location;
-   private static String Feature;
+   
 
    
 
@@ -22,10 +22,8 @@ public class Animal implements Comparable<Animal>{
 
     }
 
-    //getters and setters
-    public static String getFeature(){
-        return Feature;
-    }
+
+    
     public void setFeature(String Feature){
     }
     public String getName (){
@@ -71,7 +69,7 @@ public class Animal implements Comparable<Animal>{
     return this.name+ " location x= " + this.location.locationx+ " location y= " + this.location.locationy;
     }
     public String toString(){
-      return  this.name.toUpperCase() + " with strength: " + 
+      return  ((String) this.name).toUpperCase() + " with strength: " + 
          this.strength + " Hunger Level: " + this.hungerLevel + " vision " +this.vision;
         
         

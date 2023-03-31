@@ -69,7 +69,7 @@ public class Forest {
       }}}
           
     
-        System.out.println(firstAnimal.getName().toUpperCase()+ " meets " + nearestAnimal.getName().toUpperCase());
+        System.out.println(((String) firstAnimal.getName()).toUpperCase()+ " meets " + ((String) nearestAnimal.getName()).toUpperCase());
   
           if(firstAnimal instanceof Herbivores && nearestAnimal instanceof Herbivores){
             ((Herbivores)firstAnimal).herbiFight(nearestAnimal);
