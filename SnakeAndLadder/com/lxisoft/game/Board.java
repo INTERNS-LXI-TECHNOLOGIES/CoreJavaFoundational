@@ -1,45 +1,26 @@
 package com.lxisoft.game;
-//import com.lxisoft.game.Player;
-import java.util.ArrayList;
-import java.util.List;
 import com.lxisoft.game.Dice;
+import java.util.Scanner;
+import com.lxisoft.game.Cell;
 
 public class Board{
 	
-	private String boardName;
-		
-		
-	private List<Player> players = new ArrayList<Player>();
-	private List<Board> boardsquare = new ArrayList<Board>();
-	
- 	public void snakeNLadder(int number){
-		
-		Player player = new Player();
-		player.setPlayerName("Santhosh");
-		players.add(player);
-		player.setPlayerName("Paramesh");
-		players.add(player);
-					
-		System.out.println("____Player DETAILS_____\n");
-		System.out.println("PlayerName: "+player.getPlayerName()+"\n");
+private Player snlPlayer;
+private Dice snlDice;
+private int playerPosition;	
 
-		//players.add(paramesh1); 
-		System.out.println("PlayerName: "+player.getPlayerName()+"\n"); 
-
-	}	
-	
-	
-/* 	public boolean isWin(int playerPosition) {
-		return WINPOINT==playerPosition;
+public boolean isWin(int playerPosition) {
+		return Cell.WINPOINT==playerPosition;
 	}
-	 
-	 	public void startGame() {
+	
+public void startGame() {
 		int player1Position=0, player2Position=0;
 		int currentPlayer=-1;		
 		Scanner scan= new Scanner(System.in);
 		String rPressed;
 		int diceValue = 0;
 		Dice Dice = new Dice();
+		Cell cell = new Cell();
 		do {
 		    System.out.println(currentPlayer == -1 
 		    ? "\n\nFirst player's turn" : "\n\nSecond player's turn");
@@ -48,7 +29,7 @@ public class Board{
 		    diceValue=Dice.rollDice();
 
 		    if (currentPlayer==-1) {
-		      player1Position=calculatePlayerValue(player1Position, diceValue);
+		      player1Position = cell.calculatePlayerValue(player1Position, diceValue);
 		      System.out.println("First Player Position:"+player1Position);
 		      System.out.println("Second Player Position:"+player2Position);
 		      System.out.println("-------------------------");
@@ -57,7 +38,7 @@ public class Board{
 		         return;
 		      }
 		      } else {
-		        player2Position = calculatePlayerValue(player2Position, diceValue);
+		        player2Position = cell.calculatePlayerValue(player2Position, diceValue);
 		        System.out.println("First Player Position:"+player1Position);
 		        System.out.println("Second Player Position:"+player2Position);
 		        System.out.println("-------------------------");
@@ -68,20 +49,31 @@ public class Board{
 		      }
 		      currentPlayer = -currentPlayer;
 		} while ("r".equals(rPressed));
-	} */
-		
-public void setBoardName(String sNLBoard){
-	 this.boardName = sNLBoard;
 	}
 
-public String getBoardName(){
-	 return this.boardName;
+
+public void setPlayer(Player snlPlayer){
+	this.snlPlayer = snlPlayer;
 }
 
-public void print()	{
-	System.out.println(boardName+"\n"+this.boardName+"\n");
-	
+public Player getPlayer (){
+	return this.snlPlayer;
 }
 
+	public void setPosition(int playPosition){
+	this.playerPosition = playPosition;
+}
+
+	public int getPosition(){
+	return this.playerPosition;
+}
+
+public void setDice(Dice snlDice){
+	this.snlDice = snlDice;
+}
+
+public Dice getDice (){
+	return this.snlDice;
+}
 
 }

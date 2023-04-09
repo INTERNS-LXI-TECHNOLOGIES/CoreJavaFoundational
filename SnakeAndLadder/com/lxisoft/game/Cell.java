@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class Cell {
 	
-	private String playerName;
 	private int playerPosition;
+	private Cell snlCell;
 	
 final static int WINPOINT = 30;
 	
@@ -46,27 +46,9 @@ final static int WINPOINT = 30;
 	}
 
 
-
-	// Setter and Getter
-	
-	public void setPlayerName(String playName){
-	this.playerName = playName;
-}
-
-	public void setPosition(int playerPosition){
-	this.playerPosition = playerPosition;
-}
-	public String getPlayerName(){
-	return this.playerName;
-}
-	public int getPosition(){
-	return this.playerPosition;
-}
-
-
-// Creating Setter Below
+	// Creating Setter Below
 	  
-	 // Setter method for snake map
+	 // Setter method for snake map and Player Name & Position
 	 
     public void setSnakes(HashMap<Integer, Integer> gSnakes) {
         this.snakes = gSnakes;
@@ -76,10 +58,13 @@ final static int WINPOINT = 30;
         this.ladders = gLadders;
     }
 
+	public void setPosition(int playerPosition){
+	this.playerPosition = playerPosition;
+}
 	
 	// Creating Getter Below
 	
-	// Getters method for snake map
+	// Getters method for snake map and Player Name & Position
  
  public HashMap<Integer, Integer> gSnakes() {
         return snakes;
@@ -89,7 +74,19 @@ final static int WINPOINT = 30;
         return ladders;
     }  
 	
+	public int getPosition(){
+	return this.playerPosition;
+}
+
+public void setCell(Cell snlCell){
+	this.snlCell = snlCell;
+}
+
+public Cell getCell (){
+	return this.snlCell;
+}
+	
 	public void print()	{
-	System.out.println(playerName+"\n"+playerPosition+"\n"+this.snakes+"\n"+this.ladders+"\n");
+	System.out.println("\n"+playerPosition+"\n"+this.snakes+"\n"+this.ladders+"\n");
 }
 }
