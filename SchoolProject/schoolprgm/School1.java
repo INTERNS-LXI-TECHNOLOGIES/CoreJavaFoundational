@@ -1,7 +1,7 @@
 public class School1{
 public static void main(String[] sargs){
 Student student = new Student("Deepu","26","213","78");
-School school = new School("bmcmim Public schhol",student);
+School school = new School("bmcmim Public school",student);
 school.showDetails();
 }
 }
