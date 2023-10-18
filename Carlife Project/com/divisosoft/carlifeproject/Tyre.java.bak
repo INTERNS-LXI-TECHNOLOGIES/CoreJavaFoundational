@@ -1,6 +1,0 @@
-package com.lxi.carlifeproject ;
-
-public class Tyre
-{
-	double life ;
-}
