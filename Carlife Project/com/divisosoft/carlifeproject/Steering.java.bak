@@ -1,0 +1,6 @@
+package com.lxi.carlifeproject ;
+
+public class Steering
+{
+	double life ;
+}
