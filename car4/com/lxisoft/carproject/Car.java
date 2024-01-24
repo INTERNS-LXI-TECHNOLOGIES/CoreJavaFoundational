@@ -1,5 +1,5 @@
 package com.lxisoft.carproject;
-public class Car{
+public class Car implements Drivable {
 	
 	private String carName;
 	private String varient;
@@ -30,33 +30,36 @@ public void setColour(String colour){
 	this.colour = colour;
 }
 
+	public void drive() {
+		System.out.println("Im driving a car");
+	}
 public String toString()
 {
 	
-	String toString="";
+	String value="";
 	
-	toString=toString+carName+"";
-	toString=toString+varient+"";
-	toString=toString+colour+"";
+	value=value+carName+"";
+	value=value+varient+"";
+	value=value+colour+"";
 	
 	for(int door=0;door<3;door++)
 	{
-		toString=toString+doors[door]+"";
+		value=value+doors[door]+"";
 		
 	}
 	
 	for(int tyre=0;tyre<3;tyre++)
 	{
-		toString=toString+tyres[tyre]+"";
+		value=value+tyres[tyre]+"";
 		
 	}
 	
 	
-	toString=toString+steering+"";
+	value=value+steering+"";
 	
 	
 	
-	return toString;
+	return value;
 	
 }
 
