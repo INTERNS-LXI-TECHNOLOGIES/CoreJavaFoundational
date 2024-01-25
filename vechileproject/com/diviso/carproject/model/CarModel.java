@@ -1,8 +1,6 @@
 package com.diviso.carproject.model;
 
-
-public class Car {
-
+public class CarModel {
     private String carName;
     private String ownerName;
     private String registerNumber;
@@ -33,7 +31,7 @@ public class Car {
 
         
 
-    public Car(String carName, String ownerName, String registerNumber) {
+    public CarModel(String carName, String ownerName, String registerNumber) {
         this.carName = carName;
         this.ownerName = ownerName;
         this.registerNumber = registerNumber;
@@ -41,3 +39,8 @@ public class Car {
 
     
 }
+    
+
+
+
+   
