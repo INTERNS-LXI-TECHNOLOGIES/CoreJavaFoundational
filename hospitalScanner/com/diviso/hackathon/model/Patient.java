@@ -2,7 +2,7 @@ package com.diviso.hackathon.model;
 
 import java.util.Objects;
 
-public class Model {
+public class Patient {
 
     private String name;
     private String age;
@@ -41,21 +41,16 @@ public class Model {
             return false;
 
        
-        Model other = (Model) obj;
+        Patient other = (Patient) obj;
 
        
-        return Objects.equals(this.name, other.name) &&
-                Objects.equals(this.age, other.age) &&
-                Objects.equals(this.patientProblem, other.patientProblem);
+        return Objects.equals(this.name, other.name) ;
+                
+               
     }
-
 
     @Override
     public String toString() {
-       
-        return super.toString();
+        return " name=" + name + ", age=" + age + ", patientProblem=" + patientProblem ;
     }
-
-
-
 }

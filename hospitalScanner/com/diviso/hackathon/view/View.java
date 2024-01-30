@@ -10,6 +10,7 @@ public class View {
     Controller control = new Controller();
 
     public void uI() {
+        
         boolean check = true;
         while (check) {
 

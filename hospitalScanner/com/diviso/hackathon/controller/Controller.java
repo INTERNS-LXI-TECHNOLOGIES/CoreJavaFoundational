@@ -5,13 +5,13 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.diviso.hackathon.model.Model;
+import com.diviso.hackathon.model.Patient;
 
 public class Controller {
 
     static Scanner scan = new Scanner(System.in);
-    static List<Model> details = new ArrayList<Model>();
-    Model model = new Model();
+    static List<Patient> details = new ArrayList<Patient>();
+    Patient model = new Patient();
 
     public void createPatientDetails() {
 
@@ -27,13 +27,15 @@ public class Controller {
     }
 
     public void searchPatientDetails() {
+        Patient m=new Patient();
+        System.out.println("ENTER YOUR NAME");
+        m.setName(scan.nextLine());
+        if (details.contains(m)) {
+            int getDetails = details.indexOf(m);
 
-        if (details.contains(model)) {
-            int getDetails = details.indexOf(model);
-
-            System.out.println("patient name" + getDetails + model.getName());
-            System.out.println("patient age" + getDetails + model.getAge());
-            System.out.println("patient problem" + getDetails + model.getPatientProblem());
+            System.out.println("patient name" + details.get(getDetails).getName());
+            System.out.println("patient age" + details.get(getDetails).getAge());
+            System.out.println("patient problem" + details.get(getDetails).getPatientProblem());
 
         } else {
             System.out.println("error");
