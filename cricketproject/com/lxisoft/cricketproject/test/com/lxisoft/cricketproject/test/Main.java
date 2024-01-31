@@ -13,8 +13,12 @@ public static void main(String[] args){
  System.out.println(countryWonTheToss.getCountryName()+" won the toss");
  
  controller.chooseBattingOrBowling();
+ 
 
- System.out.println(countryWonTheToss.getCountryName()+" choose" + controller.getBattingOrBowling() );
-   
+ System.out.println(countryWonTheToss.getCountryName()+" choose\t" +  controller.getBattingOrBowling() );
+ controller.setTeamAScore();
+ controller.setTeamBScore();
+
+ controller.setTheWinner();
 }
 }
