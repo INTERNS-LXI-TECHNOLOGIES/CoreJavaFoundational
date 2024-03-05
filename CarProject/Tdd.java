@@ -2,7 +2,7 @@ public class Tdd
 {
 public static void main(String[] args){
 Car car = new Car ();
-car.setName("polo");
+car.setName("volkswagon-Polo");
 car.setColour("colour  -  blue");
 System.out.println("\n"+car);
 
