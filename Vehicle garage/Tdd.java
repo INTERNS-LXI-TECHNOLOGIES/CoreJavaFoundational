@@ -31,7 +31,20 @@ for(int i=5,q=0;i<=9;i++){
      garage.vehicle[i].setColor(bikecolor[q]);
 	 q++; 
 }
+
+
+for(int i=0;i<5;i++){
+	((Car)garage.vehicle[i]).carDetails();
+	((Car)garage.vehicle[i]).Showcar();
+	
+}
+for(int i=5;i<10;i++){
+	((MotorCycle)garage.vehicle[i]).bikeDetails();
+	((MotorCycle)garage.vehicle[i]).Showbike();
+	
+}
 System.out.println(garage);
+
 
 
 
