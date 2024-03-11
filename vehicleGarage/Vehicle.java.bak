@@ -15,7 +15,7 @@ public class Vehicle{
 		return regplate;
 	}
 	
-	/*public String toString(){
+	public String toString(){
 		return "\n VEHICLE NAME: "+name+"\n"+" REGISTRATION PLATE: "+regplate;
-	}*/
+	}
 }

@@ -16,7 +16,7 @@ public class Motorbike extends Vehicle{
 			}
 		}
 	public String toString(){
-		return "\n VEHICLE NAME: "+getName()+"\n"+" REGISTRATION PLATE: "+getRegplate()+isgeared;
+		return getName()+getRegplate()+""+isgeared;
 	}	
 
 }

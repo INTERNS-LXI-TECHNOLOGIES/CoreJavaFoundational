@@ -18,6 +18,6 @@ public class Car extends Vehicle{
 		}
 	
 	public String toString(){
-		return "\n VEHICLE NAME: "+getName()+"\n"+" REGISTRATION PLATE: "+getRegplate()+istaxi;
+		return "\n VEHICLE NAME: "+getName()+"\n"+" REGISTRATION PLATE: "+getRegplate()++istaxi;
 	}
 }

@@ -31,19 +31,15 @@ public class Tdd{
 	((Car)vg.getVehicle()[4]).carMethod();
 	vg.getVehicle()[5].setName("HERO SPLENDER");
 	vg.getVehicle()[5].setRegplate("KL 09AR 123");
-	((Motorbike)vg.getVehicle()[5]).bikeMethod();
+	((Motorbike)vg.getVehicle()[0]).bikeMethod();
 	vg.getVehicle()[6].setName("FZ-5");
 	vg.getVehicle()[6].setRegplate("KL 09AR 132");
-	((Motorbike)vg.getVehicle()[6]).bikeMethod();
 	vg.getVehicle()[7].setName("BULLET 350");
 	vg.getVehicle()[7].setRegplate("KL 09AR 145");
-	((Motorbike)vg.getVehicle()[7]).bikeMethod();
 	vg.getVehicle()[8].setName("INTERCEPTOR 650");
 	vg.getVehicle()[8].setRegplate("KL 09AR 154");
-	((Motorbike)vg.getVehicle()[8]).bikeMethod();
 	vg.getVehicle()[9].setName("PULSAR");
 	vg.getVehicle()[9].setRegplate("KL 09AR 1475");
-	((Motorbike)vg.getVehicle()[9]).bikeMethod();
 	
 		for(int i=0;i<vg.getVehicle().length;i++){
 			if(i<5){	
