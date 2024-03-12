@@ -17,6 +17,7 @@ for(int i=0,w=0;i<=4;i++){
      garage.vehicle[i].setBrand(carBrand[w]);
      garage.vehicle[i].setModel(carModel[w]);
      garage.vehicle[i].setColor(carColor[w]);
+	 ((Car)garage.vehicle[i]).carDetails();
       w++;
 }
 
@@ -32,17 +33,9 @@ for(int i=5,q=0;i<=9;i++){
 	 q++; 
 }
 
+//garage.ShowCar();
+//garage.ShowBike();
 
-for(int i=0;i<5;i++){
-	((Car)garage.vehicle[i]).carDetails();
-	((Car)garage.vehicle[i]).Showcar();
-	
-}
-for(int i=5;i<10;i++){
-	((MotorCycle)garage.vehicle[i]).bikeDetails();
-	((MotorCycle)garage.vehicle[i]).Showbike();
-	
-}
 System.out.println(garage);
 
 
@@ -52,11 +45,8 @@ System.out.println(garage);
 
 
 
-
-
-
-
-
 }
 
 }
+
+

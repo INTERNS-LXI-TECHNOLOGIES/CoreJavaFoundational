@@ -22,12 +22,18 @@ public boolean carDetails(){
 }
 
 public String toString(){
-	return "\n"+isTaxi;
+	return "\n"+super.getBrand()+"\n"+super.getModel()+"\n"+super.getColor();
 }
 
-public void Showcar(){
-	System.out.println(super.getBrand()+"\n"+super.getModel()+"\n"+super.getColor());
+public boolean carType(){
+	if(isTaxi==true){
+		System.out.println("This car is taxi"); 
+	}else if(isTaxi==false){
+		System.out.println("This car is not taxi");
+	}
+	return isTaxi;
 }
+
 
 
 

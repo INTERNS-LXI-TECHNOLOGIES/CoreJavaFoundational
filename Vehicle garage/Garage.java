@@ -4,7 +4,7 @@ private String name;
 private long mobNumber;
 private String address;
 
-Vehicle[] vehicle = new Vehicle[10];
+ Vehicle[] vehicle = new Vehicle[10];
 
 public void setName(String name){
 	this.name=name;
@@ -39,9 +39,24 @@ public String toString(){
 	return "\n"+getName()+"\n"+getMobnumber()+"\n"+getAddress()+"\n"+result;
 }
 
+public void ShowCar(){
+	for(int i=0;i<vehicle.length;i++){
+		if (vehicle[i] instanceof Car){
+	System.out.println(((Car)vehicle[i]).getBrand()+"\n"+((Car)vehicle[i]).getModel()+"\n"+((Car)vehicle[i]).getColor()+"\n"+((Car)vehicle[i]).carType()+"\n");	
+		}
+	}
+	
+}
 
-
-
+public void ShowBike(){
+	for(int i=0;i<vehicle.length;i++){
+		if (vehicle[i] instanceof MotorCycle){
+	System.out.println(((MotorCycle)vehicle[i]).getBrand()+"\n"+((MotorCycle)vehicle[i]).getModel()+"\n"+((MotorCycle)vehicle[i]).getColor()+"\n"+((MotorCycle)vehicle[i]).bikeType()+"\n");	
+			
+		}
+	}
+	
+}
 
 
 

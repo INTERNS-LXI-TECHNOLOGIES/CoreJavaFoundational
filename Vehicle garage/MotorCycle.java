@@ -13,23 +13,34 @@ public boolean getGear(){
 }
  public boolean bikeDetails(){
 	int x =(int)(Math.random()*5);
-	if(x%2==0){
-	 isGear=true;
+	 if(x%2==0){
+	     isGear=true;
+	     System.out.println("This motorcycle is Geared");
+	 
 	}
-	else if(x%2==1){
-	 isGear=false;
+     else if(x%2==1){
+	     isGear=false;
+	     System.out.println("This motorcycle is not Geared");
+	 
 	}
 	return isGear;
 }
 
 public String toString(){
-	return "\n"+isGear;
+	return "\n"+super.getBrand()+"\n"+super.getModel()+"\n"+super.getColor();
 }
  
-  
-public void Showbike(){
-	System.out.println(super.getBrand()+"\n"+super.getModel()+"\n"+super.getColor());
+
+public boolean bikeType(){
+	if(isGear==true){
+		System.out.println("This car is a geared motorcycle"); 
+	}else if(isGear==false){
+		System.out.println("This car is not a geared motorcycle");
+	}
+	return isGear;
 }
+  
+
 
 
 
