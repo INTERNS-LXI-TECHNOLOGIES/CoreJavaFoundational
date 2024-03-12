@@ -4,6 +4,10 @@ public class Motorbike extends Vehicle{
 	public void setIsgeared(boolean isgeared){
 		this.isgeared=isgeared;
 	}
+	public boolean getIsgeared(){
+		return isgeared;
+	}
+	
 		public void bikeMethod(){
 			int x= (int)(Math.random()*10);
 			if(x% 2==0){

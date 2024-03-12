@@ -13,6 +13,22 @@ public class VehicleGarage{
 		return this.vehicle;
 	}
 	
+	public void showCarDetails(){
+		for (int i = 0; i <vehicle.length; i++) {
+			if (((Car)vehicle[i]) instanceof Vehicle){
+				Car car=(Car)vehicle[i];
+				String result="";
+			if (car.getIstaxi()== true){
+				result="THS IS A TAXI";
+			}
+			else{
+				result="THS IS NOT A TAXI";
+			}
+				System.out.println(vehicle[i].getName()+vehicle[i].getRegplate()+result+"\n");
+			}
+		}
+	}
+	
 	public String toString(){
 		String result="";
 		for(int i=0;i<vehicle.length;i++){
