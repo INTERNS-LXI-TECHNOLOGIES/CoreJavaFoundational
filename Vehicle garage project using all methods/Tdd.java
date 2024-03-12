@@ -28,31 +28,41 @@ public class Tdd{
 	//System.out.println(vehiclegarage.vehicle[i].getColor());
 	}
 
-for (int i = 0; i < vehiclegarage.vehicle.length; i++) {
+/*for (int i = 0; i < vehiclegarage.vehicle.length; i++) {
     
 	int x = (int) (Math.random() * 5);
 	
 	if (vehiclegarage.vehicle[i] instanceof Car) {
         if (x % 2 == 0) {
             ((Car) vehiclegarage.vehicle[i]).setIstaxi(true);
-        } else {
+        } 
+		else {
             ((Car) vehiclegarage.vehicle[i]).setIstaxi(false);
-        }
+		}
         //System.out.println(((Car) vehiclegarage.vehicle[i]).getIstaxi());
     }
 
     if (vehiclegarage.vehicle[i] instanceof Motorcycle) {
         if (x % 2 == 0) {
             ((Motorcycle) vehiclegarage.vehicle[i]).setGearless(true);
-        } else {
+			} 
+		else {
             ((Motorcycle) vehiclegarage.vehicle[i]).setGearless(false);
-        }
+			}
         //System.out.println(((Motorcycle) vehiclegarage.vehicle[i]).getGearless());
     }
-}
+	}*/
+
+	for (int i=0;i<5;i++){
+		((Car)vehiclegarage.vehicle[i]).carsc();
+	}
+	for (int i=5;i<10;i++){
+		((Motorcycle)vehiclegarage.vehicle[i]).motorcyclec();
+	}
 	System.out.println(vehiclegarage);
 	
-	 
+	vehiclegarage.showCars();
+	
 
 
 	
