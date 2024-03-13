@@ -18,7 +18,7 @@ public class Car extends Vehicle{
 				//System.out.println(" is not a taxi");
 			}
 		}
-		
+	
 	public String toString(){
 		return "\n VEHICLE NAME: "+getName()+"\n"+" REGISTRATION PLATE: "+getRegplate()+istaxi;
 	}

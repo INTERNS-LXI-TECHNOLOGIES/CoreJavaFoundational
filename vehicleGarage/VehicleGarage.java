@@ -14,17 +14,33 @@ public class VehicleGarage{
 	}
 	
 	public void showCarDetails(){
+		System.out.println("\t	CAR DETAILS	\n");
 		for (int i = 0; i <vehicle.length; i++) {
-			if (((Car)vehicle[i]) instanceof Vehicle){
-				Car car=(Car)vehicle[i];
+			if (vehicle[i] instanceof Car){
 				String result="";
-			if (car.getIstaxi()== true){
-				result="THS IS A TAXI";
+			if (((Car) vehicle[i]).getIstaxi()== true){
+				result="A TAXI";
 			}
 			else{
-				result="THS IS NOT A TAXI";
+				result="NOT A TAXI";
 			}
-				System.out.println(vehicle[i].getName()+vehicle[i].getRegplate()+result+"\n");
+		System.out.println(" VEHICLE NAME: "+vehicle[i].getName()+"\n"+" REGISTRATION PLATE: "+vehicle[i].getRegplate()+"\n"+" THIS IS: "+result+"\n");
+			}
+		}
+	}
+	
+	public void showMotorbikeDetails(){
+		System.out.println("\t	MOTOR BIKE DETAILS	\n");
+		for (int i = 0; i <vehicle.length; i++) {
+			if (vehicle[i] instanceof Motorbike){
+				String result="";
+			 if (((Motorbike) vehicle[i]).getIsgeared()==true){
+				result="GEARED";
+			}
+			else{
+				result="NOT GEARED";
+			}
+		System.out.println(" VEHICLE NAME: "+vehicle[i].getName()+"\n"+" REGISTRATION PLATE: "+vehicle[i].getRegplate()+"\n"+" THIS IS: "+result+"\n");
 			}
 		}
 	}
