@@ -9,18 +9,20 @@ public class Tdd{
 	//System.out.println(vehiclegarage.getContactno());
 	
 	String result[] ={"M-800","Amaze","Mini cooper","Mercedez benz", "BMW"};
-	String type[] ={"Spledor","FZ","Royal enfield standared","Ninja 300", "GT-650"};
+	String type[] ={"Splendor","FZ","Royal enfield standared","Ninja 300", "GT-650"};
 	for (int i=0,t=0;i<vehiclegarage.vehicle.length;i++){
 		if(i<5){
 		vehiclegarage.vehicle[i]=new Car();
 		vehiclegarage.vehicle[i].setName(result[i]);
 		vehiclegarage.vehicle[i].setColor("Black");
+		((Car)vehiclegarage.vehicle[i]).carsc();
 		//System.out.println(vehiclegarage.vehicle[i].getName());	
 		}		
 		else if(i<10){
 		vehiclegarage.vehicle[i]=new Motorcycle();
 		vehiclegarage.vehicle[i].setName(type[t]);
-		vehiclegarage.vehicle[i].setColor("Black");
+		vehiclegarage.vehicle[i].setColor("Blue");
+		((Motorcycle)vehiclegarage.vehicle[i]).motorcyclec();
 		//System.out.println(vehiclegarage.vehicle[i].getName());
 		t++;
 		}
@@ -53,18 +55,17 @@ public class Tdd{
     }
 	}*/
 
-	for (int i=0;i<5;i++){
+	/*for (int i=0;i<5;i++){
 		((Car)vehiclegarage.vehicle[i]).carsc();
 	}
 	for (int i=5;i<10;i++){
 		((Motorcycle)vehiclegarage.vehicle[i]).motorcyclec();
-	}
+	}*/
 	System.out.println(vehiclegarage);
 	
 	vehiclegarage.showCars();
 	
-
-
+	vehiclegarage.showMotorcycles();
 	
 }
 }

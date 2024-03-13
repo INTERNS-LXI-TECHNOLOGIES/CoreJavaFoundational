@@ -37,18 +37,31 @@ for (int i=0;i<vehicle.length;i++)
 }
 
  public void showCars() {
+	System.out.println("\t Show Cars Details \n");
     for (int i = 0; i < vehicle.length; i++) {
         if (vehicle[i] instanceof Car) {
-        Car car=(Car) vehicle[i];
-		if(car.getIstaxi()==true){
+        String car ="";
+			
+		if(((Car)vehicle[i]).getIstaxi()==true){
 			System.out.println("This car is Taxi");
+			car="This car is Taxi";
 		}
 		else{
 			System.out.println("This car is not Taxi");
+			car="This car is not Taxi";
 		}
-	   System.out.println("Car: " + car.getName() + ", Color: " + car.getColor() + ", Taxi: " + (car.getIstaxi() ? "This car is Taxi":"This car is not Taxi") ); 
+	System.out.println("Car: " + vehicle[i].getName() + ", Color: " + vehicle[i].getColor() + ", Taxi: " + car ); 
             }
         }
     }
-	
+
+public void showMotorcycles() {
+	System.out.println("\n \t Show Motorcycles Details \n");
+   for (int i = 0; i < vehicle.length; i++) {
+        if (vehicle[i] instanceof Motorcycle) {
+            Motorcycle motor = (Motorcycle) vehicle[i];
+    System.out.println("Motorcycle: " + motor.getName() + ", Color: " + motor.getColor() + ", Taxi: " + (motor.getGearless() ? "This is a Gearless Motorcycle" : "This is Geared Motorcycle"));
+        }
+    }
+}
 }
