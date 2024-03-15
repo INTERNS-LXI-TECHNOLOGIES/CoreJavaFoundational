@@ -1,3 +1,5 @@
+package com.divisosoft.vehiclegarage.vehicle;
+
 public class Vehicle{
 
 private String brand;

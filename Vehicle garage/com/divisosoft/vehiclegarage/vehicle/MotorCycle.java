@@ -1,3 +1,6 @@
+package com.divisosoft.vehiclegarage.vehicle;
+import com.divisosoft.vehiclegarage.vehicle.*;
+ 
 public class MotorCycle extends Vehicle{
 
 private boolean isGear;

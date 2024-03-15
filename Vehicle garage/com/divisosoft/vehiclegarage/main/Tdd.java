@@ -1,3 +1,7 @@
+package com.divisosoft.vehiclegarage.main;
+import com.divisosoft.vehiclegarage.vehicle.*;
+import com.divisosoft.vehiclegarage.garage.Garage;
+
 public class Tdd{
 
 public static void main(String[]args){

@@ -1,10 +1,13 @@
+package com.divisosoft.vehiclegarage.garage;
+import com.divisosoft.vehiclegarage.vehicle.*;
+
 public class Garage{
 
 private String name;
 private long mobNumber;
 private String address;
 
- Vehicle[] vehicle = new Vehicle[10];
+public Vehicle[] vehicle = new Vehicle[10];
 
 public void setName(String name){
 	this.name=name;

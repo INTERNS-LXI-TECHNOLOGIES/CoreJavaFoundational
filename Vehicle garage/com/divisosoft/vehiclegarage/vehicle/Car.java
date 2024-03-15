@@ -1,6 +1,10 @@
+package com.divisosoft.vehiclegarage.vehicle;
+import com.divisosoft.vehiclegarage.vehicle.*;
+
 public class Car extends Vehicle{
 
 private boolean isTaxi;
+
 
 public void setTaxi(boolean istaxi){
 	this.isTaxi=istaxi;
