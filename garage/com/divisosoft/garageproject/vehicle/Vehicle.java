@@ -1,3 +1,6 @@
+package com.divisosoft.garageproject.vehicle;
+
+
 public class Vehicle{
 private String name;
 private String colour;

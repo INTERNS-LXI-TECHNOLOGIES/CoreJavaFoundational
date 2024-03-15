@@ -1,3 +1,6 @@
+package com.divisosoft.garageproject.vehicle;
+import com.divisosoft.garageproject.vehicle.*;
+
 public class Car extends Vehicle{
 private boolean isTaxi;
 
@@ -21,6 +24,15 @@ public boolean getIsTaxi(){
 	
 public String toString(){
 	return "\n"+isTaxi;
+}
+public boolean carType(){
+	if(isTaxi==true){
+		System.out.println("This car is Taxi");
+	}
+	else if(isTaxi==false){
+		System.out.println("This car is not Taxi");
+	}
+	return isTaxi;
 }
 
 

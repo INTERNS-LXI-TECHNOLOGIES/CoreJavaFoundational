@@ -1,3 +1,6 @@
+package com.divisosoft.garageproject.vehicle;
+import com.divisosoft.garageproject.vehicle.*;
+
 public class Bike extends Vehicle{
 private boolean isGeared;
 public void setIsGeared(boolean isGeared){
@@ -21,4 +24,16 @@ public boolean getIsGeared(){
 public String toString(){
 	return "\n"+isGeared;
 }
+public boolean bikeType(){
+	if(isGeared==true){
+		System.out.println("This Bike is Geared");
+	}
+	else if(isGeared==false){
+		System.out.println("This Bike is not Geared");
+	}
+	return isGeared;
+}
+
+
+
 }

@@ -1,3 +1,8 @@
+package com.divisosoft.garageproject.main;
+import com.divisosoft.garageproject.vehicle.*;
+import com.divisosoft.garageproject.garage.Garage;
+
+
 public class Tdd{
 public static void main (String[] agrs){
 Garage garage=new Garage();
@@ -36,8 +41,9 @@ String bikeRegNo[]={"KL54N3185","KL6D0258","KL89C558","KL01B8148","KL46M6258"};
 	 ((Bike)garage.vehicle[i]).bikeDetails();
  }
 
-System.out.println(garage);
-
+//System.out.println(garage);
+garage.showCar();
+//garage.showBike();
 
 }
 }
