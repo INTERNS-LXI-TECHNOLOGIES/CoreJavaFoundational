@@ -8,12 +8,12 @@ Scanner scan = new Scanner(System.in);
 
 		
 	int i=0;
+	boolean x=true;
 	do{
-		
-		
+			
 		
 		student[i] =new Student();
-		
+		  
 		System.out.println("Enter student");
 	    String name=scan.nextLine();
 	    System.out.println("Enter the Gender");
@@ -28,18 +28,26 @@ Scanner scan = new Scanner(System.in);
 		String subject=scan.nextLine();
 		
 		
-		System.out.println("Do you want to continue");
+		System.out.println("Do you want to continue yes or no to exit");
+		
 		String collectInputFromUser= scan.nextLine();
 	
 	    student[i].Name=name;
 		student[i].gender=gend;
 		
-		
-	
 			i++;	
-		
+
+	   
+	   if(collectInputFromUser.equals("yes")){
+		   
+		   x=true;
+	   }
+	   
+	   else{
+		   x=false;
+	   }
 	}
-	while(i<student.length);
+	while(x);
      
 
 	
