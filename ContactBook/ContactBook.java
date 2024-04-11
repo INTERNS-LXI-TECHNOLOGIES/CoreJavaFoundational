@@ -14,11 +14,11 @@ public class ContactBook{
 	public void setPhoneNumber(long phoneNumber){
 		this.phoneNumber = phoneNumber;
 	}
-	public long getphoneNumber(){
+	public long getPhoneNumber(){
 		return phoneNumber;
 	}
 	
-	public void setEmailId(String emailId){
+	public void setEmailId(String emailId){	
 		this.emailId = emailId;
 	}
 	public String getEmailId(){
