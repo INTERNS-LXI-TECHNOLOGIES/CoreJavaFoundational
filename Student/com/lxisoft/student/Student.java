@@ -1,7 +1,7 @@
+package com.lxisoft.student;
 public class Student{
 	public String name;
-	public int clas;
-	public int rollno;
+	public int age;
 	public String gender;
 	public String subject;
 }
