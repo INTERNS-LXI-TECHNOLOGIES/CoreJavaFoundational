@@ -1,0 +1,23 @@
+public class Male extends Staff{
+boolean Isextratime;
+
+public void setIsextratime(boolean Isextratime){
+	this.Isextratime=Isextratime;
+}
+public boolean getIsextratime(){
+	return Isextratime;
+}
+public void males(){
+	int x = (int)(Math.random()*5);
+	
+	if (x%2==0){
+		Isextratime=true;
+	}
+	else if(x%2!=0){
+		Isextratime=false;
+	}
+}
+public String toString(){
+	return "\n"+super.getName()+"\t"+super.getRole()+"\t"+(Isextratime ? "This Guy works extra-time":"This Guy works Actual time")+"\n";
+}
+}

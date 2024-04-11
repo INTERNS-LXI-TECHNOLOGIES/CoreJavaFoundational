@@ -1,0 +1,46 @@
+public class Tdd{
+	public static void main(String[]args){
+
+Supermarket supermarket=new Supermarket();
+supermarket.setName("Fresh & More");
+supermarket.setAddress("SH58, Nenmara, Kerala 678508");
+supermarket.setContactno(4923244780L);
+
+System.out.println(supermarket.getName());
+System.out.println(supermarket.getAddress());
+System.out.println(supermarket.getContactno());
+
+String result[]={"Raju","Ramu","Anu","Aravi","Binto"};
+String type[]={"Rema","Seema","Anita","Kavita","Sangeetha"};
+
+for (int i=0,f=0;i<supermarket.staff.length;i++){
+	if(i<5){
+		supermarket.staff[i]=new Male();
+		supermarket.staff[i].setName(result[i]);
+		supermarket.staff[i].setRole("Stock clerk");
+		((Male)supermarket.staff[i]).males();
+	}
+	else if (i<10){
+		supermarket.staff[i]=new Female();
+		supermarket.staff[i].setName(type[f]);
+		supermarket.staff[i].setRole("Store Keeper");
+		((Female)supermarket.staff[i]).females();
+		f++;
+	}
+}
+
+System.out.println(supermarket);
+
+
+
+
+
+
+
+
+
+
+
+
+}
+}
