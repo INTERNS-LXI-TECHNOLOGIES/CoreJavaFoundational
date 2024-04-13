@@ -13,10 +13,10 @@ public boolean getIsPresent(){
 
  public boolean femaleAttendance(){
 	 	int x =(int)(Math.random()*5);
-	if(x%2==0){
+	if(x>3){
 	 isPresent=true;
 	}
-	else if(x%2==1){
+	else if(x<3){
 	 isPresent=false;
 	}
 	return isPresent;

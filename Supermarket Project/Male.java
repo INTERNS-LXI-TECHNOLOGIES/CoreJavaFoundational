@@ -11,7 +11,7 @@ public boolean getisSalaryRecieved(){
 }
 
 public boolean maleSalary(){
-	 	int x =(int)(Math.random()*3);
+	 	int x =(int)(Math.random()*8);
 	if(x%2==0){
 	 isSalaryRecieved=true;
 	}

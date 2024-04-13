@@ -43,10 +43,14 @@ public long getMobNumber(){
 
   public String toString(){
 	   String result = "";
+	   String value = "";
   for(int i=0;i<staff.length;i++){
 	  result += staff[i];
     }
-	  return "Name : "+getName()+"\n"+"Location : "+getLocation()+"\n"+"Owner : "+getOwner()+"\n"+"Mob : "+getMobNumber()+"\n"+result;
+	for(int i=0;i<product.length;i++){
+		value += product[i];
+	}
+	  return "Name : "+getName()+"\n"+"Location : "+getLocation()+"\n"+"Owner : "+getOwner()+"\n"+"Mob : "+getMobNumber()+"\n"+result+"\n"+value;
   }
 
 
