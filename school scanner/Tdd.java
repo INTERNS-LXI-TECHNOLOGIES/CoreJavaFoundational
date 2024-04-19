@@ -5,7 +5,9 @@ public static void main(String args[]){
 	int i=0;
 	int j=0;
 
-		School school=new School();
+	 School school=new School();
+	 Teacher teacher=new Teacher();
+	 
 	
 	Scanner scanner = new Scanner(System.in);
 
@@ -55,6 +57,29 @@ public static void main(String args[]){
 	
    j++;
 		} while(j<2);
+
+ do{
+	 
+    System.out.println("Enter Teacher name: ");
+	teacher.name = scanner.nextLine();
+	
+	System.out.println("Enter Teacher class:");
+   teacher.clas= scanner.nextInt();
+	
+	System.out.println("Enter Teacher age:");
+    teacher.age= scanner.nextInt();
+	
+	System.out.println("Enter Teacher gender: ");
+	teacher.gender= scanner.nextLine();
+	 scanner.nextLine();
+	 
+	 
+	 i++;
+	}while(i<2);
+		
+		
+		
+	 
 	
 	}	
 	
