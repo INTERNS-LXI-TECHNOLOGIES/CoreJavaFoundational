@@ -8,6 +8,7 @@ public static void main(String []args){
          Ghostview ghostview = new Ghostview();
 		 ghostview.printghostname();
 		 ghostview.ghostScanner();
+		
 		 
 		 Ghostcontroller ghostcontroller = new Ghostcontroller();
 		 

@@ -23,6 +23,9 @@ public void ghostScanner(){
 		    ghostcontroller.Create();
 			break;
 			
+			case "2":
+			ghostcontroller.read();
+			
 		
 		        
 	  }
