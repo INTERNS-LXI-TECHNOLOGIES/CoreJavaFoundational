@@ -22,7 +22,7 @@ public class Controller{
 	  
 	  while(x){
 	      for(int i = 0 ; i < notes.length ; i++){
-	           if(notes[i].getAuthor() == null){
+	           if(notes[i] == null || notes[i].getAuthor() == null){
 		            notes[i] = view.viewCreateNote();
 			        System.out.println("\n"+"Note Saved"+"\n");
 				    break;
@@ -52,7 +52,7 @@ public class Controller{
   public void showAllNotes(){
 	 
 	  for(int i = 0 ; i < notes.length ; i++){
-		  if(notes[i].getAuthor() != null){
+		  if(notes[i] != null && notes[i].getAuthor() != null){
 		      System.out.println(notes[i]);
 		    }
 		}
@@ -61,7 +61,7 @@ public class Controller{
   public void editNotes(){
 	  
 	  for(int i = 0 ; i < notes.length ; i++){
-		  if(notes[i].getAuthor() != null){
+		  if(notes[i] != null && notes[i].getAuthor() != null){
 		      System.out.println(notes[i]);
 		    }
 		}
@@ -71,22 +71,23 @@ public class Controller{
 	  boolean id = false;
 
 	   for(int i = 0 ; i < notes.length ; i++){
-		  if(notes[i].getAuthor().equals(athr)){
+		  if(notes[i] != null && notes[i].getAuthor().equals(athr)){
 			  notes[i] = view.viewEditNote();
 			  id = true;
 			  System.out.println("Note with Auhtor name "+ athr +" has been edited");
 			  break;
 		    }
-		  else{
-			  System.out.println("Note with Author name "+ athr +" has not found");
-		    }
 	    }
+	  if(!id){
+		  System.out.println("Note with Author name "+ athr +" has not found");
+	    }
+	    
 	  
     }
 
   public void deleteNotes(){
 	  for(int i = 0 ; i < notes.length ; i++){
-		  if(notes[i].getAuthor() != null){
+		  if(notes[i] != null && notes[i].getAuthor() != null){
 		      System.out.println(notes[i]);
 		    }
 		}
@@ -100,14 +101,13 @@ public class Controller{
 			  notes[i] = null;
 			  y = true;
 			  System.out.println("Note with  Author name "+ auth +" has been deleted");
-			  
+			  break;
 		    }
-		  else{
-			  y=false;
-			  System.out.println("Note with id Author name "+ auth +" has not found");
-		    }
-			break;
-	    }
+	    }	
+	   if(!y){
+		  System.out.println("Note with id Author name "+ auth +" has not found");
+		}
+	    
 		
 	  
     }
@@ -134,8 +134,9 @@ public class Controller{
 			  case 5:
 			       not = false;
 			       System.out.println("Thank you for using Note Taking App.");
+				   break;
 			  default :
-		  System.out.println("Invalid input. Please set an option from the below menu.");
+		           System.out.println("Invalid input. Please set an option from the below menu.");
 				   break;
 		    }
 		} 
