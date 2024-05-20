@@ -33,5 +33,14 @@ public class Contactbook{
  public String toString(){
 	  return "\n Name : "+ this.name + "\n Mobile Number : "+ this.mobileNumber + "\n Email ID : "+ this.email ; 
  }
-
+ 
+ public String csvFile(){
+	  return this.name + ","+ this.mobileNumber + ","+ this.email ; 
+ }
+ 
+ 
+ 
+ 
+ 
+ 
 }

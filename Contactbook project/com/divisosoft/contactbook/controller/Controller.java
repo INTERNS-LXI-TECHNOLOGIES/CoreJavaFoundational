@@ -2,6 +2,7 @@ package com.divisosoft.contactbook.controller;
 import com.divisosoft.contactbook.view.View;
 import com.divisosoft.contactbook.model.Contactbook;
 import java.util.Scanner;
+import java.io.*;
 
 public class Controller{
 	
@@ -145,12 +146,56 @@ public class Controller{
            System.out.println("No contacts found matching: " + name);
         }
     }
+	
+
+    public void readFile(File file) {
+        try {
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bReader = new BufferedReader(fileReader);
+            String line;
+            
+            while ((line = bReader.readLine()) != null) {
+                String[] fields = line.split(",");
+                
+                for (int i = 0; i < contactbook.length; i++) {
+                    if (contactbook[i].getName() == null) {
+                        contactbook[i].setName(fields[0]);
+                        contactbook[i].setMobileNumber(Long.parseLong(fields[1]));
+                        contactbook[i].setEmail(fields[2]);
+                        break;
+                    }
+                }
+            }
+            
+            bReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }	
+	
+	public void writeFile(File file){
+		
+		try {
+			FileWriter fileWriter = new FileWriter(file);
+			BufferedWriter writer = new BufferedWriter(fileWriter);
+            for (Contactbook contact : contactbook) {
+                writer.write(contact.csvFile());
+				writer.newLine();
+				writer.flush();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }		
+	
+	}
 
    
    
    
    public void menu(){
 	   
+       File file = new File("E:\\java\\Contactbook project\\com\\divisosoft\\contactbook\\file\\Contactbook.csv");
+	   readFile(file);
 	   boolean menu = true;
        while (menu){
 		  view.viewMenu();
@@ -182,6 +227,7 @@ public class Controller{
 			  case "6":
 			      menu = false;
 				  System.out.println("Thank you for using Contacbook App.");
+				  writeFile(file);
 				  break;
 				  
 			  default :
