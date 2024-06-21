@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>
+Update Contact
+</title>
+<style>
+	.form-container {
+            margin: 80px auto;
+            width: 300px;
+            background-color: tomato;
+            border-radius: 15px;
+            padding: 20px;
+            border: 3px solid black;
+        }
+        .form-container input[type="text"] {
+            width: 100%;
+            height: 35px;
+            margin-bottom: 20px;
+            padding: 5px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"],
+        .form-container input[type="reset"] {
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+		}
+		.form-container input[type="submit"],
+        .form-container input[type="reset"] {
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+		h1{
+		margin-left:535px;
+		margin-top:100px;
+		font-size:60px;
+		}
+		
+</style>
+</head>
+<body>
+<h1>Update Contact</h1>
+	<div class = "form-container">
+		<form action = "update.jsp">
+			<input type = "text"  name = "previousname" placeholder = "enter previous name">
+			<input type = "text"  name = "newname" placeholder = "enter new name">
+			<input type = "text"  name = "number"  placeholder = "enter the new number">
+			<input type = "text"  name = "place"  placeholder = "enter the new place">
+			<input type="submit" value="Submit">
+			<input type="reset" value="Reset">
+		</form>
+	</div>
+</body>	
+</html>
+		
