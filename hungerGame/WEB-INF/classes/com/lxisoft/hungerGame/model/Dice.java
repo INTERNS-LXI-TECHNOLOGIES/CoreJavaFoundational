@@ -9,4 +9,7 @@ public class Dice{
     public void setResult(int result) {
         this.result = result;
     }
+	public void randomNumberFromDice(){
+		result = (int) (Math.random() * 6) + 1;
+	}
 }

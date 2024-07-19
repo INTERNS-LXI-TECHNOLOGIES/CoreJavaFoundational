@@ -5,10 +5,10 @@ public class Hunter{
     private String name;
     private int hungerLevel;
     
-	public Hunter(String icon) {
+	public Hunter(String icon,String name,int hungerLevel) {
         this.icon = icon;
-        /*this.name = name;
-        this.hungerLevel = hungerLevel;*/
+        this.name = name;
+        this.hungerLevel = hungerLevel;
     }
     public String getName() {
         return name;

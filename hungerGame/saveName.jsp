@@ -14,11 +14,6 @@
     String playerName = request.getParameter("player1");
     Forest forest = (Forest) application.getAttribute("forest");
 
-    if (forest == null) {
-        forest = new Forest();
-        application.setAttribute("forest", forest);
-    }
-
     if (forest != null) {
         forest.addPlayer(playerName);
     } else {

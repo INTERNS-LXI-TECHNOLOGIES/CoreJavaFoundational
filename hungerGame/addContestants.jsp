@@ -36,10 +36,12 @@
        .form-container {
             padding: 20px;
             border-radius: 10px;
-            text-align: center;
             color: white;
             width: 34%;
-            border:5px solid rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translate(0, -50%);  
         }
         .form-container input{
             margin: 10px 0;
@@ -67,7 +69,7 @@
 </head>
 <body>
 	<div class="image-container">
-        <img src="/hungerGame/HungerGame-img/bgImageForNameAdding.jpg">
+        <img src="/hungerGame/HungerGame-img/addContestantsBG.jpg">
         <div class="overlay">
             <div class="form-container">
                 <h2>ENTER PLAYER NAME</h2>

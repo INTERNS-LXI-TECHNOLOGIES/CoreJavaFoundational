@@ -31,17 +31,18 @@
         table {
             border-collapse: collapse;
             width: 50%;
-            margin-top: 0px;
-            background-color: rgba(255, 255, 255, 0.7);
+            margin-top: 0px; 
             position: relative;
             z-index: 2;
+            color: black;
+            background-color: rgba(240, 232, 232, 0.3);
         }
         th, td {
-			border: 8px solid rgb(38, 37, 37, 0.9);
 			padding: 10px;
 			text-align: center;
 			height: 10px;
 			width: 50%;
+            font-weight: bold;
 		}
         .start-button-container {
             position: absolute;
@@ -77,13 +78,13 @@
     </style>
     <script>
         function startGame() {
-            window.location.href = 'initialPage.jsp';
+            window.location.href = 'gameLoop.jsp';
         }
     </script>
 </head>
 <body>
     <div class="image-container">
-        <img src="/hungerGame/HungerGame-img/icon/playerFinalizedICON.webp">
+        <img src="/hungerGame/HungerGame-img/icon/playerFinalizedBG.jpg">
     </div>
     <table>
         <thead>
@@ -95,10 +96,7 @@
         <tbody>
             <%
                 Forest f = (Forest) application.getAttribute("forest");
-                if (f == null) {
-                    f = new Forest();
-                    application.setAttribute("forest", f);
-                }
+                
                 int playerNumber = 1;
                 for (Players player : f.getPlayer()) {
                     if (player.getName() != null) {
