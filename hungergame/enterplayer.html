@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Enter Number of Players</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+        label, input, button {
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            padding: 5px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+<head>
+    
+    <title>Enter Name</title>
+</head>
+<body>
+    <h1>Enter Your Name to Start the Game</h1>
+    <form action="addplayer.jsp"> >
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <input type="submit" value="Start Game">
+    </form>
+</body>
+</html>
+
