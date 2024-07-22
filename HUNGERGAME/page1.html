@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>HUNGER GAME</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Raleway', sans-serif;
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .text-overlay {
+            position: absolute;
+            width: 100%;
+            color: white;
+            font-weight: bold;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        .title-1 {
+            top: 40%;
+            font-size: 4em;
+        }
+        .subtitle {
+            top: 50.5%;
+            font-size: 1.5em;
+        }
+        .button-container {
+            position: absolute;
+            top: 65%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .start-button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            background-color: #ff4500;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-shadow: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .start-button:hover {
+            background-color: #ff6347;
+            transform: translateY(-3px);
+        }
+        .start-button:active {
+            transform: translateY(1px);
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function startGame() {
+            window.location.href = '/HUNGERGAME/page2.html';
+        }
+    </script>
+
+    <div class="image-container">
+        <img src="/HUNGERGAME/forestimage/img12.jpg" alt="Hunger Game">
+        <div class="text-overlay title-1">HUNGER GAME</div>
+      
+        <div class="button-container">
+            <button class="start-button" onclick="startGame()">Start Game</button>
+        </div>
+    </div>
+</body>
+</html>
