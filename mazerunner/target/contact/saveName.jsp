@@ -1,21 +1,21 @@
 <%@ page import="com.lxisoft.model.*" %>
 <html>
 <head>
-    <title>Save Player Name</title>
+    <title>Save Intern Name</title>
     <script>
         function adminMethod() {
-            alert("Player added successfully");
+            alert("Intern name added successfully");
             window.location.href = "playerFinalized.jsp";
         }
     </script>
 </head>
 <body onload="adminMethod()">
     <%
-    String playerName = request.getParameter("player1");
-    Forest forest = (Forest) application.getAttribute("forest");
+    String internName = request.getParameter("intern1");
+    QuestionBank qb = (QuestionBank) application.getAttribute("questionBank");
 
-    if (forest != null) {
-        forest.addPlayer(playerName);
+    if (qb != null) {
+        qb.addPlayer(internName);
     } else {
         out.println("INVALID");
     }

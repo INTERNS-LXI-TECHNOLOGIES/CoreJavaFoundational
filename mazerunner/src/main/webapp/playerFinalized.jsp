@@ -84,25 +84,25 @@
 </head>
 <body>
     <div class="image-container">
-        <img src="/mazerunner/images/imageForAll.jpg">
+        <img src="/mazerunner/images/imageForTableBg.webp">
     </div>
     <table>
         <thead>
             <tr>
-                <th>PLAYER NUMBER</th>
-                <th>PLAYER NAME</th>
+                <th>INTERN NUMBER</th>
+                <th>INTERN NAME</th>
             </tr>
         </thead>
         <tbody>
             <%
-                Forest f = (Forest) application.getAttribute("forest");
+                QuestionBank qBank = (QuestionBank) application.getAttribute("questionBank");
                 
-                int playerNumber = 1;
-                for (Players player : f.getPlayer()) {
+                int internNumber = 1;
+                for (Players player : qBank.getPlayer()) {
                     if (player.getName() != null) {
             %>
             <tr>
-                <td><%= playerNumber++ %></td>
+                <td><%= internNumber++ %></td>
                 <td><%= player.getName() %></td>
             </tr>
             <%

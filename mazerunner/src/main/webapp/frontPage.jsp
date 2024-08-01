@@ -1,6 +1,6 @@
 <%@ page import="com.lxisoft.model.*" %>
 <%
-    boolean isGameStarted = (application.getAttribute("forest") != null);
+    boolean isGameStarted = (application.getAttribute("questionBank") != null);
 %>
 <html>
 <head>
@@ -79,11 +79,11 @@
 </head>
 <body>
     <div class="image-container">
-        <img src="/mazerunner/images/imageForAll.jpg" alt="Hunger Game">
-        <div class="text-overlay title-1">HUNGER GAME</div>
-        <div class="text-overlay subtitle">"In the shadows of the ancient forest, the hunter hunts down the players"</div>
+        <img src="/mazerunner/images/imageForTableBg.webp" alt="Hunger Game">
+        <div class="text-overlay title-1">MAZERUNNER</div>
+        <div class="text-overlay subtitle">"TRY REACHING YOUR DESTINATION"</div>
         <div class="button-container">
-            <button class="start-button" onclick="checkGameStarted()">ENTER GAME</button>
+            <button class="start-button" onclick="checkGameStarted()">ENTER PROGRAM</button>
         </div>
     </div>
 </body>
