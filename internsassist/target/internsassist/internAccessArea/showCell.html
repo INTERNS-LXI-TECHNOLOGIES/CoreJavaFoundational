@@ -7,7 +7,7 @@
             justify-content: center;
             align-items: center;
             margin: 0;
-            background-color: #000000;
+            background-color: #1a1818;
         }
         .showCellButtons button {
             display: block;
@@ -23,19 +23,19 @@
         }
     </style>
 <script>
-    function goToPreprationTaskPage(){
-        window.location.href = '/internsassist/preprationTask.jsp';
+    function goToMissionPrep(){
+        window.location.href = '/internsassist/internAccessArea/missionPrep.jsp';
     }
-    function goToLifeOrDeathMissionPage(){
-        window.location.href = '/internsassist/lifeOrDeathMission.jsp';
+    function goToLifeOrDeathMission(){
+        window.location.href = '/internsassist/internAccessArea/lifeOrDeathMission.jsp';
     }
 </script>
 </head>
 <body>
 
     <div class="showCellButtons">
-        <button class="Prepration Task" onclick="goToPreprationTaskPage()">Preparation Task</button>
-        <button class="LifeOrDeath mission" onclick="goToLifeOrDeathMissionPage()">LifeOrDeath Mission</button>
+        <button class="MISSION-PREP QUESTIONS" onclick="goToMissionPrep()">MISSION-PREP QUESTIONS</button>
+        <button class="LIFE-OR-DEATH MISSION" onclick="goToLifeOrDeathMission()">LIFE-OR-DEATH MISSION</button>
     </div>
 
 </body>

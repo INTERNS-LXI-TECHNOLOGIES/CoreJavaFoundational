@@ -68,11 +68,11 @@ public class QuestionBank {
 
     public boolean addPlayer(String playerName) {
         String[] icons = {
-            "/hungerGame/HungerGame-img/icon/playerICONS/1.jpeg",
-            "/hungerGame/HungerGame-img/icon/playerICONS/2.jpeg",
-            "/hungerGame/HungerGame-img/icon/playerICONS/3.jpeg",
-            "/hungerGame/HungerGame-img/icon/playerICONS/4.jpeg",
-            "/hungerGame/HungerGame-img/icon/playerICONS/5.jpeg"
+            "/internsassist/images/playerICONS/1.jpeg",
+            "/internsassist/images/playerICONS/2.jpeg",
+            "/internsassist/images/playerICONS/3.jpeg",
+            "/internsassist/images/playerICONS/4.jpeg",
+            "/internsassist/images/playerICONS/5.jpeg"
         };
 
         int PlayerImage = player.size() % icons.length;

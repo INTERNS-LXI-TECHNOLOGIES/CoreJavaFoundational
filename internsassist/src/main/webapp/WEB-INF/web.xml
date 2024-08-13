@@ -25,6 +25,17 @@
     </auth-constraint>
 </security-constraint>
 
+<security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Secure Area</web-resource-name>
+        <url-pattern>/checkAdminOrIntern.jsp</url-pattern> <!-- Protect home.jsp -->
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>ADMIN</role-name>
+      <role-name>INTERN</role-name>
+    </auth-constraint>
+</security-constraint>
+
 <security-role>
     <role-name>ADMIN</role-name>
 </security-role>
@@ -59,8 +70,8 @@
 </error-page>
 
     <!-- Welcome File -->
-   <!--<welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-    </welcome-file-list> -->
+   <welcome-file-list>
+        <welcome-file>internsAssistHome.html</welcome-file>
+    </welcome-file-list>
 
 </web-app>

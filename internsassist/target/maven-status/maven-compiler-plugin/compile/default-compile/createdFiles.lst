@@ -1,4 +1,4 @@
-com\lxisoft\utils\HashUtil.class
+com\lxisoft\utils\MD5HashingExample.class
 com\lxisoft\model\MissionPrep.class
 com\lxisoft\model\Players.class
 com\lxisoft\model\LifeOrDeathMission.class

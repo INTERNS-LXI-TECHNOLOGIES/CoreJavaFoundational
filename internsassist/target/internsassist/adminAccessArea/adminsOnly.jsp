@@ -29,7 +29,7 @@
         }
         .button-container {
             position: absolute;
-            top: 60%;
+            top: 70%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
@@ -43,7 +43,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-family: Bahnschrift;
-            z-index: 2; /* Ensures the button is above other elements */
+            z-index: 2;
         }
         .button-container button:hover {
             background-color: rgb(50, 50, 120);

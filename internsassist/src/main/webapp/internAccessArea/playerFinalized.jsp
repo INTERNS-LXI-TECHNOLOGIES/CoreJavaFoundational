@@ -1,4 +1,11 @@
 <%@ page import="com.lxisoft.model.*" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.security.Principal" %>
+
 <html>
 <head>
     <title>Players Finalized</title>
@@ -86,6 +93,36 @@
     <div class="image-container">
         <img src="/internsassist/images/imageForTableBg.webp">
     </div>
+    <%
+        String url = "jdbc:mysql://localhost:3306/security_authentication";
+        String dbUsername = "root";
+        String dbPassword = "arjun7945";
+
+        Principal p = request.getUserPrincipal();
+        String name = p.getName();
+        String nickname = null;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
+
+            String query = "SELECT nick_name FROM nickname WHERE user_name = ?";
+            PreparedStatement pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, name);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                nickname = rs.getString("nick_name");
+            }
+
+            rs.close();
+            pstmt.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            String errorMessage = "Driver not found: " + e.getMessage();
+        }
+    %>
     <table>
         <thead>
             <tr>
@@ -96,7 +133,6 @@
         <tbody>
             <%
                 int internNumber = 1;
-                String nickname = request.getParameter("nickname");
                 if (nickname != null && !nickname.isEmpty()) {
             %>
             <tr>
@@ -111,6 +147,6 @@
     <div class="start-button-container">
         <div class="start-button" onclick="startGame()">START GAME</div>
     </div>
-		<div class="subtitles">"MAKE SURE ALL THE PLAYERS ARE ENTERED"</div>
+    <div class="subtitles">"MAKE SURE ALL THE PLAYERS ARE ENTERED"</div>
 </body>
 </html>

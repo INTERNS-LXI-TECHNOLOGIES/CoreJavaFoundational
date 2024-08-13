@@ -1,5 +1,10 @@
 <%@ page import="com.lxisoft.model.*" %>
-<%@ page import="java.util.*" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.security.Principal" %>
+<%@ page import="java.io.IOException" %>
 
 <html>
 <head>
@@ -112,10 +117,38 @@
         <div class="boardcontainer">
             <div class="boardcontainerforplayers">
                 <%
-                    String nickname = request.getParameter("nickname");
-                    if (nickname == null || nickname.isEmpty()) {
-                        out.println("NO NICKNAME PROVIDED");
-                    } else {
+                    String url = "jdbc:mysql://localhost:3306/security_authentication";
+                    String dbUsername = "root";
+                    String dbPassword = "arjun7945";
+
+                    Principal p = request.getUserPrincipal();
+                    String name = p.getName();
+                    String nickname = null;
+                    int imagecount = 1;
+
+                    try {
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
+
+                        String query = "SELECT nick_name FROM nickname WHERE user_name = ?";
+                        PreparedStatement pstmt = conn.prepareStatement(query);
+                        pstmt.setString(1, name);
+                        ResultSet rs = pstmt.executeQuery();
+
+                        if (rs.next()) {
+                            nickname = rs.getString("nick_name");
+                        }
+
+                        rs.close();
+                        pstmt.close();
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        String errorMessage = "Driver not found: " + e.getMessage();
+                    }
+                    if (nickname != null && !nickname.isEmpty()) {
+                        String iconPath = "/internsassist/images/playerICONS/" + imagecount + ".jpg";
+                        imagecount++;
                 %>
                 <div class="player-entry">
                     <img src="<%= request.getParameter("icon") %>" alt="Player Icon">

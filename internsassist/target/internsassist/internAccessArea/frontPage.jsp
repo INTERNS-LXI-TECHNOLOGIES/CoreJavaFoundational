@@ -1,6 +1,7 @@
 <%@ page import="com.lxisoft.model.*" %>
 <%
-    boolean isGameStarted = (application.getAttribute("questionBank") != null);
+    boolean isGameStarted = true;
+    //(application.getAttribute("questionBank") != null);
 %>
 <html>
 <head>

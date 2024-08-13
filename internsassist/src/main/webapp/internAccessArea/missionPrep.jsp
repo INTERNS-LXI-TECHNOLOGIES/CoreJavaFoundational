@@ -1,4 +1,4 @@
-<%@ page import="com.lxisoft.model.LifeOrDeathMission" %>
+<%@ page import="com.lxisoft.model.MissionPrep" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.Statement" %>
@@ -49,29 +49,31 @@
     </style>
 </head>
 <body>
-    <h3>LIFE-OR-DEATH MISSION</h3>
+    <h3>MISSION-PREP QUESTIONS</h3>
 <%
     String url = "jdbc:mysql://localhost:3306/missionlifeordeath";
     String username = "root";
     String password = "arjun7945";
 
-    LifeOrDeathMission lifeordeathmission = new LifeOrDeathMission();
-    int randomNumbers = lifeordeathmission.pickRandomNumberFromMissionPrep();
+    MissionPrep missionPrep = new MissionPrep();
+    missionPrep.randomNumbersFromMissionPrep();
+    int[] randomNumbers = missionPrep.getResults();
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(url, username, password);
         Statement stmt = conn.createStatement();
 
-        String query = "SELECT * FROM questionbank WHERE QuestionNumber = " + randomNumbers;
-        ResultSet rs = stmt.executeQuery(query);
+        for(int i = 0; i < randomNumbers.length; i++) {
+            String query = "SELECT * FROM questionbank WHERE QuestionNumber = " + randomNumbers[i];
+            ResultSet rs = stmt.executeQuery(query);
 %>
         <table>
             <thead>
                 <tr>
                     <th>Question No</th>
                     <th>Question</th>
-                    <th>Option</th>
+                    <th>Options</th>
                 </tr>
             </thead>
             <tbody>
@@ -87,8 +89,8 @@
                     <td>
                         <select name="selectedOption">
                             <%
-                            for (int i = 1; i < options.length; i++) {
-                            String option = "OPTION " + options[i];
+                            for (int q = 1; q < options.length; q++) {
+                            String option = "OPTION " + options[q];
                             String optionValue = option.substring(option.indexOf(":") + 2).trim();
                             String optionLetter = option.split(":")[0].trim();
                             %>
@@ -106,6 +108,7 @@
         </table>
         <br/>
 <%
+        }
     } catch (ClassNotFoundException e) {
         e.printStackTrace();
         String errorMessage = "Database error: " + e.getMessage();

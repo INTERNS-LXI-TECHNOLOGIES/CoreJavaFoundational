@@ -48,14 +48,14 @@
         <body>
             <div class="sign-in_form">
                 <h2>SIGN-IN</h2>
-                <form action="/internsassist/adminAccessArea/signInToDataBase.jsp" method="post">
+                <form action="signInToDataBase.jsp" method="post">
 
-                    <input type="text" name="username" size="25" placeholder="Enter UserName">
-                    <input type="password" name="userpassword" size="25" placeholder="Enter UserPassword">
-                    <input type="text" name="nickname" size="25" placeholder="Enter NickName">
+                    <input type="text" name="username"required size="25" placeholder="Enter UserName">
+                    <input type="password" name="userpassword"required size="25" placeholder="Enter UserPassword">
+                    <input type="text" name="nickname"required size="25" placeholder="Enter NickName">
                     
                     <div class="option">
-                        <select name="user_role">
+                        <select name="user_role"required>
                             <option value="">Select Role</option>
                             <option value="INTERN">INTERN</option>
                         </select>
