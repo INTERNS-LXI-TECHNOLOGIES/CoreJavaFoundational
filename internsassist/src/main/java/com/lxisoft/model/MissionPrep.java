@@ -10,9 +10,10 @@ public class MissionPrep {
         this.results = results;
     }
 
-    public void randomNumbersFromMissionPrep() {
+    public int[] randomNumbersFromMissionPrep() {
         for (int i = 0; i < results.length; i++) {
             results[i] = (int) (Math.random() * 100) + 1;
         }
+        return results;
     }
 }

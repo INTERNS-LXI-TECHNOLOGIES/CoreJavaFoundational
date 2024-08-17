@@ -19,16 +19,16 @@ try {
         String query = "";
         switch (randomNumber) {
             case 1:
-                query = "insert into questionbank(Question, Answer, TaskLevel) VALUES('MCQ" + i + " OPTION 1: A OPTION 2: B OPTION 3: C OPTION 4: D', 'B', 1)";
+                query = "insert into questionbank(Question, Options, Answer, TaskLevel) VALUES('MCQ " + i + "', 'OPTION A: A OPTION B: B OPTION C: C OPTION D: D', 'A', 1)";
                 break;
             case 2:
-                query = "insert into questionbank(Question, Answer, TaskLevel) VALUES('TRUEORFALSE" + i + " OPTION 1: TRUE OPTION 2: FALSE OPTION 3: NOT APPLICABLE OPTION 4: NONE OF THE ABOVE', 'B', 1)";
+                query = "insert into questionbank(Question, Options, Answer, TaskLevel) VALUES('TRUEORFALSE " + i + "', 'OPTION A: TRUE OPTION B: FALSE OPTION C: NOT APPLICABLE OPTION D: NONE OF THE ABOVE', 'FALSE', 1)";
                 break;
             case 3:
-                query = "insert into questionbank(Question, Answer, TaskLevel) VALUES('SOCIALSKILLS" + i + " OPTION 1: COMMUNICATION OPTION 2: TEAMWORK OPTION 3: PROBLEM-SOLVING OPTION 4: LEADERSHIP', 'B', 3)";
+                query = "insert into questionbank(Question, Options, Answer, TaskLevel) VALUES('SOCIALSKILLS " + i + "', 'OPTION A: COMMUNICATION OPTION B: TEAMWORK OPTION C: PROBLEM-SOLVING OPTION D: LEADERSHIP', 'PROBLEM-SOLVING', 3)";
                 break;
             case 4:
-                query = "insert into questionbank(Question, Answer, TaskLevel) VALUES('HACKATHON" + i + " OPTION 1: PROJECT 1 OPTION 2: PROJECT 2 OPTION 3: PROJECT 3 OPTION 4: PROJECT 4', 'B', 4)";
+                query = "insert into questionbank(Question, Options, Answer, TaskLevel) VALUES('HACKATHON " + i + "', 'OPTION A: PROJECT 1 OPTION B: PROJECT 2 OPTION C: PROJECT 3 OPTION D: PROJECT 4', 'PROJECT 4', 4)";
                 break;
         }
 

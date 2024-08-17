@@ -50,24 +50,7 @@
 </head>
 <body>
     <h3>MISSION-PREP QUESTIONS</h3>
-<%
-    String url = "jdbc:mysql://localhost:3306/missionlifeordeath";
-    String username = "root";
-    String password = "arjun7945";
-
-    MissionPrep missionPrep = new MissionPrep();
-    missionPrep.randomNumbersFromMissionPrep();
-    int[] randomNumbers = missionPrep.getResults();
-
-    try {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection(url, username, password);
-        Statement stmt = conn.createStatement();
-
-        for(int i = 0; i < randomNumbers.length; i++) {
-            String query = "SELECT * FROM questionbank WHERE QuestionNumber = " + randomNumbers[i];
-            ResultSet rs = stmt.executeQuery(query);
-%>
+    <form action="/internsassist/checkAnswer.jsp" method="post">
         <table>
             <thead>
                 <tr>
@@ -78,44 +61,73 @@
             </thead>
             <tbody>
                 <%
-                    while (rs.next()) {
-                        int questionNumber = rs.getInt("QuestionNumber");
-                        String question = rs.getString("Question");
-                        String[] options = question.split("OPTION ");
+                    String url = "jdbc:mysql://localhost:3306/missionlifeordeath";
+                    String username = "root";
+                    String password = "arjun7945";
+
+                    int[] randomNumbers = (int[]) session.getAttribute("randomNumbers");
+                    if (randomNumbers == null) {
+                        MissionPrep missionPrep = new MissionPrep();
+                        randomNumbers = missionPrep.randomNumbersFromMissionPrep();
+                        session.setAttribute("randomNumbers", randomNumbers);
+                    }
+
+                    try {
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        Connection conn = DriverManager.getConnection(url, username, password);
+                        Statement stmt = conn.createStatement();
+
+                        for (int i = 0; i < randomNumbers.length; i++) {
+                            String query = "SELECT * FROM questionbank WHERE QuestionNumber = " + randomNumbers[i];
+                            ResultSet rs = stmt.executeQuery(query);
+
+                            while (rs.next()) {
+                                int questionNumber = rs.getInt("QuestionNumber");
+                                String question = rs.getString("Question");
+                                String options = rs.getString("Options");
+                                String[] optionArray = options.split(" OPTION ");
+
+                                for (int j = 0; j < optionArray.length; j++) {
+                                    String option = optionArray[j].trim();
+                                    int colonIndex = option.indexOf(":");
+                                    if (colonIndex != -1) {
+                                        optionArray[j] = option.substring(colonIndex + 1).trim();
+                                    }
+                                }
                 %>
                 <tr>
                     <td><%= questionNumber %></td>
-                    <td><%= options[0].trim() %></td>
+                    <td><%= question %></td>
                     <td>
-                        <select name="selectedOption">
+                        <select name="answers[<%= questionNumber %>]">
                             <%
-                            for (int q = 1; q < options.length; q++) {
-                            String option = "OPTION " + options[q];
-                            String optionValue = option.substring(option.indexOf(":") + 2).trim();
-                            String optionLetter = option.split(":")[0].trim();
+                                for (int j = 0; j < optionArray.length; j++) {
+                                    String option = optionArray[j].trim();
                             %>
-                            <option value="<%= optionLetter %>"><%= optionLetter %>: <%= optionValue %></option>
+                            <option value="<%= option %>"><%= option %></option>
                             <%
-                              }
+                                }
                             %>
                         </select>
+                        <input type="hidden" name="questionNumbers[]" value="<%= questionNumber %>">
                     </td>
                 </tr>
                 <%
                     }
+                }
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                out.println("<script>alert('Database error: " + e.getMessage() + "');</script>");
+            } catch (SQLException e) {
+                e.printStackTrace();
+                out.println("<script>alert('Database error: " + e.getMessage() + "');</script>");
+            }
                 %>
             </tbody>
         </table>
-        <br/>
-<%
-        }
-    } catch (ClassNotFoundException e) {
-        e.printStackTrace();
-        String errorMessage = "Database error: " + e.getMessage();
-    } catch (SQLException e) {
-        e.printStackTrace();
-        String errorMessage = "Database error: " + e.getMessage();
-    }
-%>
+        <div style="text-align: center; margin-top: 20px;">
+            <input type="submit" value="Submit All Answers">
+        </div>
+    </form>
 </body>
 </html>

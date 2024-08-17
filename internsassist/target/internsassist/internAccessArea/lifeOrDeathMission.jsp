@@ -55,17 +55,26 @@
     String username = "root";
     String password = "arjun7945";
 
-    LifeOrDeathMission lifeordeathmission = new LifeOrDeathMission();
-    int randomNumbers = lifeordeathmission.pickRandomNumberFromMissionPrep();
+    Integer storedQuestionNumber = (Integer) session.getAttribute("questionNumber");
+
+    int questionNumber;
+    if (storedQuestionNumber == null) {
+        LifeOrDeathMission lifeordeathmission = new LifeOrDeathMission();
+        questionNumber = lifeordeathmission.pickRandomNumberFromMissionPrep();
+        session.setAttribute("questionNumber", questionNumber);
+    } else {
+        questionNumber = storedQuestionNumber;
+    }
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(url, username, password);
         Statement stmt = conn.createStatement();
 
-        String query = "SELECT * FROM questionbank WHERE QuestionNumber = " + randomNumbers;
+        String query = "SELECT * FROM questionbank WHERE QuestionNumber = " + questionNumber;
         ResultSet rs = stmt.executeQuery(query);
 %>
+    <form action="/internsassist/checkAnswer.jsp" method="post">
         <table>
             <thead>
                 <tr>
@@ -77,24 +86,31 @@
             <tbody>
                 <%
                     while (rs.next()) {
-                        int questionNumber = rs.getInt("QuestionNumber");
+                        questionNumber = rs.getInt("QuestionNumber");
                         String question = rs.getString("Question");
-                        String[] options = question.split("OPTION ");
+                        String options = rs.getString("Options");
+                        String[] optionArray = options.split(" OPTION ");
+
+                        for (int j = 0; j < optionArray.length; j++) {
+                            String option = optionArray[j].trim();
+                            int colonIndex = option.indexOf(":");
+                            if (colonIndex != -1) {
+                                optionArray[j] = option.substring(colonIndex + 1).trim();
+                            }
+                        }
                 %>
                 <tr>
                     <td><%= questionNumber %></td>
-                    <td><%= options[0].trim() %></td>
+                    <td><%= question %></td>
                     <td>
                         <select name="selectedOption">
                             <%
-                            for (int i = 1; i < options.length; i++) {
-                            String option = "OPTION " + options[i];
-                            String optionValue = option.substring(option.indexOf(":") + 2).trim();
-                            String optionLetter = option.split(":")[0].trim();
+                                for (int j = 0; j < optionArray.length; j++) {
+                                    String option = optionArray[j].trim();
                             %>
-                            <option value="<%= optionLetter %>"><%= optionLetter %>: <%= optionValue %></option>
+                            <option value="<%= option %>"><%= option %></option>
                             <%
-                              }
+                                }
                             %>
                         </select>
                     </td>
@@ -104,7 +120,11 @@
                 %>
             </tbody>
         </table>
-        <br/>
+            <input type="hidden" name="questionNumber" value="<%= questionNumber %>">
+            <div style="text-align: center; margin-top: 20px;">
+                <input type="submit" value="Submit Answer">
+            </div>
+    </form>
 <%
     } catch (ClassNotFoundException e) {
         e.printStackTrace();
