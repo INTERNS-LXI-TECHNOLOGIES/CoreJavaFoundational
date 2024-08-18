@@ -96,6 +96,11 @@
             background-color: #e0e0e0;
             border: 2.5px solid #cccccc;
             padding: 5px;
+            text-decoration: none;
+        }
+        .cellIdentity:hover {
+            background-color: #c0c0c0;
+            color: #000;
         }
         .player-button {
             margin-left: 10px;
@@ -151,12 +156,9 @@
                         imagecount++;
                 %>
                 <div class="player-entry">
-                    <img src="<%= request.getParameter("icon") %>" alt="Player Icon">
+                    <img src="<%= iconPath %>" alt="Player Icon">
                     <b><%= nickname %></b>
-                    <form action="showCell.html" method="get">
-                        <input type="hidden" name="playerName" value="<%= nickname %>">
-                        <button class="player-button" type="submit">Show Cell</button>
-                    </form>
+                    <input type="hidden" name="playerName" value="<%= nickname %>">
                 </div>
             <%
                 }
@@ -166,7 +168,7 @@
         <div class="boardcontainerforboard">
             <div class="board">
                 <% for (int i = 1; i <= 100; i++) { %>
-                    <div class="cellIdentity"><b>Cell <%= i %></b></div>
+                    <a href="showCell.html?cell=<%= i %>" class = "cellIdentity"><%= i %></a>
                 <%
                 }
                 %>

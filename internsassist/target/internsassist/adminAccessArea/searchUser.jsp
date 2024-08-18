@@ -6,41 +6,41 @@
 <html>
 <head>
     <title>SEARCH USER</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-        table {
-            width: 70%;
-            max-width: 800px;
-            margin: 20px 0;
-            border-collapse: collapse;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        th, td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background-color: #007BFF;
-            color: #ffffff;
-            font-size: 16px;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+    table {
+        width: 70%;
+        max-width: 800px;
+        margin: 20px 0;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    th, td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    th {
+        background-color: #007BFF;
+        color: #ffffff;
+        font-size: 16px;
+    }
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+</style>
 </head>
 <body>
 

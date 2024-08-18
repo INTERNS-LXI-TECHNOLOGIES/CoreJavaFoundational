@@ -32,6 +32,16 @@
         .form-container.active {
             display: flex;
         }
+        select {
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid #00796b;
+            width: calc(50% - 22px);
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
         input[type="text"] {
             padding: 10px;
             font-size: 16px;
@@ -66,6 +76,11 @@
             background-color: #d32f2f;
         }
     </style>
+    <script>
+        function convertToUppercase(input) {
+            input.value = input.value.toUpperCase();
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -73,26 +88,36 @@
         <div id="searchForm" class="form-container">
             <h1>SEARCH USER DETAILS</h1>
             <form action="searchUser.jsp" method="post">
-                <input type="text" name="username" placeholder="Enter Username" required>
+                <input type="text" name="username" placeholder="Enter Username" oninput="convertToUppercase(this);" required>
                 <input type="submit" value="Search">
                 <input type="reset" value="Reset">
             </form>
         </div>
 
-        <div id="updateForm" class="form-container">
-            <h1>UPDATE USER DETAILS</h1>
-            <form action="updateUser.jsp" method="post">
-                <input type="text" name="username" placeholder="Enter Username" required>
-                <input type="text" name="newData" placeholder="Enter New Data" required>
-                <input type="submit" value="Update">
-                <input type="reset" value="Reset">
-            </form>
-        </div>
+    <div id="updateForm" class="form-container">
+        <h1>UPDATE USER DETAILS</h1>
+        <form action="updateUser.jsp" method="post">
+            <input type="text" name="username" placeholder="Enter Username" oninput="convertToUppercase(this);" required>
+
+            <select name="updateOption" onchange="this.form.newRole.style.display = (this.value === 'role') ? 'block' : 'none'; this.form.newNickName.style.display = (this.value === 'nickname') ? 'block' : 'none';" required>
+                <option value="">CHOOSE UPDATE</option>
+                <option value="role">CHANGE ROLE</option>
+                <option value="nickname">CHANGE NICK NAME</option>
+            </select>
+
+            <input type="text" name="newRole" placeholder="Enter New Role" style="display:none;" oninput="convertToUppercase(this);">
+            <input type="text" name="newNickName" placeholder="Enter New Nickname" style="display:none;" oninput="convertToUppercase(this);">
+
+            <input type="submit" value="Update">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+
 
         <div id="deleteForm" class="form-container">
             <h1>DELETE USER DETAILS</h1>
             <form action="deleteUser.jsp" method="post">
-                <input type="text" name="username" placeholder="Enter Username" required>
+                <input type="text" name="username" placeholder="Enter Username" oninput="convertToUppercase(this);" required>
                 <input type="submit" value="Delete">
                 <input type="reset" value="Reset">
             </form>
