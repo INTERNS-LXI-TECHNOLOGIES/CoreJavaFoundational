@@ -65,13 +65,40 @@
                     String username = "root";
                     String password = "arjun7945";
 
-                    int[] randomNumbers = (int[]) session.getAttribute("randomNumbers");
-                    if (randomNumbers == null) {
-                        MissionPrep missionPrep = new MissionPrep();
-                        randomNumbers = missionPrep.randomNumbersFromMissionPrep();
-                        session.setAttribute("randomNumbers", randomNumbers);
+                    int cellnumber = Integer.parseInt(request.getParameter("cellnumber"));
+                    int taskLevel = 0;
+
+                    if (cellnumber >= 1 && cellnumber <= 25) {
+                        taskLevel = 1;
+                    } else if (cellnumber >= 26 && cellnumber <= 50) {
+                        taskLevel = 2;
+                    } else if (cellnumber >= 51 && cellnumber <= 75) {
+                        taskLevel = 3;
+                    } else if (cellnumber >= 76 && cellnumber <= 100) {
+                        taskLevel = 4;
                     }
 
+                    String cell = "questionsForCell" + cellnumber;
+                    int[] randomNumbers = (int[]) session.getAttribute(cell);
+
+                    if (randomNumbers == null) {
+                        MissionPrep missionPrep = new MissionPrep();
+                        switch (taskLevel) {
+                            case 1:
+                                randomNumbers = missionPrep.randomNumbersForTaskLevel1();
+                                break;
+                            case 2:
+                                randomNumbers = missionPrep.randomNumbersForTaskLevel2();
+                                break;
+                            case 3:
+                                randomNumbers = missionPrep.randomNumbersForTaskLevel3();
+                                break;
+                            case 4:
+                                randomNumbers = missionPrep.randomNumbersForTaskLevel4();
+                                break;
+                        }
+                        session.setAttribute(cell, randomNumbers);
+                    }
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
                         Connection conn = DriverManager.getConnection(url, username, password);
@@ -99,7 +126,7 @@
                     <td><%= questionNumber %></td>
                     <td><%= question %></td>
                     <td>
-                        <select name="answers[<%= questionNumber %>]">
+                        <select name="answers">
                             <%
                                 for (int j = 0; j < optionArray.length; j++) {
                                     String option = optionArray[j].trim();
@@ -109,19 +136,19 @@
                                 }
                             %>
                         </select>
-                        <input type="hidden" name="questionNumbers[]" value="<%= questionNumber %>">
+                        <input type="hidden" name="questionNumbers" value="<%= questionNumber %>">
                     </td>
                 </tr>
                 <%
+                            }
+                        }
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                        out.println("<script>alert('Database error: " + e.getMessage() + "');</script>");
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                        out.println("<script>alert('Database error: " + e.getMessage() + "');</script>");
                     }
-                }
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-                out.println("<script>alert('Database error: " + e.getMessage() + "');</script>");
-            } catch (SQLException e) {
-                e.printStackTrace();
-                out.println("<script>alert('Database error: " + e.getMessage() + "');</script>");
-            }
                 %>
             </tbody>
         </table>

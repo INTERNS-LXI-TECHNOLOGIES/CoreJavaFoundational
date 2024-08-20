@@ -10,9 +10,30 @@ public class MissionPrep {
         this.results = results;
     }
 
-    public int[] randomNumbersFromMissionPrep() {
+    public int[] randomNumbersForTaskLevel1() {
         for (int i = 0; i < results.length; i++) {
-            results[i] = (int) (Math.random() * 100) + 1;
+            results[i] = (int) (Math.random() * 25) + 1;
+        }
+        return results;
+    }
+    
+    public int[] randomNumbersForTaskLevel2() {
+        for (int i = 0; i < results.length; i++) {
+            results[i] = (int) (Math.random() * 26) + 25;
+        }
+        return results;
+    }
+
+    public int[] randomNumbersForTaskLevel3() {
+        for (int i = 0; i < results.length; i++) {
+            results[i] = (int) (Math.random() * 26) + 50;
+        }
+        return results;
+    }
+
+    public int[] randomNumbersForTaskLevel4() {
+        for (int i = 0; i < results.length; i++) {
+            results[i] = (int) (Math.random() * 26) + 75;
         }
         return results;
     }

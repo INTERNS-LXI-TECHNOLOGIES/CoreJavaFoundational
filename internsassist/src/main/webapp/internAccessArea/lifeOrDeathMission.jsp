@@ -60,7 +60,7 @@
     int questionNumber;
     if (storedQuestionNumber == null) {
         LifeOrDeathMission lifeordeathmission = new LifeOrDeathMission();
-        questionNumber = lifeordeathmission.pickRandomNumberFromMissionPrep();
+        questionNumber = lifeordeathmission.pickRandomNumberFromTaskLevel1();
         session.setAttribute("questionNumber", questionNumber);
     } else {
         questionNumber = storedQuestionNumber;

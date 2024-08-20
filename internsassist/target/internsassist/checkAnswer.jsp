@@ -14,30 +14,17 @@
     String username = "root";
     String password = "arjun7945";
 
+    String[] questionNumbers = request.getParameterValues("questionNumbers");
+    String[] selectedAnswers = request.getParameterValues("answers");
     String selectedAnswer = request.getParameter("selectedOption");
     String questionNumber = request.getParameter("questionNumber");
-    String[] questionNumbers = request.getParameterValues("questionNumbers[]");
-    String[] selectedAnswers = request.getParameterValues("answers[]");
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(url, username, password);
         Statement stmt = conn.createStatement();
 
-        if (questionNumber != null && selectedAnswer != null) {
-            String query = "SELECT Answer FROM questionbank WHERE QuestionNumber = " + questionNumber;
-            ResultSet rs = stmt.executeQuery(query);
-
-            if (rs.next()) {
-                String correctAnswer = rs.getString("Answer");
-                if (correctAnswer.equalsIgnoreCase(selectedAnswer)) {
-                    out.println("<script>alert('CORRECT ANSWER for Question " + questionNumber + "');</script>");
-                } else {
-                    out.println("<script>alert('WRONG ANSWER for Question " + questionNumber + "');</script>");
-                }
-            }
-        }
-
+        // Answer checking for mission prep
         if (questionNumbers != null && selectedAnswers != null) {
             for (int i = 0; i < questionNumbers.length; i++) {
                 String query = "SELECT Answer FROM questionbank WHERE QuestionNumber = " + questionNumbers[i];
@@ -54,6 +41,23 @@
                     }
                 }
             }
+        } 
+
+        // Answer checking page for lifeordeath mission
+        else if (questionNumber != null && selectedAnswer != null) {
+            String query = "SELECT Answer FROM questionbank WHERE QuestionNumber = " + questionNumber;
+            ResultSet rs = stmt.executeQuery(query);
+
+            if (rs.next()) {
+                String correctAnswer = rs.getString("Answer");
+                if (correctAnswer.equalsIgnoreCase(selectedAnswer)) {
+                    out.println("<script>alert('CORRECT ANSWER FOR QUESTION " + questionNumber + "');</script>");
+                } else {
+                    out.println("<script>alert('WRONG ANSWER FOR QUESTION " + questionNumber + "');</script>");
+                }
+            }
+        } else {
+            out.println("<script>alert('CANNOT FIND DETAILS');</script>");
         }
     } catch (ClassNotFoundException e) {
         e.printStackTrace();

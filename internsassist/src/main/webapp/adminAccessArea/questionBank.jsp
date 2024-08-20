@@ -22,7 +22,7 @@ try {
                 query = "insert into questionbank(Question, Options, Answer, TaskLevel) VALUES('MCQ " + i + "', 'OPTION A: A OPTION B: B OPTION C: C OPTION D: D', 'A', 1)";
                 break;
             case 2:
-                query = "insert into questionbank(Question, Options, Answer, TaskLevel) VALUES('TRUEORFALSE " + i + "', 'OPTION A: TRUE OPTION B: FALSE OPTION C: NOT APPLICABLE OPTION D: NONE OF THE ABOVE', 'FALSE', 1)";
+                query = "insert into questionbank(Question, Options, Answer, TaskLevel) VALUES('TRUEORFALSE " + i + "', 'OPTION A: TRUE OPTION B: FALSE OPTION C: NOT APPLICABLE OPTION D: NONE OF THE ABOVE', 'FALSE', 2)";
                 break;
             case 3:
                 query = "insert into questionbank(Question, Options, Answer, TaskLevel) VALUES('SOCIALSKILLS " + i + "', 'OPTION A: COMMUNICATION OPTION B: TEAMWORK OPTION C: PROBLEM-SOLVING OPTION D: LEADERSHIP', 'PROBLEM-SOLVING', 3)";

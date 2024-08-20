@@ -168,7 +168,7 @@
         <div class="boardcontainerforboard">
             <div class="board">
                 <% for (int i = 1; i <= 100; i++) { %>
-                    <a href="showCell.html?cell=<%= i %>" class = "cellIdentity"><%= i %></a>
+                    <a href="showCell.jsp?cell=<%= i %>" class = "cellIdentity"><%= i %></a>
                 <%
                 }
                 %>
