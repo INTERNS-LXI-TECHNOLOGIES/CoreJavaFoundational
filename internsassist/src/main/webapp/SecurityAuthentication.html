@@ -62,6 +62,11 @@
             }
         }
     </style>
+    <script>
+        function convertToUppercase(element) {
+            element.value = element.value.toUpperCase();
+        }
+    </script>
     
 </head>
 <body>
@@ -70,7 +75,7 @@
         <form action="j_security_check" method=post>
 
             <p><strong>Please Enter Your User Name: </strong>
-            <input type="text" name="j_username" size="25" required>
+            <input type="text" name="j_username" size="25" required oninput="convertToUppercase(this);">
 
             <p><p><strong>Please Enter Your Password: </strong>
             <input type="password" size="15" name="j_password" required>

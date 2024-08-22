@@ -14,12 +14,25 @@
             response.sendRedirect("/internsassist/adminAccessArea/adminHelpDesk.html");
         } else if (request.isUserInRole("INTERN")) {
             response.sendRedirect("/internsassist/internAccessArea/frontPage.jsp");
+        }else if (request.isUserInRole("MENTOR")) {
+            response.sendRedirect("/internsassist/mentorAccessArea/mentorCreateQuestion.html");
+        }
+        else{
+%>
+            <script>
+                alert('No user found with the username: <%= p.getName() %>');
+                window.location.href = "SecurityAuthentication.html";
+            </script>
+<%
         }
     } else {
-        response.sendRedirect("loginError.html");
+%>
+            <script>
+                alert('No user found with the username: <%= p.getName() %>');
+                window.location.href = "SecurityAuthentication.html";
+            </script>
+<%
     }
 %>
-
-
 </body>
 </html>

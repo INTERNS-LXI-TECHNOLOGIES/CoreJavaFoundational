@@ -44,15 +44,20 @@
                 background-color: #d9534f;
             }
         </style>
+        <script>
+            function convertToUppercase(element) {
+                element.value = element.value.toUpperCase();
+            }
+        </script>
         </head>
         <body>
             <div class="sign-in_form">
                 <h2>SIGN-IN</h2>
                 <form action="signInToDataBase.jsp" method="post">
 
-                    <input type="text" name="username"required size="25" placeholder="Enter UserName" required>
+                    <input type="text" name="username"required size="25" placeholder="Enter UserName" required oninput="convertToUppercase(this);">
                     <input type="password" name="userpassword"required size="25" placeholder="Enter UserPassword" required>
-                    <input type="text" name="nickname"required size="25" placeholder="Enter NickName" required>
+                    <input type="text" name="nickname"required size="25" placeholder="Enter NickName" required oninput="convertToUppercase(this);">
                     
                     <div class="option">
                         <select name="user_role"required>

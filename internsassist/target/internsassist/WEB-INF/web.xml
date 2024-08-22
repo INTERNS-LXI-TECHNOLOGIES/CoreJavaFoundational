@@ -33,11 +33,27 @@
     <auth-constraint>
       <role-name>ADMIN</role-name>
       <role-name>INTERN</role-name>
+      <role-name>MENTOR</role-name>
+    </auth-constraint>
+</security-constraint>
+
+<security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Secure Area</web-resource-name>
+        <url-pattern>/mentorAccessArea/*</url-pattern> <!-- Protect home.jsp -->
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>ADMIN</role-name>
+      <role-name>MENTOR</role-name>
     </auth-constraint>
 </security-constraint>
 
 <security-role>
     <role-name>ADMIN</role-name>
+</security-role>
+
+<security-role>
+    <role-name>MENTOR</role-name>
 </security-role>
 
 <security-role>
