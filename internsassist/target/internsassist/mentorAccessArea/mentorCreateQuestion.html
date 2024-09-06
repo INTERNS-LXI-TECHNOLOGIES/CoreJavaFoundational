@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>CREATE QUESTIONS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #000000;
+            font-size: 1.5em;
+        }
+        label {
+            font-size: 15px;
+            color: #0f0f0f;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 8px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+        input[type="reset"]:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ENTER NEW QUESTION</h1>
+        <form action="mentorCreateQuestion.jsp" method="post">
+            <label for="newQuestion">Enter New Question:</label>
+            <input type="text" name="newQuestion" required>
+
+            <label for="optionA">OPTION A:</label>
+            <input type="text" name="optionA" required>
+
+            <label for="optionB">OPTION B:</label>
+            <input type="text" name="optionB" required>
+
+            <label for="optionC">OPTION C:</label>
+            <input type="text" name="optionC" required>
+
+            <label for="optionD">OPTION D:</label>
+            <input type="text" name="optionD" required>
+
+            <label for="answer">Enter Correct Answer:</label>
+            <input type="text" name="answer" required>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+</body>
+</html>

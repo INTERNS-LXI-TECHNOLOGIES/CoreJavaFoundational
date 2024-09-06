@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>CRUD OPERATIONS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin-bottom: 30px;
+            color: #00796b;
+            font-size: 2.5em;
+        }
+        .CRUD-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+        }
+        a:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 18px rgba(0, 86, 179, 0.6);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CRUD OPERATIONS</h1>
+        <div class="CRUD-container">
+            <a href="/internsassist/signIn.html">CREATE USER</a>
+            <a href="crudOperations.jsp?action=search">SEARCH USER</a>
+            <a href="crudOperations.jsp?action=update">UPDATE USER</a>
+            <a href="crudOperations.jsp?action=delete">DELETE USER</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>INSIDE THE CELL</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: #1a1818;
+        }
+        .showCellButtons button {
+            display: block;
+            margin: 20px auto;
+            padding: 20px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        .showCellButtons button:hover {
+            background-color: #7bbc4a;
+        }
+    </style>
+<script>
+    function goToMissionPrep(){
+        window.location.href = '/internsassist/internAccessArea/missionPrep.jsp';
+    }
+    function goToLifeOrDeathMission(){
+        window.location.href = '/internsassist/internAccessArea/lifeOrDeathMission.jsp';
+    }
+</script>
+</head>
+<body>
+
+    <div class="showCellButtons">
+        <button class="MISSION-PREP QUESTIONS" onclick="goToMissionPrep()">MISSION-PREP QUESTIONS</button>
+        <button class="LIFE-OR-DEATH MISSION" onclick="goToLifeOrDeathMission()">LIFE-OR-DEATH MISSION</button>
+    </div>
+
+</body>
+</html>

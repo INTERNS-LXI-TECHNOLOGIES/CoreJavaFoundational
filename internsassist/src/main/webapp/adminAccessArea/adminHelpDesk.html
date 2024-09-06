@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>ADMIN HELP DESK</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .helpDesk-buttons {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .helpDesk-buttons a {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 15px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 50px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+        }
+        .helpDesk-buttons a:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 18px rgba(0, 86, 179, 0.6);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="helpDesk-buttons">
+        <a href="adminsOnly.jsp">ADMIN START</a>
+        <a href="showAvailableUsers.jsp">DATABASE</a>
+        <a href="crudOperations.html">TAKE CONTROL</a>
+        <a href="addNewQuestion.jsp">ADD QUESTIONS</a>
+    </div>  
+</body>
+</html>

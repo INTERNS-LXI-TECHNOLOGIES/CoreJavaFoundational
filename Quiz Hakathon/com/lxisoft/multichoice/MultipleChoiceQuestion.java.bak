@@ -1,0 +1,22 @@
+// MultipleChoiceQuestion class represents a multiple choice quiz question
+package com.lxisoft.multichoice;
+
+public class MultipleChoiceQuestion extends Question {
+    private String[] choices;
+
+    // Overloaded Constructor for MultipleChoiceQuestion class
+    public MultipleChoiceQuestion(String questionText, String correctAnswer, String[] choices) {
+        super(questionText, correctAnswer);
+        this.choices = choices;
+    }
+
+    // Method to display the question with choices
+    public void display() {
+        System.out.println(questionText);
+        char option = 'A';
+        for (String choice : choices) {
+            System.out.println("Option " + option + ": " + choice);
+            option++;
+        }
+    }
+}

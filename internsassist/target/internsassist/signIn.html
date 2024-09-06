@@ -1,0 +1,75 @@
+
+<html>
+    <head>
+        <title>SIGN-IN PAGE</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #509793;
+            }
+            .sign-in_form {
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                width: 300px;
+            }
+            .sign-in_form h2 {
+                margin-bottom: 20px;
+            }
+            .sign-in_form input[type="text"], .sign-in_form input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            .sign-in_form input[type="submit"], .sign-in_form input[type="reset"] {
+                width: 48%;
+                padding: 10px;
+                margin: 10px 1%;
+                border: none;
+                border-radius: 4px;
+                background-color: #5cb85c;
+                color: white;
+                cursor: pointer;
+            }
+            .sign-in_form input[type="reset"] {
+                background-color: #d9534f;
+            }
+        </style>
+        <script>
+            function convertToUppercase(element) {
+                element.value = element.value.toUpperCase();
+            }
+        </script>
+        </head>
+        <body>
+            <div class="sign-in_form">
+                <h2>SIGN-IN</h2>
+                <form action="signInToDataBase.jsp" method="post">
+
+                    <input type="text" name="username"required size="25" placeholder="Enter UserName" required oninput="convertToUppercase(this);">
+                    <input type="password" name="userpassword"required size="25" placeholder="Enter UserPassword" required>
+                    <input type="text" name="nickname"required size="25" placeholder="Enter NickName" required oninput="convertToUppercase(this);">
+                    
+                    <div class="option">
+                        <select name="user_role"required>
+                            <option value="">Select Role</option>
+                            <option value="INTERN">INTERN</option>
+                        </select>
+                    </div>
+
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+
+                </form>
+            </div>
+        </body>
+</html>
