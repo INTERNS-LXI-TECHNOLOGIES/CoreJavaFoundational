@@ -12,7 +12,7 @@ public class Tdd{
         int turn;
        
 		
-		System.out.println(" Welcome to the sos Game ");
+		System.out.println(" Welcome to the sos Game ......");
 		fillBoard();
 		turn= 0;
 		do{
